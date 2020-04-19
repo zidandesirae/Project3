@@ -9,7 +9,7 @@ import Card from './../Card';
 function Outer(props) {
     return (
         <Container1>
-            <TitleH1 title="INSERT" subtitle="INSERT"/>
+            <TitleH1 title="" subtitle="INSERT"/>
                 <Card>
                     {props.children}
                 </Card>
