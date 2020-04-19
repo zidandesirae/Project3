@@ -1,18 +1,18 @@
 
 import React from 'react';
 import Col6 from "./Col6";
-import Link from "./Link";
+import Link from "./SegLink";
 import Card from "./../Card";
 import Image from "./Image";
 
 function Segment() {
     return (
         <Col6>
-            <Link>
+            <SegLink>
                 <Card>
                     <Image />
                 </Card>
-            </Link>
+            </SegLink>
         </Col6>
     );
 }
