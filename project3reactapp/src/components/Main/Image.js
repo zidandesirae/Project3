@@ -4,7 +4,7 @@ import React from "react";
 
 function Image(props) {
     return (
-        <img src={INSERT} alt={INSERT} className="img-fluid" />
+        <img src="INSERT" alt="INSERT" className="img-fluid" />
     );
 }
 

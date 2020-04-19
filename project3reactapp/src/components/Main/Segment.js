@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Col6 from "./Col6";
-import Link from "./SegLink";
+import SegLink from "./SegLink";
 import Card from "./../Card";
 import Image from "./Image";
 

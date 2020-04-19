@@ -1,8 +1,8 @@
 //NEED to add to functionality for saving user input
 
 import React from 'react';
-import Outer from './../Outer';
-import SignUpForm from './../SignUpForm';
+import Outer from './../../components/LoginSignUp/Outer';
+import SignUpForm from './../../components/LoginSignUp/SignUpForm';
 
 function SignUp(props) {
     return (
