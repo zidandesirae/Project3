@@ -1,13 +1,13 @@
 //NEED to create variables for all UserSegment and NotsSegment information
 
 import React from 'react';
-import NavBar from './../Navbar';
+import NavBar from './../NavBar/Navbar';
 import Container2 from './../Container2';
 import Col10 from './../Col10';
 import TitleH2 from './../TitleH2';
 import Card from './../Card';
 import TitleH4 from '../Settings/TitleH4';
-import UserSegment from './../UserSegment';
+import UserSegment from './../Settings/UserSegment';
 import NotsSegment from '../Settings/NotsSegment';
 import EditSaveBtns from './../EditSaveBtn';
 import Footer from './../Footer';

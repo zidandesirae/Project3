@@ -2,10 +2,10 @@
 
 import React from "react";
 
-function Link(props) {
+function SegLink(props) {
     return (
         <a href="">{props.children}</a>
     );
 }
 
-export default Link;
+export default SegLink;
