@@ -1,8 +1,8 @@
 import React from 'react';
-import Login from './components/pages/Login';
-// import SignUp from './components/pages/SignUp';
-// import Main from './components/pages/Main';
-// import Settings from "./components/pages/Settings";
+import Login from './components/pageBuild/Login';
+// import SignUp from './components/pageBuild/SignUp';
+// import Main from './components/pageBuild/Main';
+// import Settings from "./components/pageBuild/Settings";
 
 function App() {
   return (
