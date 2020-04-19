@@ -1,8 +1,8 @@
 //ADD on-click of "Create an account" to show <SignUp />
 
 import React from 'react';
-import Outer from './../Outer';
-import LoginForm from './../LoginForm';
+import Outer from './../../components/LoginSignUp/Outer';
+import LoginForm from './../../components/LoginSignUp/LoginForm';
 
 function Login(props) {
     return (
