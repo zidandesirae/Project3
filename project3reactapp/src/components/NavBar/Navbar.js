@@ -1,18 +1,26 @@
-// Change TITLE
+// Home link => <Main />
+// Settings link => <Settings />
+// Group Info link => <GroupInfo />
+// Log Out link => <Login />
+// Edit title attribute
 
 import React from "react";
-import NavBtns from "./NavBtns";
+import NavToggler from "./NavToggler";
+import NavTitle from "./NavTitle";
+import NavGroup from "./NavGroup";
+import NavBtn from "./NavBtn";
 
 function NavBar() {
     return (
         <nav className="navbar navbar-expand-xs navbar-light bg-light">
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMarkup" aria-controls="navbarMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            <a className="navbar-brand" href="#">TITLE</a>
-            <div className="collapse navbar-collapse" id="navbarMarkup">
-                <NavBtns />
-            </div>
+            <NavToggler />
+            <NavTitle title="INSERT"/>
+            <NavGroup>
+                <NavBtn title="Home" />
+                <NavBtn title="Settings" />
+                <NavBtn title="Group Information" />
+                <NavBtn title="Log Out" />
+            </NavGroup>
         </nav>
     );
 }
