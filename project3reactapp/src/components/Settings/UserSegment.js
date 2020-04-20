@@ -1,4 +1,4 @@
-// 5 TOTAL (as of now, will be adding more)
+// 5 TOTAL (as of now, more can be added)
 
 import React from "react";
 import SetRow from './SetRow';

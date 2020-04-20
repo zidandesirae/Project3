@@ -1,14 +1,16 @@
-//NEED to add to functionality for saving user input
-
 import React from 'react';
 import Outer from './../../components/LoginSignUp/Outer';
 import SignUpForm from './../../components/LoginSignUp/SignUpForm';
+import Footer from './../Footer';
 
 function SignUp(props) {
     return (
-        <Outer>
-            <SignUpForm />
-        </Outer>
+        <div>
+            <Outer>
+                <SignUpForm />
+            </Outer>
+            <Footer />
+        </div>
     );
 }
 

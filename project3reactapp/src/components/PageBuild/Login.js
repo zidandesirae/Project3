@@ -1,14 +1,16 @@
-//ADD on-click of "Create an account" to show <SignUp />
-
 import React from 'react';
 import Outer from './../../components/LoginSignUp/Outer';
 import LoginForm from './../../components/LoginSignUp/LoginForm';
+import Footer from './../Footer';
 
 function Login(props) {
     return (
-        <Outer>
-            <LoginForm />
-        </Outer>
+        <div>
+            <Outer>
+                <LoginForm />
+            </Outer>
+            <Footer />
+        </div>
     );
 }
 
