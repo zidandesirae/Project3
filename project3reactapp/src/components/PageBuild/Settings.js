@@ -1,7 +1,7 @@
 //NEED to create variables for all UserSegment and NotsSegment information
 
 import React from 'react';
-import NavBar from './../NavBar/Navbar';
+import NavBar from './../NavBar/NavBar';
 import Container2 from './../Container2';
 import Col10 from './../Col10';
 import TitleH2 from './../TitleH2';

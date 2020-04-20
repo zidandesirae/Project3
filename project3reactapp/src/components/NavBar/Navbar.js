@@ -10,16 +10,18 @@ import NavTitle from "./NavTitle";
 import NavGroup from "./NavGroup";
 import NavBtn from "./NavBtn";
 
-function NavBar() {
+function NavBar(props) {
     return (
         <nav className="navbar navbar-expand-xs navbar-light bg-light">
             <NavToggler />
             <NavTitle title="INSERT"/>
             <NavGroup>
-                <NavBtn title="Home" />
+                <NavBtn />
+                {/* <NavBtn navbtns={navbtns} /> */}
+                {/* <NavBtn title="Home" />
                 <NavBtn title="Settings" />
                 <NavBtn title="Group Information" />
-                <NavBtn title="Log Out" />
+                <NavBtn title="Log Out" /> */}
             </NavGroup>
         </nav>
     );

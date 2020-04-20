@@ -5,7 +5,7 @@ import React from "react";
 function SignUpForm(props) {
     return (
         <form>
-            <input className="form-control form-control-lg mt-2" type="text" placeholder="Full Name" />
+            <input className="form-control form-control-lg my-4" type="text" placeholder="Full Name" />
             <input className="form-control form-control-lg my-4" type="text" placeholder="Email" />
             <input className="form-control form-control-lg my-4" type="text" placeholder="Create Password" />
             <input className="form-control form-control-lg my-4" type="text" placeholder="Phone Number (XXX-XXX-XXXX)" />
