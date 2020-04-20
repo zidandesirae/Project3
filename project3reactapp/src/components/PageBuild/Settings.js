@@ -8,7 +8,7 @@ import TitleH2 from './../TitleH2';
 import Card from './../Card';
 import TitleH4 from '../Settings/TitleH4';
 import UserSegment from './../Settings/UserSegment';
-import NotsSegment from '../Settings/NotsSegment';
+import NotsSegment from './../Settings/NotsSegment';
 import EditSaveBtns from './../EditSaveBtn';
 import Footer from './../Footer';
 
@@ -25,11 +25,13 @@ function Settings(props) {
                         <UserSegment />
                         <UserSegment />
                         <UserSegment />
+                        <UserSegment />
                         <EditSaveBtns />
                     </Card>
                     <br />
                     <Card>
                         <TitleH4 title="Notifications" />
+                        <NotsSegment />
                         <NotsSegment />
                         <NotsSegment />
                         <NotsSegment />

@@ -1,7 +1,4 @@
 // **POSSIBLE CHANGE** breakdown into smaller comonents
-// Take user input (email and password) and match member with their group
-// On click of login button => main group page <Main />
-// On click of 'Create an account' link => <SignUp />
 
 import React from "react";
 

@@ -3,7 +3,7 @@
 import React from "react";
 import SetRow from './SetRow';
 import SetCol from './SetCol';
-import UserInfo from './UserInfo';
+import NotsInfo from './NotsInfo';
 import NotsInput from './NotsInput';
 
 function NotsSegment(props) {
@@ -11,7 +11,7 @@ function NotsSegment(props) {
         <div>
             <SetRow>
                 <SetCol>
-                    <UserInfo />
+                    <NotsInfo />
                 </SetCol>
                 <SetCol>
                     <NotsInput />
