@@ -26,7 +26,7 @@ const navbtns = [
 function NavBtn(props) {
     return (
         navbtns.map(btn => (
-            <a className="nav-item nav-link" href="#" key={btn.id}>{btn.title}</a>
+            <a className="nav-item nav-link" href="#">{btn.title}</a>
         ))
     );
 }

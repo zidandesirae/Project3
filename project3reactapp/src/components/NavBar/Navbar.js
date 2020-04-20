@@ -17,11 +17,6 @@ function NavBar(props) {
             <NavTitle title="INSERT"/>
             <NavGroup>
                 <NavBtn />
-                {/* <NavBtn navbtns={navbtns} /> */}
-                {/* <NavBtn title="Home" />
-                <NavBtn title="Settings" />
-                <NavBtn title="Group Information" />
-                <NavBtn title="Log Out" /> */}
             </NavGroup>
         </nav>
     );
