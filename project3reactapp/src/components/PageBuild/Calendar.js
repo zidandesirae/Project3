@@ -10,7 +10,7 @@ function Calendar(props) {
         <div>
             <NavBar />
             <Container2>
-                <TitleH2 />
+                <TitleH2 title="Calendar"/>
                 <Col10>
                 {/* enter calendar code here*/}
                 </Col10>
