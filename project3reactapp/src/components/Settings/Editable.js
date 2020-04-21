@@ -2,7 +2,7 @@
 
 import React from "react";
 
-function UserInput(props) {
+function Editable(props) {
     return (
         <form>
             <input className="form-control" type="text" placeholder="INSERT props for placeholder" disabled />
@@ -10,4 +10,4 @@ function UserInput(props) {
     );
 }
 
-export default UserInput;
+export default Editable;

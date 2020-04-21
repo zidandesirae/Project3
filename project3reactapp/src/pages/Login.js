@@ -1,7 +1,7 @@
 import React from 'react';
-import Outer from './../../components/LoginSignUp/Outer';
-import LoginForm from './../../components/LoginSignUp/LoginForm';
-import Footer from './../Footer';
+import Outer from './../components/Login/Outer';
+import LoginForm from './../components/Login/LoginForm';
+import Footer from './../components/Footer';
 
 function Login(props) {
     return (

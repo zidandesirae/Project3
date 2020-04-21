@@ -1,11 +1,11 @@
 import React from "react";
 
-function SetCol(props) {
+function Col(props) {
     return (
-        <div className="col-md-6 col-sm-12">
+        <div className="col">
             {props.children}
         </div>
     );
 }
 
-export default SetCol;
+export default Col;

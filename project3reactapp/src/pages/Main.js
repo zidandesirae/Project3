@@ -2,10 +2,10 @@
 //ADD href and image for each segment
 
 import React from 'react';
-import NavBar from '../NavBar/NavBar';
-import Container2 from './../Container2';
-import Segment from './../Main/Segment';
-import Footer from './../Footer';
+import NavBar from './../components/NavBar/NavBar';
+import Container2 from './../components/Main/Container2';
+import Segment from './../components/Main/Segment';
+import Footer from './../components/Footer';
 
 function Main(props) {
     return (

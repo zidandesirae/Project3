@@ -1,8 +1,8 @@
 import React from "react";
-import Main from './../PageBuild/Main';
-import Settings from './../PageBuild/Settings';
-import GroupInfo from './../PageBuild/GroupInfo';
-import Login from './../PageBuild/Login';
+// import Main from './../PageBuild/Main';
+// import Settings from './../PageBuild/Settings';
+// import GroupInfo from './../PageBuild/GroupInfo';
+// import Login from './../PageBuild/Login';
 
 const navbtns = [
     {

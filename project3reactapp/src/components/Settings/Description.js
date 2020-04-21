@@ -1,9 +1,9 @@
 import React from "react";
 
-function NotsInfo(props) {
+function Description(props) {
     return (
         <h5>INSERT</h5>
     );
 }
 
-export default NotsInfo;
+export default Description;

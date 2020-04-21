@@ -4,7 +4,7 @@
 import React from "react";
 import Container1 from './Container1';
 import TitleH1 from './TitleH1';
-import Card from './../Card';
+import Card from './Card';
 
 function Outer(props) {
     return (

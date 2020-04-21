@@ -2,7 +2,7 @@
 
 import React from "react";
 
-function NotsInput(props) {
+function CheckBox(props) {
     return (
         <form>
             <div className="form-group form-check">
@@ -13,4 +13,4 @@ function NotsInput(props) {
     );
 }
 
-export default NotsInput;
+export default CheckBox;
