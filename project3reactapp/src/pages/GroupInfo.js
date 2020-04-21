@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../components/NavBar/NavBar';
+import NavBar from '../components/NavBar/Navbar';
 import Container2 from '../components/GroupInfo/Container2';
 import Col10 from '../components/GroupInfo/Col10';
 import TitleH2 from '../components/GroupInfo/TitleH2';
