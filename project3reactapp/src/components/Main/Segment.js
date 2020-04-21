@@ -1,8 +1,7 @@
-
 import React from 'react';
 import Col6 from "./Col6";
 import SegLink from "./SegLink";
-import Card from "./../Card";
+import Card from "./Card";
 import Image from "./Image";
 
 function Segment() {

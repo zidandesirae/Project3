@@ -1,12 +1,13 @@
 import React from 'react';
-// import Login from './components/PageBuild/Login';
-// import SignUp from './components/PageBuild/SignUp';
-import Main from './components/PageBuild/Main';
-// import Settings from "./components/PageBuild/Settings";
-// import Calendar from "./components/PageBuild/Calendar";
+// import Login from './pages/Login';
+// import SignUp from './pages/SignUp';
+// import Main from './pages/Main';
+// import Settings from "./pages/Settings";
+// import Calendar from "./pages/Calendar";
+import GroupInfo from './pages/GroupInfo';
 function App() {
   return (
-    <Main />
+    <GroupInfo />
   );
 }
 

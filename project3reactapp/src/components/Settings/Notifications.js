@@ -1,10 +1,10 @@
 import React from "react";
 import Row from './Row';
 import Col6 from './Col6';
-import Description from './Description';
-import Editable from "./Editable";
+import CheckBox from './CheckBox';
+import Description from "./Description";
 
-function UserSegment(props) {
+function Notifications(props) {
     return (
         <div>
             <Row>
@@ -12,7 +12,7 @@ function UserSegment(props) {
                     <Description />
                 </Col6>
                 <Col6>
-                    <Editable />
+                    <CheckBox />
                 </Col6>
             </Row>
             <hr className="my-2" />
@@ -20,4 +20,4 @@ function UserSegment(props) {
     );
 }
 
-export default UserSegment;
+export default Notifications;
