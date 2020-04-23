@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import NavBar from '../NavBar/NavBar';
-import Container2 from '../Container2';
-import TitleH2 from '../TitleH2'
-import Col10 from '../Col10';
-import Footer from '../Footer';
+import NavBar from '../components/NavBar/Navbar';
+import Container2 from '../components/Calendar/Container2';
+import TitleH2 from '../components/Calendar/TitleH2';
+import Col10 from '../components/Calendar/Col10';
+import Footer from '../components/Footer';
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 
