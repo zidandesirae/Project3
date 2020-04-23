@@ -30,9 +30,8 @@ class CalendarShare extends Component {
             <div>
                 <NavBar />
                 <Container2>
-                    <TitleH2 title="Calendar" />
                     <Col10>
-
+                    <TitleH2 title="Calendar" />
                         {
                             <div className="App">
                                 <Calendar
