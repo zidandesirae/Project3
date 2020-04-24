@@ -4,11 +4,11 @@ import React from 'react';
 // import Main from './pages/Main';
 // import Settings from "./pages/Settings";
 // import Calendar from "./pages/Calendar";
-import CalendarShare from "./pages/CalendarShare";
-// import GroupInfo from './pages/GroupInfo';
+// import CalendarShare from "./pages/CalendarShare";
+import GroupInfo from './pages/GroupInfo';
 function App() {
   return (
-    <CalendarShare />
+    <GroupInfo />
   );
 }
 
