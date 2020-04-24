@@ -1,22 +1,20 @@
-// 5 TOTAL (as of now, more can be added)
-
 import React from "react";
-import SetRow from './SetRow';
-import SetCol from './SetCol';
-import UserInfo from './UserInfo';
-import UserInput from './UserInput';
+import Row from './Row';
+import Col6 from './Col6';
+import Description from './Description';
+import Editable from "./Editable";
 
 function UserSegment(props) {
     return (
         <div>
-            <SetRow>
-                <SetCol>
-                    <UserInfo />
-                </SetCol>
-                <SetCol>
-                    <UserInput />
-                </SetCol>
-            </SetRow>
+            <Row>
+                <Col6>
+                    <Description />
+                </Col6>
+                <Col6>
+                    <Editable />
+                </Col6>
+            </Row>
             <hr className="my-2" />
         </div>
     );
