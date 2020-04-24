@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import NavBar from '../components/NavBar/Navbar';
-import Container2 from '../components/Calendar/Container2';
-import TitleH2 from '../components/Calendar/TitleH2';
-import Col10 from '../components/Calendar/Col10';
-import Footer from '../components/Footer';
+import Container2 from '../components/Universal/Container2';
+import TitleH2 from '../components/Universal/TitleH2';
+import Col10 from '../components/Universal/Col10';
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-
 import "./App.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+
+// import NavBar from '../components/Universal/NavBar';
+// import Footer from '../components/Universal/Footer';
 
 const localizer = momentLocalizer(moment);
 
@@ -28,7 +28,7 @@ class CalendarShare extends Component {
     render() {
         return (
             <div>
-                <NavBar />
+                {/* <NavBar /> */}
                 <Container2>
                     <Col10>
                     <TitleH2 title="Calendar" />
@@ -45,7 +45,7 @@ class CalendarShare extends Component {
                         }
                     </Col10>
                 </Container2>
-                <Footer />
+                {/* <Footer /> */}
             </div>
         );
     }

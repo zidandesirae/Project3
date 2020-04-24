@@ -1,24 +1,30 @@
-//NEED to get each segment directed correcty and photo added
-//ADD href and image for each segment
-
 import React from 'react';
-import NavBar from './../components/NavBar/NavBar';
-import Container2 from './../components/Main/Container2';
-import Segment from './../components/Main/Segment';
-import Footer from './../components/Footer';
+import Container2 from '../components/Universal/Container2';
+import Segment from '../components/Main/Segment';
+import CalendarShare from './CalendarShare';
+import Dashboard from './Dashboard';
+import Lists from './Lists';
+import PhotoAlbum from './PhotoAlbum';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 function Main(props) {
     return (
-        <div>
-            <NavBar />
+        <Router>
+            <Switch>
             <Container2>
-                <Segment /* To Calander Page and add specific cover image*//>
-                <Segment /* To Dashboard Page and add specific cover image *//>
-                <Segment /* To Lists Page and add specific cover image *//>
-                <Segment /* To Photo Album Page and add specific cover image *//>
+                <Segment />
+                <Route path="/calendar"><CalendarShare /></Route>
+                <Route path="/dashboard"><Dashboard /></Route>
+                <Route path="/lists"><Lists /></Route>
+                <Route path="/photos"><PhotoAlbum /></Route>
             </Container2>
-            <Footer />
-        </div>
+            </Switch>
+        </Router>
     );
 }
 

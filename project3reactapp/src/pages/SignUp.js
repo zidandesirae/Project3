@@ -1,16 +1,12 @@
 import React from 'react';
-import Outer from './../components/SignUp/Outer';
+import SignUpPage from './../components/SignUp/SignUpPage';
 import SignUpForm from './../components/SignUp/SignUpForm';
-import Footer from './../components/Footer';
 
 function SignUp(props) {
     return (
-        <div>
-            <Outer>
-                <SignUpForm />
-            </Outer>
-            <Footer />
-        </div>
+        <SignUpPage>
+            <SignUpForm />
+        </SignUpPage>
     );
 }
 
