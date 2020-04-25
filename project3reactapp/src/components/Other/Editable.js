@@ -1,5 +1,3 @@
-//when edited and saved, input box will have to become un-disabled, saved and then re-disabled
-
 import React from "react";
 
 function Editable(props) {
