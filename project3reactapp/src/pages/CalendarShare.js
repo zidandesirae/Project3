@@ -7,9 +7,6 @@ import moment from "moment";
 import "./App.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-// import NavBar from '../components/Universal/NavBar';
-// import Footer from '../components/Universal/Footer';
-
 const localizer = momentLocalizer(moment);
 
 class CalendarShare extends Component {
@@ -28,7 +25,6 @@ class CalendarShare extends Component {
     render() {
         return (
             <div>
-                {/* <NavBar /> */}
                 <Container2>
                     <Col10>
                     <TitleH2 title="Calendar" />
@@ -45,7 +41,6 @@ class CalendarShare extends Component {
                         }
                     </Col10>
                 </Container2>
-                {/* <Footer /> */}
             </div>
         );
     }

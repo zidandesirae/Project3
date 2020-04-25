@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const eachSeg = [
     {
@@ -27,20 +28,20 @@ const eachSeg = [
     }
 ];
 
-function Segment(props) {
+function MainSeg(props) {
     return (
         eachSeg.map(item => (
             <div class="col-6 p-4">
-            <a href={item.route}>
+            <Link to={item.route}>
                 <div className="card">
                     <div className="card-body">
                         <img src={item.img} alt={item.alt} key={item.id} className="img-fluid" />
                     </div>
                 </div>
-            </a>
+            </Link>
         </div>
         ))
     );
 }
 
-export default Segment;
+export default MainSeg;
