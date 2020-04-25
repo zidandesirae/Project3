@@ -4,7 +4,7 @@ import TitleH2 from '../components/Universal/TitleH2';
 import Col10 from '../components/Universal/Col10';
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-import "./App.css";
+import "./CalendarShare.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
 const localizer = momentLocalizer(moment);

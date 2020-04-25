@@ -1,7 +1,7 @@
 import React from "react";
 import NavBtns from "./NavBtns";
 
-const appTitle = "INSERT";
+const appTitle = "Our Circle";
 
 function NavBar(props) {
     return (
