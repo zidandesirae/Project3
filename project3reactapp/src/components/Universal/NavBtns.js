@@ -1,34 +1,34 @@
 import React from "react";
-// import Main from './../PageBuild/Main';
-// import Settings from './../PageBuild/Settings';
-// import GroupInfo from './../PageBuild/GroupInfo';
-// import Login from './../PageBuild/Login';
 
 const navbtns = [
     {
         id: 1,
         title: "Home",
+        route: '/home'
     },
     {
         id: 2,
         title: "Settings",
+        route: '/settings'
     },
     {   
         id: 3,
         title: "Group Information",
+        route: '/groupinfo'
     },
     {
         id: 4,
         title: "Log Out",
+        route: '/login'
     }
 ];
 
-function NavBtn(props) {
+function NavBtns(props) {
     return (
         navbtns.map(btn => (
-            <a className="nav-item nav-link" href="#">{btn.title}</a>
+            <a className="nav-item nav-link" href={btn.route} key={btn.id}>{btn.title}</a>
         ))
     );
 }
 
-export default NavBtn;
+export default NavBtns;
