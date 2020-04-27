@@ -6,7 +6,7 @@ function LoginPage(props) {
         <div className="container my-4 py-4">
             <div className="row">
                 <div className="col-md-8 mx-auto text-center">
-                    <TitleH1 title="INSERT TITLE" subtitle="INSERT SUBTITLE" />
+                    <TitleH1 title="Our Circle" subtitle="Always in the Loop" />
                     <div className="card">
                         <div className="card-body">
                             {props.children}

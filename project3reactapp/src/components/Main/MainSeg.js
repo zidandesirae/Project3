@@ -4,25 +4,25 @@ import { Link } from "react-router-dom";
 const eachSeg = [
     {
         id: 1,
-        img: "INSERT",
+        img: "https://lakelandescaperoom.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg",
         alt: "calendar",
         route: '/calendar'
     },
     {
         id: 2,
-        img: "INSERT",
+        img: "https://lakelandescaperoom.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg",
         alt: "dashboard",
         route: '/dashboard'
     },
     {
         id: 3,
-        img: "INSERT",
+        img: "https://lakelandescaperoom.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg",
         alt: "lists",
         route: '/lists'
     },
     {
         id: 4,
-        img: "INSERT",
+        img: "https://lakelandescaperoom.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg",
         alt: "photos",
         route: '/photos'
     }
