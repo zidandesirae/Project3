@@ -11,7 +11,7 @@ function NavBar(props) {
                 <span className="navbar-toggler-icon"></span>
             </button>
             {/* <a className="navbar-brand" href="/home">{OurCircle}</a> */}
-            <img src={OurCircle} className="card-img-top logo" alt="image1"/>
+            <img src={OurCircle} className="logo" alt="image1"/>
             <div className="collapse navbar-collapse" id="navbarMarkup">
                 <div className="navbar-nav mr-auto mt-2 mt-lg-0">
                     <NavBtns />
