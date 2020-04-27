@@ -8,6 +8,10 @@
   width: 75px;
   }
 
+  .signUpLogo {
+    width: 300px;
+    }
+
   .card {
     background-image: linear-gradient(90deg, rgb(0, 0, 0),  rgb(255, 32, 32),  rgb(47, 255, 245)), linear-gradient(90deg,rgb(0, 0, 0), rgb(255, 32, 32),  rgb(47, 255, 245));
     background-position: 0 0px, 100% 100%;
