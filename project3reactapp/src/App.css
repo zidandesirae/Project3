@@ -36,7 +36,7 @@ body {
 
     @import url('https://fonts.googleapis.com/css?family=Roboto:700');
 
-    body {
+    .bodyTextScroll {
       margin:0px;
       font-family:'Roboto';
       text-align:center;
@@ -92,11 +92,4 @@ body {
       100% {margin-top:-270px;}
     }
     
-    /* p {
-      position:fixed;
-      width:100%;
-      bottom:30px;
-      font-size:12px;
-      color:rgb(0, 0, 0);
-      margin-top:200px;
-    } */
+    
