@@ -30,7 +30,7 @@ function Notifications(props) {
                     <div className="col-md-6 col-sm-12">
                         <form>
                             <div className="form-group form-check">
-                                <input type="checkbox" className="form-check-input" id="exampleCheck" checked disabled />
+                                <input type="checkbox" className="form-check-input" id="exampleCheck" />
                                 <label className="form-check-label" for="exampleCheck"></label>
                             </div>
                         </form>

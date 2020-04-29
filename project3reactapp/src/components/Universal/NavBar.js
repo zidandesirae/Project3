@@ -1,7 +1,7 @@
 import React from "react";
 import NavBtns from "./NavBtns";
 
-const appTitle = "Our Circle";
+const appLogo = "LOGO";
 
 function NavBar(props) {
     return (
@@ -9,7 +9,7 @@ function NavBar(props) {
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMarkup" aria-controls="navbarMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <a className="navbar-brand" href="/home">{appTitle}</a>
+            <a className="navbar-brand" href="/home">{appLogo}</a>
             <div className="collapse navbar-collapse" id="navbarMarkup">
                 <div className="navbar-nav mr-auto mt-2 mt-lg-0">
                     <NavBtns />
