@@ -124,26 +124,11 @@ body {
                     0 7px 10px rgba(0,0,0,.20),
                     0 10px 15px rgba(0,0,0,.25);
     transition: all 0.3s ease-in-out;        
-    cursor: pointer;
+    cursor: context-menu;
 }
 .text-3d:hover {
     color:rgb(0, 0, 0);
     text-shadow:
-                    /* 0 1px 0 rgb(0, 0, 0),
-                    0 2px 0 rgb(53, 1, 1),
-                    0 3px 0 rgb(129, 0, 0),
-                    0 4px 0 rgb(206, 0, 0),
-                    0 5px 0 rgb(255, 0, 0),
-                    0 6px 0 rgb(167,157,155),
-                    0 7px 0 rgb(181,221,221),
-                    0 8px 0 rgb(38, 206, 197),
-                    0 9px 0 rgb(0, 247, 255),
-                    0 1px 5px rgba(0,0,0,.05),
-                    0 5px 5px rgba(0,0,0,.10),
-                    0 10px 10px rgba(0,0,0,.15),
-                    0 15px 10px rgba(0,0,0,.20),
-                    0 20px 15px rgba(0,0,0,.25); */
-
                     0 1px 0 rgb(0, 0, 0),
                     0 2px 0 rgb(56, 0, 0),
                     0 3px 0 rgb(95, 0, 0),
@@ -156,6 +141,5 @@ body {
                     0 10px 10px rgba(255, 0, 0),
                     0 15px 10px rgb(106, 150, 150),
                     0 20px 15px rgb(0, 247, 255);
-    /* transform: translate(-51%,-51%); */
-    transition: all 0.3s ease-in-out;
+    transition: all 1s ease-in-out;
 }
