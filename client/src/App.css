@@ -1,10 +1,6 @@
 body {
-  background-color: rgb(255, 255, 255);
   font-family: 'Varela Round', sans-serif;
-}
-
-.navbar {
-  background-color: rgb(255, 255, 255);
+  color: #212529
 }
 
 .logo {
@@ -36,6 +32,24 @@ body {
   background-color: white;
 }
 
+.btn {
+  background-color: white;
+  border: 2px solid #212529;
+}
+.btn:hover {
+  background-color: #212529;
+  color: white;
+}
+.signupLink {
+  color: black;
+}
+.signupLink:hover {
+  color: black;
+}
+.form-control {
+  border: 2px solid #212529;
+}
+
 #root {
   min-height: 100vh
 }
@@ -44,13 +58,11 @@ body {
 
 .bodyTextScroll {
   margin:0px;
-  /* font-family:'Roboto'; */
   text-align:center;
 }
     
 #containerHead {
   color:#999;
-  text-transform: uppercase;
   font-size:36px;
   font-weight:bold;
   padding: top 5px;  
@@ -66,7 +78,7 @@ body {
 }
     
 #flip > div > div {
-  color:#fff;
+  color:white;
   padding:0px 20px;
   height:50px;
   margin-bottom:40px;
@@ -97,8 +109,6 @@ body {
   99.99% {margin-top:0px;}
   100% {margin-top:-270px;}
 }
-    
-/* adding 3d text */
 
 .text-3d {
   text-transform: uppercase;

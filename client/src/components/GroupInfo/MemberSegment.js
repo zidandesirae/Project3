@@ -28,7 +28,7 @@ function MemberSegment(props) {
                 <h5>{props.title}</h5>
                 {/* {members.map(member => ( */}
                     <div className="cardGM">
-                        <div className="card-body">
+                        <div className="card-body border">
                             <div className="row">
                                 <div className="col">
                                     {/* TABLE INSERT OF ALL MEMEBERS  */}

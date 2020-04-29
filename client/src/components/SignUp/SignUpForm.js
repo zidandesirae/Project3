@@ -20,7 +20,7 @@ function SignUpForm(props) {
                     <input className="form-control form-control-lg" type="text" placeholder="" />
                 </div>
             </div>
-            <button type="button" className="btn btn-light btn-lg btn-block mb-4">Create Account</button>
+            <button type="button" className="btn btn-lg btn-block mb-4">Create Account</button>
         </form>
     );
 }

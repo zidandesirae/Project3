@@ -3,11 +3,11 @@ import React from 'react';
 function TitleMainPage() {
     return (
         <div className="bodyTextScroll" id="containerHead">
-            Stay
+            <h1>STAY</h1>
             <div id="flip">
-                <div><div>organized</div></div>
-                <div><div>in the loop</div></div>
-                <div><div>connected</div></div>
+                <div><div>ORGANIZED</div></div>
+                <div><div>IN THE LOOP</div></div>
+                <div><div>CONNECTED</div></div>
             </div>
         </div>
     );
