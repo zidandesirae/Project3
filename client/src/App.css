@@ -1,9 +1,10 @@
 body {
-    background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+  font-family: 'Varela Round', sans-serif;
 }
 
 .navbar {
-    background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 .logo {
@@ -11,7 +12,7 @@ body {
 }
 
 .signUpLogo {
-    width: 300px;
+  width: 300px;
 }
 
 .navbar-toggler {
@@ -21,16 +22,14 @@ body {
 .card {
   background-image: linear-gradient(90deg, rgb(0, 0, 0),  rgb(255, 32, 32),  rgb(47, 255, 245)), linear-gradient(90deg,rgb(0, 0, 0), rgb(255, 32, 32),  rgb(47, 255, 245));
   background-position: 0 0px, 100% 100%;
-  /* background-repeat: no-repeat; */
   background-size: 100% 5px;
-  /* border-left: 3px solid rgb(0, 0, 0); */
-  /* border-right: 3px solid rgb(47, 255, 245); */
-  /* border-top: none; */
-  /* border-bottom: none; */
   border: none;
   padding: 5px;
-  box-shadow: 5px 5px 8px rgb(0, 0, 0), 10px 10px 8px rgb(255, 33, 33), 15px 15px 8px rgb(124, 251, 255);
+  box-shadow: 5px 5px 5px rgb(0, 0, 0), 10px 10px 8px rgb(255, 33, 33), 15px 15px 8px rgb(124, 251, 255);
   border-radius: 1rem;
+  /* background-repeat: no-repeat; */
+  /* border-left: 3px solid rgb(0, 0, 0); */
+  /* border-right: 3px solid rgb(47, 255, 245); */
 }
 .card-body {
   border-radius: .75rem;
@@ -45,7 +44,7 @@ body {
 
 .bodyTextScroll {
   margin:0px;
-  font-family:'Roboto';
+  /* font-family:'Roboto'; */
   text-align:center;
 }
     
