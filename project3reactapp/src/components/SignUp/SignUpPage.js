@@ -1,6 +1,6 @@
 import React from "react";
 import TitleH1 from '../Universal/TitleH1';
-import OurCircle from "../Images/OurCircle.png";
+import OurCircle from "../Images/OurCircleLogoMed.png";
 
 function SignUpPage(props) {
     return (

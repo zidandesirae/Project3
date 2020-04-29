@@ -1,6 +1,6 @@
 import React from "react";
 import NavBtns from "./NavBtns";
-import OurCircle from "../Images/OurCircle.png";
+import OurCircle from "../Images/OurCircleLogoMed.png";
 
 const appTitle = "Our Circle";
 
