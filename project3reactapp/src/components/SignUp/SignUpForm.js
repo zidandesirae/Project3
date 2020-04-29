@@ -1,5 +1,3 @@
-// **CHANGE** breakdown into smaller comonents
-
 import React from "react";
 
 function SignUpForm(props) {

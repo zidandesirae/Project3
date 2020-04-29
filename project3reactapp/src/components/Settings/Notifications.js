@@ -1,23 +1,44 @@
 import React from "react";
-import Row from './Row';
-import Col6 from './Col6';
-import CheckBox from './CheckBox';
-import Description from "./Description";
+
+const userSeg = [
+    {
+        id: 1,
+        description: "Notify me when there are Calendar Updates"
+    },
+    {
+        id: 2,
+        description: "Notify me when there are List Updates"
+    },
+    {
+        id: 3,
+        description: "Notify me of Photo Album Updates"
+    },
+    {
+        id: 4,
+        description: "OTHER UPDATES"
+    }
+];
 
 function Notifications(props) {
     return (
-        <div>
-            <Row>
-                <Col6>
-                    <Description />
-                </Col6>
-                <Col6>
-                    <CheckBox />
-                </Col6>
-            </Row>
-            <hr className="my-2" />
-        </div>
+        userSeg.map(user => (
+            <div>
+                <div className="row" key={user.id}>
+                    <div className="col-md-6 col-sm-12">
+                        <h5>{user.description}</h5>
+                    </div>
+                    <div className="col-md-6 col-sm-12">
+                        <form>
+                            <div className="form-group form-check">
+                                <input type="checkbox" className="form-check-input" id="exampleCheck" checked disabled />
+                                <label className="form-check-label" for="exampleCheck"></label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <hr className="my-2" />
+            </div>
+        ))
     );
 }
-
 export default Notifications;
