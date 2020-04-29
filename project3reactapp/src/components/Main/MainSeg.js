@@ -24,7 +24,7 @@ const eachSeg = [
         id: 4,
         img: "https://lakelandescaperoom.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg",
         alt: "photos",
-        route: '/photos'
+        route: '/photoalbum'
     }
 ];
 
