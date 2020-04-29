@@ -3,7 +3,7 @@ import Login from './pages/Login';
 import Main from './pages/Main';
 import Settings from "./pages/Settings";
 import GroupInfo from './pages/GroupInfo';
-import Footer from '../src/components/Universal/Footer';
+import Footer from './components/Universal/Footer';
 import CalendarShare from './pages/CalendarShare';
 import Dashboard from './pages/Dashboard';
 import Lists from './pages/Lists';
