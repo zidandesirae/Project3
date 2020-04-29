@@ -40,6 +40,7 @@ function MainSeg(props) {
                 </div>
             </Link>
         </div>
+    
         ))
     );
 }

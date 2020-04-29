@@ -11,7 +11,7 @@ class Dashboard extends Component {
                 <NavBar />
                 <Container2>
                     <Col10>
-                    <TitleH2 title="Dashboard" />
+                        <TitleH2 title="Dashboard" />
                         {<div>"INSERT"</div>}
                     </Col10>
                 </Container2>

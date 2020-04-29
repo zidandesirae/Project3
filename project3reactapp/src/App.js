@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard';
 import Lists from './pages/Lists';
 import PhotoAlbum from './pages/PhotoAlbum';
 import SignUp from './pages/SignUp';
+import './App.css';
 
 import {
   BrowserRouter as Router,
