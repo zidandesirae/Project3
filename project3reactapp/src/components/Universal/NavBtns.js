@@ -19,7 +19,7 @@ const navbtns = [
     {
         id: 4,
         title: "Log Out",
-        route: '/login'
+        route: '/'
     }
 ];
 

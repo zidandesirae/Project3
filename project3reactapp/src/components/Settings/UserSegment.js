@@ -38,7 +38,7 @@ function UserSegment(props) {
                     </div>
                     <div className="col-md-6 col-sm-12">
                         <form>
-                            <input className="form-control" type="text" placeholder={user.placeholder} disabled />
+                            <input className="form-control" type="text" placeholder={user.placeholder} />
                         </form>
                     </div>
                 </div>

@@ -6,7 +6,8 @@ function LoginForm(props) {
         <form>
             <input className="form-control form-control-lg mt-2" type="text" placeholder="Email" />
             <input className="form-control form-control-lg my-4" type="text" placeholder="Password" />
-            <button type="button" className="btn btn-light btn-lg btn-block mb-4">LOGIN</button>
+            {/* NEEDS TO BE CHANGED BACK TO BUTTON TAG- Link tag only for viewing purposes right now  */}
+            <Link to="/home" type="button" className="btn btn-light btn-lg btn-block mb-4">LOGIN</Link>
             <p>Not registered?
                 <span>
                 <Link to="/signup"> Create an account</Link></span>
