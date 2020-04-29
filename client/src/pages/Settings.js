@@ -6,7 +6,7 @@ import Card from '../components/Universal/Card';
 import TitleH4 from '../components/Universal/TitleH4';
 import UserSegment from '../components/Settings/UserSegment';
 // import Notifications from './../components/Settings/Notifications';
-import EditSaveBtns from '../components/Universal/EditSaveBtn';
+import SaveBtns from '../components/Universal/SaveBtn';
 import NavBar from '../components/Universal/NavBar';
 
 function Settings(props) {
@@ -19,7 +19,7 @@ function Settings(props) {
                     <Card>
                         <TitleH4 title="Personal Information" />
                         <UserSegment />
-                        <EditSaveBtns />
+                        <SaveBtns />
                     </Card>
                     {/* <br />
                 <Card>

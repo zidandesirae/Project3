@@ -1,6 +1,6 @@
 import React from "react";
 
-function EditSaveBtn() {
+function SaveBtn() {
     return (
         <div>
             {/* <button type="button" className="btn btn-light">Edit</button> */}
@@ -9,4 +9,4 @@ function EditSaveBtn() {
     );
 }
 
-export default EditSaveBtn;
+export default SaveBtn;

@@ -1,5 +1,6 @@
 import React from "react";
 
+// TABLE INSERT 
 // const members = [];
 
 const memberInfo = [
@@ -30,6 +31,7 @@ function MemberSegment(props) {
                         <div className="card-body">
                             <div className="row">
                                 <div className="col">
+                                    {/* TABLE INSERT OF ALL MEMEBERS  */}
                                     <h5>INSERT NAME FROM TABLE</h5>
                                 </div>
                             </div>

@@ -12,7 +12,7 @@ class Dashboard extends Component {
                 <Container2>
                     <Col10>
                         <TitleH2 title="Dashboard" />
-                        {<div>"INSERT"</div>}
+                        {<div>"INSERT CONTENT HERE"</div>}
                     </Col10>
                 </Container2>
             </div>

@@ -1,3 +1,6 @@
+// THIS COMPONENT HAS BEEN REMOVED FROM MVP 
+// USED FOR FUTURE DEVELOPMENT 
+
 import React from "react";
 
 const userSeg = [

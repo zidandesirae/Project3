@@ -12,7 +12,7 @@ class Lists extends Component {
                 <Container2>
                     <Col10>
                     <TitleH2 title="Lists" />
-                        {<div>"INSERT"</div>}
+                        {<div>"INSERT CONTENT HERE"</div>}
                     </Col10>
                 </Container2>
             </div>
