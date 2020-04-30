@@ -8,10 +8,14 @@ const sequelize = new Sequelize("test", "root", "root", {
 });
 
 const User = sequelize.import(__dirname + "/users");
+const Event = sequelize.import(__dirname + "/events");
+const Group = sequelize.import(__dirname + "/groups");
 
 var dbReady = sequelize.sync();
 
 module.exports = {
     sequelize: sequelize,
-    User: User
+    User: User,
+    Event: Event,
+    Group: Group
 }
