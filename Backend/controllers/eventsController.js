@@ -5,7 +5,7 @@ module.exports = {
     findAll: function (req, res) {
         db.Event
             .findAll({
-                attributes: name, description
+                attributes: ["name", "description", "start", "end", "id"]
             })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
@@ -26,13 +26,13 @@ module.exports = {
     },
     update: function (req, res) {
         db.Event
-            .update(req.body, { name: req.params.name } )
+            .update(req.body, { where: {id: req.params.id} })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
 },
     remove: function(req, res) {
         db.Event
-            .destroy({ where: { name: req.params.name } })
+            .destroy({ where: { id: req.params.id } })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     }

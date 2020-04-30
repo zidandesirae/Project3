@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 
 const routes = require("./routes/index");
 const app = express();
@@ -13,6 +14,7 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(express.static("../../project3reactapp/build"));
+app.use('/static', express.static(path.join(__dirname, '../client/build/static')))
 app.use(routes);
 
 // Start the API server
