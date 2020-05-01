@@ -5,6 +5,11 @@ body {
 
 .heading-text {
   color: rgb(0, 0, 0)
+
+}
+.heading-text:hover {
+  color: rgb(0, 0, 0)
+
 }
 
 .logo {
