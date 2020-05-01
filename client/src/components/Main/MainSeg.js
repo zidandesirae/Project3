@@ -47,7 +47,8 @@ function MainSeg(props) {
             <Link to={item.route}>
                 <div className="card">
                     <div className="card-body text-center">
-                        
+                        <h1>{item.heading}</h1>
+
                         <i className={item.className}></i>
                     </div>
                 </div>
