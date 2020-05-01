@@ -3,6 +3,10 @@ body {
   color: #212529
 }
 
+.heading-text {
+  color: rgb(0, 0, 0)
+}
+
 .logo {
   width: 56px;
 }
