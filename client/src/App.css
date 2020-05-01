@@ -152,3 +152,48 @@ body {
     0 20px 15px rgb(0, 247, 255);
   transition: all 1s ease-in-out;
 }
+
+.text-3d-iconSizing {
+    text-transform: uppercase;
+    font-size: 25vw;
+    color:rgb(210, 210, 210);
+    position: static;
+    top:50%;
+    left:50%;
+    /* transform: translate(-50% ,-50%); */
+    text-shadow:
+      0 1px 0 rgb(160,160,160),
+      0 2px 0 rgb(155,155,155),
+      0 3px 0 rgb(150,150,150),
+      0 4px 0 rgb(145,145,145),
+      0 5px 0 rgb(140,140,140),
+      0 6px 0 rgb(135,135,135),
+      0 7px 0 rgb(130,130,130),
+      0 1px 5px rgba(0,0,0,.05),
+      0 3px 5px rgba(0,0,0,.10),
+      0 5px 10px rgba(0,0,0,.15),
+      0 7px 10px rgba(0,0,0,.20),
+      0 10px 15px rgba(0,0,0,.25);
+    transition: all 0.3s ease-in-out;        
+    cursor: pointer;
+  }
+  
+  .text-3d-iconSizing:hover {
+    color:rgb(0, 0, 0);
+    text-shadow:
+      0 1px 0 rgb(0, 0, 0),
+      0 2px 0 rgb(56, 0, 0),
+      0 3px 0 rgb(95, 0, 0),
+      0 4px 0 rgba(223, 0, 0, 0.973),
+      0 5px 0 rgba(76, 113, 124, 0.911),
+      0 6px 0 rgba(150, 150, 150, 0.87),
+      0 7px 0 rgba(0, 217, 255, 0.74),
+      0 1px 5px rgb(53, 192, 211),
+      0 5px 5px rgb(129, 0, 0),
+      0 10px 10px rgba(255, 0, 0),
+      0 15px 10px rgb(106, 150, 150),
+      0 20px 15px rgb(0, 247, 255);
+    transition: all 1s ease-in-out;
+  }
+
+
