@@ -43,7 +43,7 @@ const eachSeg = [
 function MainSeg(props) {
     return (
         eachSeg.map(item => (
-            <div class="col-6 p-4">
+            <div className="col-6 p-4" key={item.id}>
             <Link to={item.route}>
                 <div className="card">
                     <div className="card-body text-center">

@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-
+const db = require('./models');
 const routes = require("./routes/index");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -19,7 +19,7 @@ app.use('/static', express.static(path.join(__dirname, '../client/build/static')
 app.use(routes);
 
 // Start the API server
-db.sequelize.sync({  }).then(function() {
+db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
