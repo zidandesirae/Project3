@@ -1,5 +1,4 @@
 import React from 'react';
-import SaveBtn from '../Universal/SaveBtn';
 
 function ListsPage() {
     return (

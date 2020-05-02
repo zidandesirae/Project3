@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import API from '../../utils/API';
 
-function SignUpForm(props) {
+function SignUpForm() {
+    // const [userInput, setUserInput] = useState({
+    //     name: "",
+    //     email: "",
+    //     password: "",
+    //     phone: "",
+    //     birthday: ""
+    // });
+
+    
     return (
         <form>
             <input className="form-control form-control-lg my-4" type="text" placeholder="Full Name" />
             <input className="form-control form-control-lg my-4" type="text" placeholder="Email" />
             <input className="form-control form-control-lg my-4" type="text" placeholder="Create Password" />
-            <input className="form-control form-control-lg my-4" type="text" placeholder="Phone Number (XXX-XXX-XXXX)" />
-            <input className="form-control form-control-lg my-4" type="text" placeholder="Birthday (MM/DD)" />
+            <input className="form-control form-control-lg my-4" type="text" placeholder="Phone Number" />
+            <input className="form-control form-control-lg my-4" type="text" placeholder="Birthday" />
             <div className="row my-4">
                 <div className="col">
                     <select className="form-control form-control-lg" id="exampleFormControlSelect1">
