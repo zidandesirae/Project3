@@ -9,8 +9,8 @@ function SignUpPage(props) {
                 <div className="col-md-8 mx-auto text-center">
                     <img src={OurCircle} className="signUpLogo img-fluid" alt="image1" />
                     <TitleH1 title="Join Our Circle" subtitle="It's Time to Get in the Loop"/>
-                    <div className="card">
-                        <div className="card-body">
+                    <div className="card card1">
+                        <div className="card-body card-body1">
                             {props.children}
                         </div>
                     </div>

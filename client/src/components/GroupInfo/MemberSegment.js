@@ -27,7 +27,7 @@ function MemberSegment(props) {
             <div className="col">
                 <h5>{props.title}</h5>
                 {/* {members.map(member => ( */}
-                    <div className="cardGM">
+                    <div className="card">
                         <div className="card-body border">
                             <div className="row">
                                 <div className="col">

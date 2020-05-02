@@ -4,6 +4,9 @@ import TitleH2 from '../components/Universal/TitleH2';
 import Col10 from '../components/Universal/Col10';
 import NavBar from '../components/Universal/NavBar';
 
+import './Lists.css';
+import ListsPage from '../components/Lists/ListsPage';
+
 class Lists extends Component {
     render() {
         return (
@@ -11,8 +14,8 @@ class Lists extends Component {
                 <NavBar />
                 <Container2>
                     <Col10>
-                    <TitleH2 title="Lists" />
-                        {<div>"INSERT CONTENT HERE"</div>}
+                        <TitleH2 title="Lists" />
+                        <ListsPage />
                     </Col10>
                 </Container2>
             </div>
