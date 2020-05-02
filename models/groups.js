@@ -6,6 +6,6 @@ module.exports = (sequelize, DataTypes) => {
     Group.init({
         name: DataTypes.STRING,
         description: DataTypes.TEXT
-    }, { sequelize, modelName: 'meetingGroup' });
+    }, { sequelize, modelName: 'group' });
     return Group;
 }

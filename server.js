@@ -4,6 +4,7 @@ const path = require("path");
 const routes = require("./routes/index");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const db = require("./models");
 console.log(routes);
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +19,8 @@ app.use('/static', express.static(path.join(__dirname, '../client/build/static')
 app.use(routes);
 
 // Start the API server
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+db.sequelize.sync({  }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
