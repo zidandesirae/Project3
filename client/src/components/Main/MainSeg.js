@@ -34,8 +34,8 @@ function MainSeg(props) {
         eachSeg.map(item => (
             <div class="col-6 p-4">
             <Link to={item.route}>
-                <div className="card">
-                    <div className="card-body">
+                <div className="card card1">
+                    <div className="card-body card-body1">
                         <img src={item.img} alt={item.alt} key={item.id} className="img-fluid" />
                     </div>
                 </div>
