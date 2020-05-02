@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 
 // // Connect to the MySQL DB
 // User and password points for MSQL DB
-const sequelize = new Sequelize("test", "root", "root", {
+const sequelize = new Sequelize("test", "root", "", {
 	host: "localhost",
 	dialect: "mysql"
 });
