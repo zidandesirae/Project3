@@ -2,18 +2,32 @@ import React, { useState } from "react";
 import API from '../../utils/API';
 
 function SignUpForm() {
-    // const [userInput, setUserInput] = useState({
-    //     name: "",
-    //     email: "",
-    //     password: "",
-    //     phone: "",
-    //     birthday: ""
-    // });
+    const [userInput, setUserInput] = useState({
+        name: "",
+        email: "",
+        password: "",
+        phone: "",
+        birthday: ""
+    });
 
+    const handleSubmit = e => {
+        e.preventDefault();
+        setUserInput({
+            name:
+            email:
+            password:
+            phone:
+            birthday:
+        })
+    }
+
+    const handleChange = e => {
+        setUserInput
+    }
     
     return (
         <form>
-            <input className="form-control form-control-lg my-4" type="text" placeholder="Full Name" />
+            <input className="form-control form-control-lg my-4" type="text" placeholder="Full Name" onchange={() => setUserInput({name: something, ...userInput})  handleChange}/>
             <input className="form-control form-control-lg my-4" type="text" placeholder="Email" />
             <input className="form-control form-control-lg my-4" type="text" placeholder="Create Password" />
             <input className="form-control form-control-lg my-4" type="text" placeholder="Phone Number" />

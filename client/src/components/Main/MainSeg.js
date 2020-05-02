@@ -32,11 +32,11 @@ const eachSeg = [
 function MainSeg(props) {
     return (
         eachSeg.map(item => (
-            <div class="col-6 p-4">
+            <div className="col-6 p-4" key={item.id}>
             <Link to={item.route}>
                 <div className="card card1">
                     <div className="card-body card-body1">
-                        <img src={item.img} alt={item.alt} key={item.id} className="img-fluid" />
+                        <img src={item.img} alt={item.alt} className="img-fluid" />
                     </div>
                 </div>
             </Link>
