@@ -13,12 +13,12 @@ function SignUpForm() {
     const handleSubmit = e => {
         e.preventDefault();
         setUserInput({
-            name:
-            email:
-            password:
-            phone:
-            birthday:
-        })
+            name: userInput.name,
+            email: userInput.email,
+            password: userInput.password,
+            phone: userInput.phone,
+            birthday: userInput.birthday
+        });
     }
 
     const handleChange = e => {
