@@ -17,5 +17,9 @@
     "moment": "^2.24.0",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.6"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.3"
   }
 }
