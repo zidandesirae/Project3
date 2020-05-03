@@ -5,11 +5,6 @@ body {
 
 .heading-text {
   color: rgb(0, 0, 0)
-
-}
-.heading-text:hover {
-  color: rgb(0, 0, 0)
-
 }
 
 .logo {
@@ -63,7 +58,7 @@ body {
   min-height: 100vh
 }
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:700'); */
 
 .bodyTextScroll {
   margin:0px;
