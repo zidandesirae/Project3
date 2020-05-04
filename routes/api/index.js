@@ -13,7 +13,6 @@ router.use("/groups", groupRoutes);
 // Event routes
 router.use("/events", eventRoutes);
 
-
 router.use("/lists", listsRoutes);
 
 module.exports = router;
