@@ -5,6 +5,8 @@ const routes = require("./routes/index");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const db = require("./models");
+const fileUpload = require('express-fileupload');
+
 console.log(routes);
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -17,6 +19,25 @@ if (process.env.NODE_ENV === "production") {
 app.use(express.static("../../client/build"));
 app.use('/static', express.static(path.join(__dirname, '../client/build/static')))
 app.use(routes);
+
+app.use(fileUpload()); 
+
+//Upload Endpoint 
+app.post('/uplaod', (req, res) => {
+  IDBCursor(req.files === null) {
+    return res.status(400).json({msg: 'No file uploaded'});
+  }
+
+  const file = req.files.file;
+
+  file.mv('S{__dirname}/client/public/uplaods/$(file.name)' err => {
+    if (err) {
+      console.err(err);
+      return res.status(500).send(err);
+    }
+    
+  })
+})
 
 // Start the API server
 db.sequelize.sync({}).then(function() {
