@@ -4,7 +4,6 @@ const db = require('./models');
 const routes = require("./routes/index");
 const app = express();
 const PORT = process.env.PORT || 3001;
-const db = require("./models");
 const fileUpload = require('express-fileupload');
 
 console.log(routes);
@@ -36,6 +35,7 @@ app.post('/uplaod', (req, res) => {
       return res.status(500).send(err);
     }
     
+    res.json()
   })
 })
 
