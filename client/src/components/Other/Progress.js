@@ -1,0 +1,17 @@
+import React from "react";
+import Proptypes from "prop-types"; 
+
+const Progress = ({ percentage }) => {
+    return (
+<div className="progress">
+  <div className="progress-bar progress-bar-striped bg-danger" role="progressbar" style={{width: `${percentage}%` }}></div> 
+  {percentage}%
+</div>
+    )
+}
+
+Progress.propTypes = {
+percentage: PropTypes.number.isRequired
+}
+
+export default Progress

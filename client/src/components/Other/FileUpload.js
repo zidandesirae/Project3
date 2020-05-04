@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import Messages from "./Message"
+import Progress from "./Progress"
 import axios from 'axios';
 
 
@@ -61,6 +62,8 @@ const FileUpload = () => {
                             {fileName}
                         </lable>
                     </div>
+
+                    <Progress percentage={uploadPercentage} />
                     <input type="submit" value="Uplaod" className="btn btn=primary btm-block mt-4" />
                 </form>
                 {uploadedFile ? (<div className="row mt-5">
