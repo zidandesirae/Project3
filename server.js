@@ -35,9 +35,11 @@ app.post('/uplaod', (req, res) => {
       return res.status(500).send(err);
     }
     
-    res.json()
-  })
-})
+    res.json({ fileName: file.name, filePath: '/uploads/$(file.name}'});
+  });
+});
+
+app.listen(5000, () => console.log('server started..'));
 
 // Start the API server
 db.sequelize.sync({}).then(function() {
