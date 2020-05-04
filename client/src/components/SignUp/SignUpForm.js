@@ -1,13 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import API from '../../utils/API';
 
 function SignUpForm() {
     const { register, handleSubmit } = useForm();
+
     const onSubmit = data => {
-        API.saveUser(data);
         console.log(data);
-    }
+        // Data gets saved to Users Table
+        API.saveUser({
+            fullname: data.fullname,
+            email: data.email,
+            password: data.password,
+            phone: data.phone,
+            birthday: data.birthday
+        })
+            .then(() => {
+                const numbers = /^[0-9]+$/;
+                // Checks to see if user input is a number
+                if ((data.typeInput).match(numbers)) {
+                    return console.log("Existing group");
+                } else {
+                    // Data (group name) gets saved to Groups Table
+                    API.saveGroup({ name: data.typeInput })
+                    // Checks to see if user inputs 'new group name'
+                    return console.log("Create a new group");
+                }
+            })
+    };
+
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <input
@@ -43,14 +64,18 @@ function SignUpForm() {
             />
             <div className="row my-4">
                 <div className="col">
-                    <select className="form-control form-control-lg" id="exampleFormControlSelect1">
+                    <select className="form-control form-control-lg" name="grouptype">
                         <option>Select</option>
-                        <option>Create New Group</option>
-                        <option>Enter Existing Group ID</option>
+                        <option value="new">Create New Group</option>
+                        <option value="groupID">Enter Existing Group ID</option>
                     </select>
                 </div>
                 <div className="col">
-                    <input className="form-control form-control-lg" type="text" placeholder="" />
+                    <input
+                        className="form-control form-control-lg"
+                        name="typeInput"
+                        ref={register}
+                    />
                 </div>
             </div>
             <button type="submit" className="btn btn-lg btn-block mb-4">Create Account</button>
