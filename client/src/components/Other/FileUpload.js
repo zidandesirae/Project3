@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import Messages from "./Message"
 import axios from 'axios';
 
 
@@ -7,6 +8,7 @@ const FileUpload = () => {
     const [filename, setFilename] = useState('Choose File');
     const [uploadedfile, setUploadedFile] = useState({});
     const [message, setMessage] = useState("");
+    const [uploadPercentage, setUploadPercentage] = useState(0);
 
     const onChange = e => {
         setFile(e.target.files[0]);
@@ -21,8 +23,18 @@ const FileUpload = () => {
             const res = await axios.post('/uploads', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
+                },
+                onUploadProgress: progressEvent => {
+                    setUploadPercentage(parseInt(
+                        Math.round((progressEvent.loaded * 100) / progressEvent.total)
+                    )
+                    );
+                    // clearing timer
+                    setTimeout(() => setUploadPercentage(0), 100000);
                 }
             });
+
+
             const { fileName, filePath } = res.data;
 
             setUploadedFile({ fileName, filePath });
@@ -30,7 +42,7 @@ const FileUpload = () => {
             setMessage('File Uploaded');
         } catch (err) {
             if (err.response.status === 500) {
-               setMessage('there was a problem with the server');
+                setMessage('there was a problem with the server');
             } else {
                 setMessage('err.response.data.msg');
             }
@@ -41,6 +53,7 @@ const FileUpload = () => {
         <div>
 
             <Fragment>
+                {message ? <Message msg={message} /> : null}
                 <form>
                     <div className="custom-file">
                         <input type="file" className="custome-file-input" id="customefile" onChange={onChange} />
@@ -54,7 +67,7 @@ const FileUpload = () => {
                     <h3 className="text-center">{uploadFile.fileName}</h3>
                     <img style={{ width: '100%' }} src={uploadedFile.filePath} alt="" />
                 </div>
-     ) : null}
+                ) : null}
             </Fragment>/>
 
         </div>
