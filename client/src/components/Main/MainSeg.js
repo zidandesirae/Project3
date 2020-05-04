@@ -42,7 +42,7 @@ const eachSeg = [
 function MainSeg(props) {
     return (
         eachSeg.map(item => (
-            <div className="col-6 p-4" key={item.id}>
+            <div className="col-md-6 col-sm-12 p-4" key={item.id}>
             <Link to={item.route} style={{textDecoration: "none"}}>
                 <div className="card card1">
                     <div className="card-body card-body1 text-center">
