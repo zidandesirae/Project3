@@ -1,21 +1,28 @@
-import React, { useState, useEffect } from 'react'
-import { useForm } from 'react-hook-form';
+import React, { useState } from 'react'
 import API from '../../utils/API';
 
 function SignUpForm() {
-    const { register, handleSubmit } = useForm();
+    const [user, setUser] = useState({
+        fullname: "",
+        email: "",
+        password: "",
+        phone: "",
+        birthday: "",
+        groupType: "start",
+        typeInput: ""
+    });
 
-    const onSubmit = data => {
-        console.log(data);
+    const handleInputChange = e => {
+        const { name, value } = e.target;
+        setUser(prevUser => ({...prevUser, [name]: value}))
+    }
+    const onSubmit = e => {
+        e.preventDefault();
+        console.log(e);
         // Data gets saved to Users Table
-        API.saveUser({
-            fullname: data.fullname,
-            email: data.email,
-            password: data.password,
-            phone: data.phone,
-            birthday: data.birthday
-        })
-            .then(() => {
+        API.saveUser(user)
+            .then((data) => {
+                console.log(data);
                 const numbers = /^[0-9]+$/;
                 // Checks to see if user input is a number
                 if ((data.typeInput).match(numbers)) {
@@ -30,42 +37,47 @@ function SignUpForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={e => onSubmit(e)}>
             <input
+                value={user.fullname}
+                onChange={e => handleInputChange(e)}
                 className="form-control form-control-lg my-4"
                 name="fullname"
                 placeholder="Full Name"
-                ref={register}
             />
             <input
+                value={user.email}
+                onChange={e => handleInputChange(e)}
                 className="form-control form-control-lg my-4"
                 name="email"
                 placeholder="Email"
-                ref={register}
             />
             <input
+                value={user.password}
+                onChange={e => handleInputChange(e)}
                 className="form-control form-control-lg my-4"
                 name="password"
                 placeholder="Create Password (8-20 characters)"
-                ref={register}
             />
             <input
+                value={user.phone}
+                onChange={e => handleInputChange(e)}
                 className="form-control form-control-lg my-4"
                 type="tel"
                 name="phone"
                 placeholder="Phone Number (XXX-XXX-XXXX)"
-                ref={register}
             />
             <input
+                value={user.birthday}
+                onChange={e => handleInputChange(e)}
                 className="form-control form-control-lg my-4"
                 name="birthday"
                 placeholder="Birthday (MM/DD)"
-                ref={register}
             />
             <div className="row my-4">
                 <div className="col">
-                    <select className="form-control form-control-lg" name="grouptype">
-                        <option>Select</option>
+                    <select className="form-control form-control-lg" name="groupType" value={user.groupType} onChange={e => handleInputChange(e)}>
+                        <option value="start">Select</option>
                         <option value="new">Create New Group</option>
                         <option value="groupID">Enter Existing Group ID</option>
                     </select>
@@ -74,7 +86,7 @@ function SignUpForm() {
                     <input
                         className="form-control form-control-lg"
                         name="typeInput"
-                        ref={register}
+    
                     />
                 </div>
             </div>
