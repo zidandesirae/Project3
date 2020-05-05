@@ -1,13 +1,13 @@
 import React, { Fragment, useState } from 'react';
-import Messages from "./Message"
+import Message from "./Message"
 import Progress from "./Progress"
 import axios from 'axios';
 
 
 const FileUpload = () => {
     const [file, setFile] = useState('');
-    const [filename, setFilename] = useState('Choose File');
-    const [uploadedfile, setUploadedFile] = useState({});
+    const [fileName, setFilename] = useState('Choose File');
+    const [uploadedFile, setUploadedFile] = useState({});
     const [message, setMessage] = useState("");
     const [uploadPercentage, setUploadPercentage] = useState(0);
 
@@ -58,16 +58,16 @@ const FileUpload = () => {
                 <form>
                     <div className="custom-file">
                         <input type="file" className="custome-file-input" id="customefile" onChange={onChange} />
-                        <lable className="custome-file-lable" for="customFile">
+                        <label className="custome-file-label" htmlFor="customFile">
                             {fileName}
-                        </lable>
+                        </label>
                     </div>
 
                     <Progress percentage={uploadPercentage} />
-                    <input type="submit" value="Uplaod" className="btn btn=primary btm-block mt-4" />
+                    <input type="submit" value="Upload" className="btn btn=primary btm-block mt-4" />
                 </form>
                 {uploadedFile ? (<div className="row mt-5">
-                    <h3 className="text-center">{uploadFile.fileName}</h3>
+                    <h3 className="text-center">{uploadedFile.fileName}</h3>
                     <img style={{ width: '100%' }} src={uploadedFile.filePath} alt="" />
                 </div>
                 ) : null}

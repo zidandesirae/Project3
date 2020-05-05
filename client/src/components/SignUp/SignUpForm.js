@@ -4,19 +4,7 @@ import API from '../../utils/API';
 
 function SignUpForm() {
     const { register, handleSubmit } = useForm();
-
-<<<<<<< HEAD
-    const handleSubmit = e => {
-        e.preventDefault();
-        setUserInput({
-            name:"",
-            email:"",
-            password:"",
-            phone:"",
-            birthday: ""
-        });
-    }
-=======
+    
     const onSubmit = data => {
         console.log(data);
         // Data gets saved to Users Table
@@ -40,7 +28,6 @@ function SignUpForm() {
                 }
             })
     };
->>>>>>> 2e298795941cb7deefb1da8c547e492398454ace
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>

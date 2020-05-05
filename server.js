@@ -1,14 +1,10 @@
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3001;
-<<<<<<< HEAD
 const fileUpload = require('express-fileupload');
-
-=======
 const path = require("path");
 const db = require("./models");
 const routes = require("./routes/index");
->>>>>>> 2e298795941cb7deefb1da8c547e492398454ace
 console.log(routes);
 
 // Define middleware here
