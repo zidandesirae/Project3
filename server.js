@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const fileUpload = require('express-fileupload');
 const path = require("path");
 const db = require("./models");
@@ -24,24 +24,25 @@ app.use(routes);
 app.use(fileUpload()); 
 
 //Upload Endpoint 
-app.post('/uplaod', (req, res) => {
-  IDBCursor(req.files === null) {
+app.post('/upload', (req, res) => {
+  console.log("something");
+  if(req.files === null) {
     return res.status(400).json({msg: 'No file uploaded'});
   }
 
   const file = req.files.file;
 
-  file.mv('S{__dirname}/client/public/uplaods/$(file.name)' err => {
+  file.mv(`${__dirname}/client/public/uploads/$(file.name)`, err => {
     if (err) {
-      console.err(err);
+      console.error(err);
       return res.status(500).send(err);
     }
     
-    res.json({ fileName: file.name, filePath: '/uploads/$(file.name}'});
+    res.json({ fileName: file.name, filePath: `/uploads/$(file.name}`});
   });
 });
 
-app.listen(5000, () => console.log('server started..'));
+app.listen(3001, () => console.log('server started..'));
 
 // Start the API server
 db.sequelize.sync({}).then(function() {
