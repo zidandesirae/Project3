@@ -9,6 +9,9 @@ export default {
     saveGroup: function(groupData) {
         return axios.post("/api/groups", groupData);
     },
+    getGroup: function(id) {
+        return axios.get("/api/groups/" + id);
+    },
     // Create Event
     saveEvent: function(eventData) {
         return axios.post("/api/events", eventData);
