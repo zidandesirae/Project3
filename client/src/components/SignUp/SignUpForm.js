@@ -13,21 +13,21 @@ function SignUpForm() {
     const handleSubmit = e => {
         e.preventDefault();
         setUserInput({
-            name: userInput.name,
-            email: userInput.email,
-            password: userInput.password,
-            phone: userInput.phone,
-            birthday: userInput.birthday
+            name: this.target.name,
+            email: this.target.email,
+            password: this.target.password,
+            phone: this.target.phone,
+            birthday: this.target.birthday
         });
     }
 
     const handleChange = e => {
-        setUserInput
+        setUserInput();
     }
     
     return (
         <form>
-            <input className="form-control form-control-lg my-4" type="text" placeholder="Full Name" onchange={() => setUserInput({name: something, ...userInput})  handleChange}/>
+            <input className="form-control form-control-lg my-4" type="text" placeholder="Full Name" onChange={() => setUserInput({name: this.state.value, ...userInput}),  handleChange()}/>
             <input className="form-control form-control-lg my-4" type="text" placeholder="Email" />
             <input className="form-control form-control-lg my-4" type="text" placeholder="Create Password" />
             <input className="form-control form-control-lg my-4" type="text" placeholder="Phone Number" />
