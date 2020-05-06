@@ -1,10 +1,4 @@
 const express = require("express");
-<<<<<<< HEAD
-const path = require("path");
-// const db = require('./models');
-const routes = require("./routes/index");
-=======
->>>>>>> 765169403a14e6013463ded6a43876ebe676977d
 const app = express();
 const PORT = process.env.PORT || 3001;
 const path = require("path");

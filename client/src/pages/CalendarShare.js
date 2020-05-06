@@ -31,6 +31,21 @@ class CalendarShare extends Component {
         ]
     }
 
+    handleSelect = ({ start, end }) => {
+        const title = window.prompt('New Event Name')
+        if (title)
+        this.setState({
+            events: [
+                ...this.state.events,
+                {
+                    start,
+                    end,
+                    title,
+                },
+            ],
+        })
+    }
+
     moveEvent = ({ event, start, end, isAllDay: droppedOnAllDaySlot }) => {
         const { events } = this.state
 
@@ -103,12 +118,15 @@ class CalendarShare extends Component {
                         {
                             <div className="App">
                                 <DragAndDropCalendar
+                                    selectable
                                     localizer={localizer}
                                     onEventDrop={this.moveEvent}
                                     onEventResize={this.resizeEvent}
                                     defaultDate={new Date()}
                                     defaultView="month"
                                     events={this.state.events}
+                                    onSelectEvent={event => alert(event.title)}
+                                    onSelectSlot={this.handleSelect}
                                     style={{ height: "100vh" }}
                                 />
                             </div>
