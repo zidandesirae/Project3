@@ -1,13 +1,11 @@
 import React from 'react';
-import LoginPage from '../components/Login/LoginPage';
-// import LoginForm from '../components/Login/LoginForm';
-import NewLoginForm from '../components/Login/NewLoginForm';
+import LoginPage from '../components/LandingPage/LoginPage';
+import LoginForm from '../components/LandingPage/LoginForm';
 
 function Login(props) {
     return (
         <LoginPage>
-            {/* <LoginForm /> */}
-            <NewLoginForm />
+            <LoginForm />
         </LoginPage>
     );
 }

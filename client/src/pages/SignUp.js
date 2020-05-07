@@ -1,13 +1,11 @@
 import React from 'react';
-import SignUpPage from '../components/SignUp/SignUpPage';
-// import SignUpForm from '../components/SignUp/SignUpForm';
-import NewSignUpForm from '../components/SignUp/NewSignUpForm';
+import SignUpPage from '../components/LandingPage/SignUpPage';
+import SignUpForm from '../components/LandingPage/SignUpForm';
 
 function SignUp(props) {
     return (
         <SignUpPage>
-            {/* <SignUpForm /> */}
-            <NewSignUpForm />
+            <SignUpForm />
         </SignUpPage>
     );
 }

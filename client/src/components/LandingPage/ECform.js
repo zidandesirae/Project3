@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import API from '../../utils/API';
 
-function EGform(props) {
+function ECform(props) {
     const [group, setGroup] = useState({
         name: "",
         id: ""
@@ -37,4 +37,4 @@ function EGform(props) {
     );
 }
 
-export default EGform;
+export default ECform;

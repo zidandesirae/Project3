@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import API from '../../utils/API';
 
-function NewSignUpForm() {
+function SignUpForm() {
     const [user, setUser] = useState({
         fullname: "",
         email: "",
@@ -65,4 +65,4 @@ function NewSignUpForm() {
     );
 }
 
-export default NewSignUpForm;
+export default SignUpForm;

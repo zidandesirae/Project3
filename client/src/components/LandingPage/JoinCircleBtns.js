@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function JoinGroupBtns(props) {
+function JoinCircleBtns(props) {
     return (
         <div>
-            <label className="text-left h5 pt-4 pb-2">Select an option to join your new group:</label>
+            <label className="text-left h5 pt-4 pb-2">Select an Option to Join Your New Circle:</label>
             <div className="row mx-auto">
                 <div className="col">
                     <Link to="/login" type="button" className="btn btn-lg btn-block mb-4">LOGIN</Link>
@@ -17,4 +17,4 @@ function JoinGroupBtns(props) {
     );
 }
 
-export default JoinGroupBtns;
+export default JoinCircleBtns;

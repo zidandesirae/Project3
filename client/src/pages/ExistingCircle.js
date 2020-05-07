@@ -2,10 +2,10 @@ import React from "react";
 import TitleH1 from '../components/Universal/TitleH1';
 import Card1 from '../components/Universal/Card1';
 import OurCircle from "../components/Images/OurCircleLogoMed.png";
-import JoinGroupBtns from '../components/LandingPage/JoinGroupBtns';
-import CGform from '../components/LandingPage/CGform';
+import ECform from "../components/LandingPage/ECform";
+import JoinCircleBtns from "../components/LandingPage/JoinCircleBtns";
 
-function CreateNewGroup() {
+function ExistingCircle(props) {
     return (
         <div className="container my-4 py-4">
             <div className="row">
@@ -15,16 +15,16 @@ function CreateNewGroup() {
                 </div>
             </div>
             <div className="row">
-                <div className="col-md-8 col-sm-12 mx-auto">
+                <div className="col-md-8 mx-auto">
                     <Card1>
-                        <CGform />
-                        <hr className="my-3" style={{borderTop: "2px solid black"}}/>
-                        <JoinGroupBtns />
+                        <ECform />
+                        <hr className="my-4" style={{borderTop: "2px solid black"}}/>
+                        <JoinCircleBtns />
                     </Card1>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
-export default CreateNewGroup;
+export default ExistingCircle;

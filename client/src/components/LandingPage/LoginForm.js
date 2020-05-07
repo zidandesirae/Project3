@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 // import API from '../../utils/API';
 
-function NewLoginForm(props) {
+function LoginForm(props) {
     const [user, setUser] = useState({
         email: "",
         password: ""
@@ -40,4 +40,4 @@ function NewLoginForm(props) {
     );
 }
 
-export default NewLoginForm;
+export default LoginForm;

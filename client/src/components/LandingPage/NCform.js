@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import API from '../../utils/API';
 
-function CGform(props) {
+function NCform(props) {
     const [group, setGroup] = useState({
         name: "",
         description: ""
@@ -39,4 +39,4 @@ function CGform(props) {
     );
 }
 
-export default CGform;
+export default NCform;
