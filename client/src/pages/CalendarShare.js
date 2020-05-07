@@ -31,6 +31,31 @@ class CalendarShare extends Component {
         ]
     }
 
+    handleSelect = ({ start, end }) => {
+        const title = window.prompt('New Event Name')
+        const description = window.prompt('New Event Description')
+        if (title){
+            //TODO: when group is figured out, add groupId to post info (and make sure it shouws in db)
+            axios.post("/api/events", { start: start, end: end, name: title, description: description}).then(
+                (res) => {
+                    this.setState({
+                        events: [
+                            ...this.state.events,
+                            {
+                                start,
+                                end,
+                                title,
+                            },
+                        ],
+                    })
+                },
+                (err) => console.log(err)
+            )
+            
+        }
+        
+    }
+
     moveEvent = ({ event, start, end, isAllDay: droppedOnAllDaySlot }) => {
         const { events } = this.state
 
@@ -64,16 +89,21 @@ class CalendarShare extends Component {
 
     resizeEvent = ({ event, start, end }) => {
         const { events } = this.state
-
-        const nextEvents = events.map(existingEvent => {
-            return existingEvent.id === event.id
-                ? { ...existingEvent, start, end }
-                : existingEvent
-        })
-
-        this.setState({
-            events: nextEvents,
-        })
+        
+        axios.put("/api/events/" + event.id, {start: start.toISOString(), end: end.toISOString()}).then(
+            (res) => {
+                console.log(res);
+                const nextEvents = events.map(existingEvent => {
+                    return existingEvent.id === event.id
+                        ? { ...existingEvent, start, end }
+                        : existingEvent
+                })
+        
+                this.setState({
+                    events: nextEvents,
+                })
+            }, (err) => {console.log(err); }
+        );
 
         //alert(`${event.title} was resized to ${start}-${end}`)
     }
@@ -103,12 +133,15 @@ class CalendarShare extends Component {
                         {
                             <div className="App">
                                 <DragAndDropCalendar
+                                    selectable
                                     localizer={localizer}
                                     onEventDrop={this.moveEvent}
                                     onEventResize={this.resizeEvent}
                                     defaultDate={new Date()}
                                     defaultView="month"
                                     events={this.state.events}
+                                    onSelectEvent={event => alert(event.title)}
+                                    onSelectSlot={this.handleSelect}
                                     style={{ height: "100vh" }}
                                 />
                             </div>
