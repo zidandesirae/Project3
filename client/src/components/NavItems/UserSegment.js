@@ -35,21 +35,24 @@ const userSeg = [
 
 function UserSegment(props) {
     return (
-        userSeg.map(user => (
-            <div>
-                <div className="row" key={user.id}>
-                    <div className="col-md-6 col-sm-12">
-                        <h5>{user.description}</h5>
+        <div>
+            {userSeg.map(user => (
+                <div>
+                    <div className="row" key={user.id}>
+                        <div className="col-md-6 col-sm-12">
+                            <h5>{user.description}</h5>
+                        </div>
+                        <div className="col-md-6 col-sm-12">
+                            <form>
+                                <input className="form-control" type="text" placeholder={user.placeholder} />
+                            </form>
+                        </div>
                     </div>
-                    <div className="col-md-6 col-sm-12">
-                        <form>
-                            <input className="form-control" type="text" placeholder={user.placeholder} />
-                        </form>
-                    </div>
+                    <hr className="my-2" />
                 </div>
-                <hr className="my-2" />
-            </div>
-        ))
+            ))}
+            <button type="button" className="btn">Save Changes</button>
+        </div>
     );
 }
 

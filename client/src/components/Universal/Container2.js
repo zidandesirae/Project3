@@ -1,4 +1,3 @@
-//CONTAINER 2 - Used for all other Main Pages
 import React from "react";
 
 function Container2(props) {

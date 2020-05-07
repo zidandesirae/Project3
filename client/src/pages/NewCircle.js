@@ -1,61 +1,98 @@
-import React, { useState } from "react";
-import TitleH1 from '../components/Universal/TitleH1';
+import React, { useState, useContext } from "react";
 import Card1 from '../components/Universal/Card1';
 import OurCircle from "../components/Images/OurCircleLogoMed.png";
-// import JoinCircleBtns from '../components/LandingPage/JoinCircleBtns';
 import NCform from '../components/LandingPage/NCform';
 import API from '../utils/API';
-import Login from '../pages/Login';
-import SignUp from '../pages/SignUp';
+import Login from '../components/LandingPage/Login';
+import SignUp from '../components/LandingPage/SignUp';
+import { Container, Row, Col, Image, Card, FormLabel } from 'react-bootstrap';
 
-function NewCircle() {
-    const [group, setGroup] = useState({ name: "" });
+function NewCircle(props) {
     const [renderLogin, setRenderLogin] = useState();
     const [renderSignUp, setRenderSignUp] = useState();
+    // New Group
+    const [group, setGroup] = useState({ name: "" });
+    const [newUser, setNewUser] = useState({
+        fullname: "",
+        email: "",
+        password: "",
+        phone: "",
+        birthday: "",
+    });
+    const [user, setUser] = useState({
+        email: "",
+        password: ""
+    });
 
-
-    const handleInputChange = e => {
+    // NEW GROUP
+    const handleGroupInputChange = e => {
         const { name, value } = e.target;
         setGroup(prevGroup => ({ ...prevGroup, [name]: value }))
     };
 
-    const onSubmit = e => {
+    const onGroupSubmit = e => {
         e.preventDefault();
         console.log(group);
-        API.saveGroup(group);
+        API.saveGroup(group)
     };
 
-    return ( <>
-        { !renderSignUp && !renderLogin &&
-        <div className="container my-4 py-4">
-            <div className="row">
-                <div className="col-md-8 mx-auto text-center">
-                    <img src={OurCircle} className="signUpLogo img-fluid" alt="image1" />
-                    <TitleH1 title="Join Our Circle" subtitle="It's Time to Get in the Loop" />
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-8 col-sm-12 mx-auto">
-                    <Card1>
-                        <NCform group={group} handleInputChange={handleInputChange} onSubmit={onSubmit} />
-                        <hr className="my-3" style={{ borderTop: "2px solid black" }} />
-                        {/* <JoinCircleBtns /> */}
-                        <label className="text-left h5 pt-4 pb-2">Select an Option to Join Your New Circle:</label>
-                        <div className="row mx-auto">
-                            <div className="col">
-                                <button onClick={() => setRenderLogin(true)} type="button" className="btn btn-lg btn-block mb-4">LOGIN</button>
-                            </div>
-                            <div className="col">
-                                <button onClick={() => setRenderSignUp(true)} type="button" className="btn btn-lg btn-block mb-4">SIGNUP</button>
-                            </div>
+    // SIGN UP
+    const handleNewUserInputChange = e => {
+        const { name, value } = e.target;
+        setNewUser(prevNewUser => ({ ...prevNewUser, [name]: value }))
+    }
+    const onNewUserSubmit = e => {
+        e.preventDefault();
+        console.log(newUser);
+        API.saveUser(newUser)
+    };
+
+    // LOGIN
+    const handleUserInputChange = e => {
+        const { name, value } = e.target;
+        setUser(prevUser => ({ ...prevUser, [name]: value }))
+    }
+    const onUserSubmit = e => {
+        e.preventDefault();
+        console.log(user);
+
+    };
+
+
+    return (<>
+        {!renderSignUp && !renderLogin &&
+            <Container className="my-4 py-4">
+                <Row>
+                    <Col md={8} className="mx-auto text-center">
+                        <Image src={OurCircle} className="signUpLogo" fluid />
+                        <div className="m-4">
+                            <h1 className="text-3d">Join Our Circle</h1>
+                            <h4>It's Time to Get in the Loop</h4>
                         </div>
-                    </Card1>
-                </div>
-            </div>
-        </div>}
-        {renderLogin && <Login />}
-        {renderSignUp && <SignUp />}
-        </>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md={8} className="mx-auto">
+                        <Card1>
+                            <NCform group={group} handleGroupInputChange={handleGroupInputChange} onGroupSubmit={onGroupSubmit} />
+                            <hr className="my-4" style={{ borderTop: "2px solid black" }} />
+                            <FormLabel className="text-left h5 pt-4 pb-2">Select an Option to Join Your New Circle:</FormLabel>
+                            <Row className="mx-auto">
+                                <Col>
+                                    <button onClick={() => setRenderLogin(true)} type="button" className="btn btn-lg btn-block mb-4">LOGIN</button>
+                                </Col>
+                                <Col>
+                                    <button onClick={() => setRenderSignUp(true)} type="button" className="btn btn-lg btn-block mb-4">SIGN UP</button>
+                                </Col>
+                            </Row>
+                        </Card1>
+                    </Col>
+                </Row>
+            </Container>
+        }
+        {renderLogin && <Login user={user} handleUserInputChange={handleUserInputChange} onUserSubmit={onUserSubmit} />}
+        {renderSignUp && <SignUp newUser={newUser} handleNewUserInputChange={handleNewUserInputChange} onNewUserSubmit={onNewUserSubmit} />}
+    </>
     );
 }
 
