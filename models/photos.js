@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const Model = Sequelize.Model;
-import SequelizeFile from 'sequelize-file';
+const SequelizeFile = require("sequelize-file");
 
 const photos = SequelizeFile({
     attribute: 'image',
@@ -17,7 +17,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER,}
+      type: Sequelize.INTEGER,},
+      name: STRING,
+
       
   }); 
   

@@ -10,6 +10,7 @@ const sequelize = new Sequelize("test", "root", "", {
 const User = sequelize.import(__dirname + "/users");
 const Event = sequelize.import(__dirname + "/events");
 const Group = sequelize.import(__dirname + "/groups");
+const Photos = sequelize.import(__dirname + "/photos");
 
 
 User.belongsToMany(Group, { through: 'User_Group' });
@@ -25,5 +26,6 @@ module.exports = {
     sequelize: sequelize,
     User: User,
     Event: Event,
-    Group: Group
+    Group: Group,
+    Photos: Photos
 }

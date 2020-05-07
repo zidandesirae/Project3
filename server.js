@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 const fileUpload = require('express-fileupload');
 const path = require("path");
 const db = require("./models");
 const routes = require("./routes/index");
+const Photos = require("./models/photos");
 console.log(routes);
 
 // Define middleware here
@@ -19,7 +20,6 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(express.static("../../client/build"));
 app.use('/static', express.static(path.join(__dirname, '../client/build/static')))
-app.use(routes);
 
 app.use(fileUpload()); 
 
@@ -32,15 +32,21 @@ app.post('/upload', (req, res) => {
 
   const file = req.files.file;
 
-  file.mv(`${__dirname}/client/public/uploads/$(file.name)`, err => {
+  Photos.create(file);
+
+  file.mv(`${__dirname}/client/public/uploads/${file.name}`, err => {
     if (err) {
       console.error(err);
       return res.status(500).send(err);
     }
     
-    res.json({ fileName: file.name, filePath: `/uploads/$(file.name}`});
+    res.json({ fileName: file.name, filePath: `/uploads/${file.name}`});
   });
 });
+
+app.use(routes);
+
+
 
 app.listen(3001, () => console.log('server started..'));
 

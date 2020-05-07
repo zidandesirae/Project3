@@ -13,7 +13,7 @@ class PhotoAlbum extends Component {
                 <Container2>
                     <Col10>
                         <TitleH2 title="Photo Album" />
-                        {<div>"INSERT CONTENT HERE"</div>}
+                        {<div className= "h4 mt-4 text-center">Share your memories!</div>}
                         <FileUpload/>
                     </Col10>
                 </Container2>
