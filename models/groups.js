@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     class Group extends Model { }
     Group.init({
         name: DataTypes.STRING,
-        description: DataTypes.TEXT
+        circlecode: DataTypes.INTEGER
     }, { sequelize, modelName: 'group' });
     return Group;
 }
