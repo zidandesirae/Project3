@@ -86,7 +86,8 @@ function SignUpForm() {
                     <input
                         className="form-control form-control-lg"
                         name="typeInput"
-    
+                        value={user.typeInput}
+                        onChange={e => handleInputChange(e)}
                     />
                 </div>
             </div>

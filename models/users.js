@@ -27,6 +27,11 @@ module.exports = (sequelize, DataTypes) => {
         }
     },
     { sequelize, modelName: 'user' });
+
+    User.prototype.validPassword = function(password) {
+        return this.password === password;
+        //return bcrypt.compareSync(password, this.password); - use if switching to bcrypt
+    };
     return User;
 }
 
