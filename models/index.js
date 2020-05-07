@@ -14,6 +14,7 @@ const JDATABASE = JAWS.split("@")[1].split("/")[1];
 
 // // Connect to the MySQL DB
 // User and password points for MSQL DB
+
 const sequelize = new Sequelize(JDATABASE, JUSERNAME, JPASSWORD, {
     host: JHOST,
 	dialect: "mysql"
@@ -38,6 +39,7 @@ module.exports = {
     sequelize: sequelize,
     User: User,
     Event: Event,
+
     Group: Group //,
    // Photos: Photos
 }
