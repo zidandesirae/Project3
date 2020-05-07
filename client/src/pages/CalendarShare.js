@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import NavBar from '../components/Universal/NavBar';
-import Container2 from '../components/Universal/Container2';
-import TitleH2 from '../components/Universal/TitleH2';
-import Col10 from '../components/Universal/Col10';
+import NavBar from '../components/NavItems/NavBar';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import axios from "axios";
@@ -127,10 +125,11 @@ class CalendarShare extends Component {
         return (
             <div>
                 <NavBar />
-                <Container2>
-                    <Col10>
-                        <TitleH2 title="Calendar" />
-                        {
+                <Container className="pb-4">
+                    <Row className="mx-auto">
+                        <Col md={10} sm={12} className="mx-auto">
+                            <h2 className="text-center mb-4 text-3d">Calendar</h2>
+                            {
                             <div className="App">
                                 <DragAndDropCalendar
                                     selectable
@@ -146,8 +145,9 @@ class CalendarShare extends Component {
                                 />
                             </div>
                         }
-                    </Col10>
-                </Container2>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
         );
     }

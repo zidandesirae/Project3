@@ -26,8 +26,8 @@ const Group = sequelize.import(__dirname + "/groups");
 // const Photos = sequelize.import(__dirname + "/photos");
 
 
-User.belongsToMany(Group, { through: 'User_Group' });
-Group.belongsToMany(User, { through: 'User_Group' });
+User.belongsToMany(Group, { through: 'User_Group', foreignKey: "userId"});
+Group.belongsToMany(User, { through: 'User_Group', foreignKey: "groupId"});
 // User.hasMany(Group);
 // Group.hasMany(User);
 Group.hasMany(Event);

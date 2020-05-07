@@ -1,4 +1,5 @@
 import React from "react";
+import { Row, Col } from 'react-bootstrap';
 
 // TABLE INSERT 
 // const members = [];
@@ -23,33 +24,33 @@ const memberInfo = [
 
 function MemberSegment(props) {
     return (
-        <div className="row">
-            <div className="col">
+        <Row>
+            <Col>
                 <h5>{props.title}</h5>
                 {/* {members.map(member => ( */}
                     <div className="card">
                         <div className="card-body border">
-                            <div className="row">
-                                <div className="col">
+                            <Row>
+                                <Col>
                                     {/* TABLE INSERT OF ALL MEMEBERS  */}
                                     <h5>INSERT NAME FROM TABLE</h5>
-                                </div>
-                            </div>
+                                </Col>
+                            </Row>
                             {memberInfo.map(info => (
-                                <div className="row" key={info.id}>
-                                    <div className="col">
+                                <Row key={info.id}>
+                                    <Col>
                                         <h5>{info.description}</h5>
-                                    </div>
-                                    <div className="col">
+                                    </Col>
+                                    <Col>
                                         <h5>{info.userData}</h5>
-                                    </div>
-                                </div>
+                                    </Col>
+                                </Row>
                             ))}
                         </div>
                     </div>
                 {/* ))} */}
-            </div>
-        </div>
+            </Col>
+        </Row>
     );
 }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Row, Col, Form } from 'react-bootstrap';
 
 const userSeg = [
     {
@@ -35,21 +36,24 @@ const userSeg = [
 
 function UserSegment(props) {
     return (
-        userSeg.map(user => (
-            <div>
-                <div className="row" key={user.id}>
-                    <div className="col-md-6 col-sm-12">
-                        <h5>{user.description}</h5>
-                    </div>
-                    <div className="col-md-6 col-sm-12">
-                        <form>
-                            <input className="form-control" type="text" placeholder={user.placeholder} />
-                        </form>
-                    </div>
+        <div>
+            {userSeg.map(user => (
+                <div key={user.id}>
+                    <Row>
+                        <Col md={6} sm={12}>
+                            <h5>{user.description}</h5>
+                        </Col>
+                        <Col md={6} sm={12}>
+                            <Form>
+                                <input className="form-control" type="text" placeholder={user.placeholder} />
+                            </Form>
+                        </Col>
+                    </Row>
+                    <hr className="my-2" />
                 </div>
-                <hr className="my-2" />
-            </div>
-        ))
+            ))}
+            <button type="button" className="btn">Save Changes</button>
+        </div>
     );
 }
 
