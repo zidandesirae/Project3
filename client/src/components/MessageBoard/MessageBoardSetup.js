@@ -95,7 +95,7 @@ function MessageBoardSetup() {
                     }}
                 >
                     Send
-                    </Button>
+                </Button>
             </div>
         </Paper>
     );

@@ -36,7 +36,6 @@ function reducer(state, action) {
 }
 
 
-
 let socket;
 
 function sendChatAction(value) {
@@ -48,9 +47,9 @@ function Store(props) {
     const [allChats, dispatch] = React.useReducer(reducer, initialState);
 
     if(!socket) {
-        socket = io('3001')
+        socket = io(':3001')
         socket.on('chat message', function(msg){
-            dispatch({type: "RECEIVE_MESSAGE", paylod: msg});
+            dispatch({type: "RECEIVE_MESSAGE", payload: msg});
         });
     }
 

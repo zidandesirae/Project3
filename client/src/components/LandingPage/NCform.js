@@ -4,8 +4,10 @@ import API from '../../utils/API';
 function NCform(props) {
     const [group, setGroup] = useState({
         name: "",
-        description: ""
+        cirlecode: ""
     });
+
+    // const code = Math.floor(Math.random() * 9000000000) + 1000000000;
 
     const handleInputChange = e => {
         const { name, value } = e.target;
