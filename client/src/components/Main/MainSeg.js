@@ -4,25 +4,19 @@ import { Link } from "react-router-dom";
 const eachSeg = [
     {
         id: 1,
-        // img: "https://lakelandescaperoom.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg",
-        // alt: "calendar",
         route: '/calendar',
         className: "far fa-calendar-alt text-3d-iconSizing p-3",
         heading: "Calendar"
     },
     {
         id: 2,
-        // img: "https://lakelandescaperoom.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg",
-        // alt: "dashboard",
-        route: '/dashboard',
+        route: '/messageboard',
         className: "far fa-comment-dots text-3d-iconSizing p-3",
-        heading: "Chat"
+        heading: "Message Board"
 
     },
     {
         id: 3,
-        // img: "https://lakelandescaperoom.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg",
-        // alt: "lists",
         route: '/lists',
         className: "fas fa-list-ol text-3d-iconSizing p-3",
         heading: "Lists"
@@ -30,8 +24,6 @@ const eachSeg = [
     },
     {
         id: 4,
-        // img: "https://lakelandescaperoom.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg",
-        // alt: "photos",
         route: '/photoalbum',
         className: "far fa-image text-3d-iconSizing p-3",
         heading: "Photos"

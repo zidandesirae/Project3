@@ -8,8 +8,6 @@ function SignUpForm() {
         password: "",
         phone: "",
         birthday: "",
-        groupType: "start",
-        typeInput: ""
     });
 
     const handleInputChange = e => {
@@ -18,22 +16,10 @@ function SignUpForm() {
     }
     const onSubmit = e => {
         e.preventDefault();
-        console.log(e);
-        // Data gets saved to Users Table
-        API.saveUser(user)
-            .then((data) => {
-                console.log(data);
-                const numbers = /^[0-9]+$/;
-                // Checks to see if user input is a number
-                if ((data.typeInput).match(numbers)) {
-                    return console.log("Existing group");
-                } else {
-                    // Data (group name) gets saved to Groups Table
-                    API.saveGroup({ name: data.typeInput })
-                    // Checks to see if user inputs 'new group name'
-                    return console.log("Create a new group");
-                }
-            })
+        console.log(user);
+        
+        API.saveUser(user);
+    
     };
 
     return (
@@ -74,22 +60,6 @@ function SignUpForm() {
                 name="birthday"
                 placeholder="Birthday (MM/DD)"
             />
-            <div className="row my-4">
-                <div className="col">
-                    <select className="form-control form-control-lg" name="groupType" value={user.groupType} onChange={e => handleInputChange(e)}>
-                        <option value="start">Select</option>
-                        <option value="new">Create New Group</option>
-                        <option value="groupID">Enter Existing Group ID</option>
-                    </select>
-                </div>
-                <div className="col">
-                    <input
-                        className="form-control form-control-lg"
-                        name="typeInput"
-    
-                    />
-                </div>
-            </div>
             <button type="submit" className="btn btn-lg btn-block mb-4">Create Account</button>
         </form>
     );
