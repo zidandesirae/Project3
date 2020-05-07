@@ -20,9 +20,21 @@ app.use(express.static("../../client/build"));
 app.use('/static', express.static(path.join(__dirname, '../client/build/static')))
 app.use(routes);
 
+//Message Board
+var http = require('http').createServer(app);
+var io = require('socket.io')(http);
+
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  socket.on('chat message', function(msg) {
+    console.log('message: ' + JSON.stringify(msg));
+    io.emit('chat message', msg);
+  });
+});
+
 // Start the API server
 db.sequelize.sync({}).then(function() {
-  app.listen(PORT, function() {
+  http.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
 });
