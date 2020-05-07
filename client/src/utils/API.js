@@ -19,6 +19,9 @@ export default {
         return axios.get("/api/users");
     },
     
+    getUser: function (id) {
+        return axios.get("/api/groups/" + id);
+    },
     getGroup: function (id) {
         return axios.get("/api/groups/" + id);
     }

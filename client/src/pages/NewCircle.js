@@ -58,7 +58,7 @@ function NewCircle(props) {
     const onUserSubmit = e => {
         e.preventDefault();
         console.log(user);
-        API.getUsers()
+        API.getUser(user, user)
         .then(res => console.log(res));
 
     };
