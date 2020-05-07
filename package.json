@@ -15,6 +15,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-fileupload": "^1.1.7-alpha.3",
+    "if-env": "^1.0.4",
     "install": "^0.13.0",
     "moment": "^2.24.0",
     "mysql2": "^2.1.0",
