@@ -3,8 +3,8 @@ const Sequelize = require("sequelize");
 require("dotenv").config();
 const JAWS = process.env.JAWSDB_URL.split("//")[1];
 const JUSERNAME = JAWS.split(":")[0];
-const JPASSWORD = JAWS.split(":")[1];
-const JHOST = JAWS.split("@")[1].split("/")[0];
+const JPASSWORD = JAWS.split(":")[1].split("@")[0];
+const JHOST = JAWS.split("@")[1].split(":")[0];
 const JDATABASE = JAWS.split("@")[1].split("/")[1];
 
 
