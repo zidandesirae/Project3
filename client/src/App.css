@@ -1,0 +1,203 @@
+body {
+  font-family: 'Varela Round', sans-serif;
+  color: #212529
+}
+
+.heading-text {
+  color: rgb(0, 0, 0)
+}
+
+.logo {
+  width: 56px;
+}
+
+.signUpLogo {
+  width: 300px;
+}
+
+.navbar-toggler {
+  box-shadow: 1px 1px 3px rgb(0, 0, 0), 3px 3px 3px rgb(255, 33, 33), 6px 6px 3px rgb(124, 251, 255);
+}
+
+.card1 {
+  background-image: linear-gradient(90deg, rgb(0, 0, 0),  rgb(255, 32, 32),  rgb(47, 255, 245)), linear-gradient(90deg,rgb(0, 0, 0), rgb(255, 32, 32),  rgb(47, 255, 245));
+  background-position: 0 0px, 100% 100%;
+  background-size: 100% 5px;
+  border: none;
+  padding: 5px;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0), 10px 10px 8px rgb(255, 33, 33), 15px 15px 8px rgb(124, 251, 255);
+  border-radius: 1rem;
+  /* background-repeat: no-repeat; */
+  /* border-left: 3px solid rgb(0, 0, 0); */
+  /* border-right: 3px solid rgb(47, 255, 245); */
+}
+.card-body1 {
+  border-radius: .75rem;
+  background-color: white;
+}
+
+.btn {
+  background-color: white;
+  border: 2px solid #212529;
+}
+.btn:hover {
+  background-color: #212529;
+  color: white;
+}
+.signupLink {
+  color: black;
+}
+.signupLink:hover {
+  color: black;
+}
+.form-control {
+  border: 2px solid #212529;
+}
+
+#root {
+  min-height: 100vh
+}
+
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:700'); */
+
+.bodyTextScroll {
+  margin:0px;
+  text-align:center;
+}
+    
+#containerHead {
+  color:#999;
+  font-size:36px;
+  font-weight:bold;
+  padding: top 5px;  
+  position:top;
+  width:100%;
+  bottom:45%;
+  display:block;
+}
+    
+#flip {
+  height:50px;
+  overflow:hidden;
+}
+    
+#flip > div > div {
+  color:white;
+  padding:0px 20px;
+  height:50px;
+  margin-bottom:40px;
+  display:inline-block;
+}
+    
+#flip div:first-child {
+  animation: show 5s linear infinite;
+}
+    
+#flip div div {
+  background:#000000;
+}
+#flip div:first-child div {
+  background: rgb(255, 32, 32);
+}
+#flip div:last-child div {
+  background:rgb(47, 255, 245);
+}
+    
+@keyframes show {
+  0% {margin-top:-270px;}
+  5% {margin-top:-180px;}
+  33% {margin-top:-180px;}
+  38% {margin-top:-90px;}
+  66% {margin-top:-90px;}
+  71% {margin-top:0px;}
+  99.99% {margin-top:0px;}
+  100% {margin-top:-270px;}
+}
+
+.text-3d {
+  text-transform: uppercase;
+  font-size: 50px;
+  color:rgb(255, 255, 255);
+  position: static;
+  top:50%;
+  left:50%;
+  /* transform: translate(-50% ,-50%); */
+  text-shadow:
+    0 1px 0 rgb(190,190,190),
+    0 2px 0 rgb(185,185,185),
+    0 3px 0 rgb(180,180,180),
+    0 4px 0 rgb(175,175,175),
+    0 5px 0 rgb(170,170,170),
+    0 6px 0 rgb(165,165,165),
+    0 7px 0 rgb(160,160,160),
+    0 1px 5px rgba(0,0,0,.05),
+    0 3px 5px rgba(0,0,0,.10),
+    0 5px 10px rgba(0,0,0,.15),
+    0 7px 10px rgba(0,0,0,.20),
+    0 10px 15px rgba(0,0,0,.25);
+  transition: all 0.3s ease-in-out;        
+  cursor: context-menu;
+}
+
+.text-3d:hover {
+  color:rgb(0, 0, 0);
+  text-shadow:
+    0 1px 0 rgb(0, 0, 0),
+    0 2px 0 rgb(56, 0, 0),
+    0 3px 0 rgb(95, 0, 0),
+    0 4px 0 rgba(223, 0, 0, 0.973),
+    0 5px 0 rgba(76, 113, 124, 0.911),
+    0 6px 0 rgba(150, 150, 150, 0.87),
+    0 7px 0 rgba(0, 217, 255, 0.74),
+    0 1px 5px rgb(53, 192, 211),
+    0 5px 5px rgb(129, 0, 0),
+    0 10px 10px rgba(255, 0, 0),
+    0 15px 10px rgb(106, 150, 150),
+    0 20px 15px rgb(0, 247, 255);
+  transition: all 1s ease-in-out;
+}
+
+.text-3d-iconSizing {
+    text-transform: uppercase;
+    font-size: 20vw;
+    color:rgb(250, 250, 250);
+    position: static;
+    top:50%;
+    left:50%;
+    /* transform: translate(-50% ,-50%); */
+    text-shadow:
+      0 1px 0 rgb(160,160,160),
+      0 2px 0 rgb(155,155,155),
+      0 3px 0 rgb(150,150,150),
+      0 4px 0 rgb(145,145,145),
+      0 5px 0 rgb(140,140,140),
+      0 6px 0 rgb(135,135,135),
+      0 7px 0 rgb(130,130,130),
+      0 1px 5px rgba(0,0,0,.05),
+      0 3px 5px rgba(0,0,0,.10),
+      0 5px 10px rgba(0,0,0,.15),
+      0 7px 10px rgba(0,0,0,.20),
+      0 10px 15px rgba(0,0,0,.25);
+    transition: all 0.3s ease-in-out;        
+    cursor: pointer;
+  }
+  
+  .text-3d-iconSizing:hover {
+    color:rgb(0, 0, 0);
+    text-shadow:
+      0 1px 0 rgb(0, 0, 0),
+      0 2px 0 rgb(56, 0, 0),
+      0 3px 0 rgb(95, 0, 0),
+      0 4px 0 rgba(223, 0, 0, 0.973),
+      0 5px 0 rgba(76, 113, 124, 0.911),
+      0 6px 0 rgba(150, 150, 150, 0.87),
+      0 7px 0 rgba(0, 217, 255, 0.74),
+      0 1px 5px rgb(53, 192, 211),
+      0 5px 5px rgb(129, 0, 0),
+      0 10px 10px rgba(255, 0, 0),
+      0 15px 10px rgb(106, 150, 150),
+      0 20px 15px rgb(0, 247, 255);
+    transition: all 1s ease-in-out;
+  }
+
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>settings</title>
+</head>
+
+<body>
+  <!-- NAVBAR  -->
+  <nav class="navbar navbar-expand-xs navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMarkup"
+      aria-controls="navbarMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">TITLE</a>
+    <div class="collapse navbar-collapse" id="navbarMarkup">
+      <div class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <a class="nav-item nav-link" href="#">Home</a>
+        <a class="nav-item nav-link" href="#">Settings</a>
+        <a class="nav-item nav-link" href="#">Group Information</a>
+        <a class="nav-item nav-link" href="#">Log Out</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SETTINGS -->
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-10 mx-auto">
+        <h2 class="text-center mb-4">Settings</h2>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="pb-4">Personal Information</h4>
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <h5>Name:</h5>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <form>
+                  <input class="form-control" type="text" placeholder="USER INPUT FROM SIGN UP" disabled>
+                </form>
+              </div>
+            </div>
+            <hr class="my-2">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <h5>Email:</h5>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <form>
+                  <input class="form-control" type="text" placeholder="USER INPUT FROM SIGN UP" disabled>
+                </form>
+              </div>
+            </div>
+            <hr class="my-2">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <h5>Password:</h5>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <form>
+                  <input class="form-control" type="text" placeholder="USER INPUT FROM SIGN UP" disabled>
+                </form>
+              </div>
+            </div>
+            <hr class="my-2">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <h5>Phone Number:</h5>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <form>
+                  <input class="form-control" type="text" placeholder="USER INPUT FROM SIGN UP" disabled>
+                </form>
+              </div>
+            </div>
+            <hr class="my-2">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <h5>Birthday:</h5>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <form>
+                  <input class="form-control" type="text" placeholder="Enter Birthday MM/DD/YYYY" disabled>
+                </form>
+              </div>
+            </div>
+            <hr class="my-2">
+            <button type="button" class="btn btn-light">Edit</button>
+            <button type="button" class="btn btn-light">Save Changes</button>
+          </div>
+        </div>
+        <br>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="pb-4">Notifications</h4>
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <h5>Notify me when there are Calendar Updates</h5>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <form>
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" checked disabled>
+                    <label class="form-check-label" for="exampleCheck1"></label>
+                  </div>  
+                </form>
+              </div>
+            </div>
+            <hr class="my-2">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <h5>Notify me when there are List Updates</h5>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <form>
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck2" checked disabled>
+                    <label class="form-check-label" for="exampleCheck2"></label>
+                  </div>  
+                </form>
+              </div>
+            </div>
+            <hr class="my-2">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <h5>Notify me of Photo Album Updates</h5>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <form>
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck3" checked disabled>
+                    <label class="form-check-label" for="exampleCheck3"></label>
+                  </div>  
+                </form>
+              </div>
+            </div>
+            <hr class="my-2">
+            <button type="button" class="btn btn-light">Edit</button>
+            <button type="button" class="btn btn-light">Save Changes</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- FOOTER  -->
+  <footer class="footer my-4 text-center">&copy; 2020 TITLE</footer>
+</body>
+
+</html>
