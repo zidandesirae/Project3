@@ -1,23 +1,24 @@
 import React from 'react';
+import { Form, FormLabel, Row, Col } from 'react-bootstrap';
 
 function ECform(props) {
     return (
-        <form onSubmit={e => props.onGroupSubmit(e)}>
-            <label className="text-left h5 pt-4 pb-2">Enter the Group ID of the Circle you would like to join: </label>
-            <div className="row mx-auto">
-                <div className="col-8">
+        <Form onSubmit={e => props.onGroupSubmit(e)}>
+            <FormLabel className="text-left h5 pt-4 pb-2">Enter the Group ID of the Circle you would like to join:</FormLabel>
+            <Row className="mx-auto">
+                <Col sm={8}>
                     <input
                         value={props.group.id}
                         onChange={e => props.handleGroupInputChange(e)}
                         className="form-control form-control-lg mb-4"
                         name="id"
                     />
-                </div>
-                <div className="col-4">
+                </Col>
+                <Col sm={4}>
                     <button type="submit" className="btn btn-lg mb-4">Search</button>
-                </div>
-            </div>
-        </form>
+                </Col>
+            </Row>
+        </Form>
     );
 }
 

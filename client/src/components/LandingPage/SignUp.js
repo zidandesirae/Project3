@@ -1,18 +1,20 @@
 import React from 'react';
 import OurCircle from "../Images/OurCircleLogoMed.png";
-import TitleH1 from '../Universal/TitleH1';
 import Card1 from '../Universal/Card1';
-import { Link } from 'react-router-dom';
+import { Container, Row, Col, Image, Form } from 'react-bootstrap';
 
 function SignUp(props) {
     return (
-        <div className="container my-4 py-4">
-            <div className="row">
-                <div className="col-md-8 mx-auto text-center">
-                    <img src={OurCircle} className="signUpLogo img-fluid" alt="image1" />
-                    <TitleH1 title="Join Our Circle" subtitle="It's Time to Get in the Loop" />
+        <Container className="my-4 py-4">
+            <Row>
+                <Col md={8} className="mx-auto text-center">
+                    <Image src={OurCircle} className="signUpLogo" fluid />
+                    <div className="m-4">
+                        <h1 className="text-3d">Our Circle</h1>
+                        <h4>Always in the Loop</h4>
+                    </div>
                     <Card1>
-                        <form onSubmit={e => props.onNewUserSubmit(e)}>
+                        <Form onSubmit={e => props.onNewUserSubmit(e)}>
                             <input
                                 value={props.newUser.fullname}
                                 onChange={e => props.handleNewUserInputChange(e)}
@@ -50,12 +52,11 @@ function SignUp(props) {
                                 placeholder="Birthday (MM/DD)"
                             />
                             <button type="submit" className="btn btn-lg btn-block mb-4">Create Account</button>
-                        </form>
+                        </Form>
                     </Card1>
-                </div>
-            </div>
-        </div>
-
+                </Col>
+            </Row>
+        </Container>
     );
 }
 

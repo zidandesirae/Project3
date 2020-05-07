@@ -1,27 +1,27 @@
 import React from "react";
-
+import { Row, Col } from 'react-bootstrap';
 function GroupName(props) {
     return (
         <div>
-            <div className="row">
-                <div className="col">
+            <Row>
+                <Col>
                     <h5>Group Name:</h5>
-                </div>
-                <div className="col">
+                </Col>
+                <Col>
                     {/* TABLE INSERT  */}
                     <h5>INSERT FROM TABLE</h5>
-                </div>
-            </div>
+                </Col>
+            </Row>
             <hr className="my-2" />
-            <div className="row">
-                <div className="col">
+            <Row>
+                <Col>
                     <h5>Group ID:</h5>
-                </div>
-                <div className="col">
+                </Col>
+                <Col>
                     {/* TABLE INSERT  */}
                     <h5>INSERT FROM TABLE</h5>
-                </div>
-            </div>
+                </Col>
+            </Row>
             <hr className="my-2" />
         </div>
     );

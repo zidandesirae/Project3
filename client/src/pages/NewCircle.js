@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import Card1 from '../components/Universal/Card1';
 import OurCircle from "../components/Images/OurCircleLogoMed.png";
 import NCform from '../components/LandingPage/NCform';
 import API from '../utils/API';
 import Login from '../components/LandingPage/Login';
 import SignUp from '../components/LandingPage/SignUp';
-import { Container, Row, Col, Image, Card, FormLabel } from 'react-bootstrap';
+import { Container, Row, Col, Image, FormLabel } from 'react-bootstrap';
 
 function NewCircle(props) {
     const [renderLogin, setRenderLogin] = useState();

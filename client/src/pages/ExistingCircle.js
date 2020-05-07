@@ -5,7 +5,7 @@ import ECform from "../components/LandingPage/ECform";
 import API from '../utils/API';
 import Login from '../components/LandingPage/Login';
 import SignUp from '../components/LandingPage/SignUp';
-import { Container, Row, Col, Image, Card, FormLabel } from 'react-bootstrap';
+import { Container, Row, Col, Image, FormLabel } from 'react-bootstrap';
 
 function ExistingCircle(props) {
     const [renderLogin, setRenderLogin] = useState();

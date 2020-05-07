@@ -1,6 +1,6 @@
 import React from 'react';
 import Card1 from '../Universal/Card1';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Row, Col, Card } from 'react-bootstrap';
 
 function ListsPage() {
     return (

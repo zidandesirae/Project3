@@ -1,8 +1,9 @@
 import React from "react";
 import NavBtns from "./NavBtns";
 import OurCircle from "../Images/OurCircleLogoMed.png";
+import { Image } from 'react-bootstrap';
 
-const appLogo = <img src={OurCircle} className="logo" alt="image1"/>
+const appLogo = <Image src={OurCircle} className="logo"/>
 ;
 
 function NavBar(props) {

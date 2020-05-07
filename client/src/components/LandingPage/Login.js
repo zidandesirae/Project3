@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import TitleH1 from "../Universal/TitleH1";
 import Card1 from '../Universal/Card1';
 import OurCircle from '../Images/OurCircleLogoMed.png';
-import { Link } from 'react-router-dom';
-import Main from '../../pages/Main';
+import { Container, Row, Col, Image, Form } from 'react-bootstrap';
+
 
 function Login(props) {
     const [user, setUser] = useState({
@@ -37,13 +36,16 @@ function Login(props) {
     };
 
     return (
-        <div className="container my-4 py-4">
-            <div className="row">
-                <div className="col-md-8 mx-auto text-center">
-                    <img src={OurCircle} className="signUpLogo img-fluid" alt="image1" />
-                    <TitleH1 title="Our Circle" subtitle="Always in the Loop" />
+        <Container className="my-4 py-4">
+            <Row>
+                <Col md={8} className="mx-auto text-center">
+                    <Image src={OurCircle} className="signUpLogo" fluid />
+                    <div className="m-4">
+                        <h1 className="text-3d">Our Circle</h1>
+                        <h4>Always in the Loop</h4>
+                    </div>
                     <Card1>
-                        <form onSubmit={e => props.onUserSubmit(e)}>
+                        <Form onSubmit={e => props.onUserSubmit(e)}>
                             <input
                                 className="form-control form-control-lg mt-2"
                                 name="email"
@@ -58,12 +60,12 @@ function Login(props) {
                                 value={user.password}
                                 onChange={e => props.handleUserInputChange(e)}
                             />
-                            <button onClick={() => <Main />} type="submit" className="btn btn-lg btn-block mb-4">LOGIN</button>
-                        </form>                    
+                            <button type="submit" className="btn btn-lg btn-block mb-4">LOGIN</button>
+                        </Form>
                     </Card1>
-                </div>
-            </div>
-        </div>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 
