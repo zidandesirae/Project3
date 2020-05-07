@@ -13,7 +13,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "bootstrap": "^4.4.1",
+=======
+    "dotenv": "^8.2.0",
+>>>>>>> 41e0c4214448525a2c5fa0e0d7ca176ac0a6f68d
     "express": "^4.17.1",
     "express-fileupload": "^1.1.7-alpha.3",
     "if-env": "^1.0.4",
