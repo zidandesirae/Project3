@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 
 // // Connect to the MySQL DB
 // User and password points for MSQL DB
-const sequelize = new Sequelize("test", "root", "root", {
+const sequelize = new Sequelize("test", "root", "", {
 	host: "localhost",
 	dialect: "mysql"
 });
@@ -10,7 +10,7 @@ const sequelize = new Sequelize("test", "root", "root", {
 const User = sequelize.import(__dirname + "/users");
 const Event = sequelize.import(__dirname + "/events");
 const Group = sequelize.import(__dirname + "/groups");
-const Photos = sequelize.import(__dirname + "/photos");
+// const Photos = sequelize.import(__dirname + "/photos");
 
 
 User.belongsToMany(Group, { through: 'User_Group' });
@@ -26,6 +26,7 @@ module.exports = {
     sequelize: sequelize,
     User: User,
     Event: Event,
-    Group: Group,
-    Photos: Photos
+    Group: Group
+    // ,
+    // Photos: Photos
 }

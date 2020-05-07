@@ -2,23 +2,6 @@ import React, { useState} from 'react';
 import API from '../../utils/API';
 
 function NCform(props) {
-    const [group, setGroup] = useState({
-        name: "",
-        cirlecode: ""
-    });
-
-    // const code = Math.floor(Math.random() * 9000000000) + 1000000000;
-
-    const handleInputChange = e => {
-        const { name, value } = e.target;
-        setGroup(prevGroup => ({ ...prevGroup, [name]: value }))
-    };
-
-    const onSubmit = e => {
-        e.preventDefault();
-        console.log(group);
-        API.saveGroup(group);
-    };
 
     return (
         <form onSubmit={e => onSubmit(e)}>
