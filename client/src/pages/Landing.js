@@ -1,23 +1,26 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import TitleH1 from "../components/Universal/TitleH1";
 import OurCircle from "../components/Images/OurCircleLogoMed.png";
+import { Container, Row, Col, Image } from 'react-bootstrap';
 
 function Landing(props) {
     return (
-        <div className="container my-4 py-4">
-            <div className="row">
-                <div className="col-md-10 mx-auto text-center">
-                    <img src={OurCircle} className="img-fluid" alt="image1" />
-                    <TitleH1 title="Our Circle" subtitle="Always in the Loop" />
-                </div>
-                <div className="col-md-5 mx-auto text-center">
+        <Container className="my-4 py-4">
+            <Row>
+                <Col md={8} className="mx-auto text-center">
+                    <Image src={OurCircle} fluid />
+                    <div className="m-4">
+                        <h1 className="text-3d">Our Circle</h1>
+                        <h4>Always in the Loop</h4>
+                    </div>
+                </Col>
+                <Col md={5} className="mx-auto text-center">
                     <Link to="/newcircle" type="button" className="btn btn-lg btn-block mb-4">Create a New Circle</Link>
                     <Link to="/existingcircle" type="button" className="btn btn-lg btn-block mb-4">Join an Existing Circle</Link>
                     <Link to="/login" type="button" className="btn btn-lg btn-block mb-4">Login</Link>
-                </div>
-            </div>
-        </div>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 

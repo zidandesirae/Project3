@@ -1,28 +1,59 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Note from './Note';
+import Titles from './Titles'
+import './Lists.css';
 
-function ListsPage() {
-    return (
-        <div className="card card1">
-            <div className="card-body card-body1">
-                <div className="row">
-                    <div className="col-4 list-container">
-                        <button type="button" className="btn">New List</button>
-                        <div className="card">
-                            <ul className="list-group">
-                            </ul>
-                        </div>
+const notesArray = [
+    { id: 1, heading: 'List 3', value: 'Create a new list!' },
+    { id: 2, heading: 'List 2', value: 'Create a new list!' },
+    { id: 3, heading: 'List 1', value: 'Create a new list!' }
+];
+
+class Lists extends Component {
+
+    state = {
+        currentNote: null,
+        notes: notesArray
+    }
+
+    changeCurrentNote = (note) => {
+        this.setState({ currentNote: note })
+    }
+
+    deletenote = (note) => {
+        this.setState((state) => ({ notes: state.notes.filter(noteIterator => (noteIterator.id !== note.id)) }))
+        this.setState({ currentNote: null })
+    }
+
+    saveNote = (note) => {
+        this.setState((state) => { state.notes.concat([note]) })
+        this.setState({ currentNote: note })
+
+    }
+
+    addNew = () => {
+        const note = { id: this.state.notes.length + 1, heading: '', value: '' }
+        this.setState((state) => ({ notes: state.notes.concat([note]) }))
+        this.setState({ currentNote: note })
+    }
+
+    render() {
+        this.state.notes.sort((a, b) => { return b.id - a.id })
+
+        return (
+            <div className="App">
+                <button className='add-note btn' onClick={this.addNew}>New List</button>
+                <div className='notes-wrapper row'>
+                    <div className='list-notes-top col-md-4 col-sm-12'>
+                        <Titles notes={this.state.notes} changeCurrentNote={this.changeCurrentNote} deletenote={this.deletenote} />
                     </div>
-                    <div className="col-8">
-                        <button type="button" className="btn mb-4">Save</button>
-                        <input className="note-title h4" placeholder="List Title" maxLength="28" type="text" />
-                        <textarea className="note-textarea" placeholder="List Text"></textarea>
+                    <div className='current-note col-md-8 col-sm-12'>
+                        {(this.state.currentNote !== null) && (<Note note={this.state.currentNote} savenote={this.saveNote} />)}
                     </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
-
-
-export default ListsPage;
+export default Lists;

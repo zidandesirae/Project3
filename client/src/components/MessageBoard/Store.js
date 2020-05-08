@@ -4,18 +4,25 @@ import io from 'socket.io-client';
 export const CTX = React.createContext();
 
 const initialState = {
-    general: [
-        {from: 'desi', msg: 'hello'}, 
-        {from: 'jc', msg: 'bye'}, 
-        {from: 'hunter', msg: 'hello1'}, 
-        {from: 'desi', msg: 'bye1'}, 
+    General: [
+        {from: 'Desi', msg: 'Hi Guys'}, 
+        {from: 'JC', msg: 'Whats up?'}, 
+        {from: 'Hunter', msg: 'Hello'}
     ],
-    topic2: [
-        {from: 'jc', msg: 'bye'}, 
-        {from: 'desi', msg: 'bye1'}, 
-        {from: 'hunter', msg: 'hello1'}, 
-        {from: 'desi', msg: 'hello'}, 
-    ]
+    Memes: [
+        {from: 'Desi', msg: 'HAHAHA'}, 
+        {from: 'JC', msg: 'That was a good one!'}, 
+        {from: 'Hunter', msg: 'So funny lol'}
+    ],
+    Topic1: [
+
+    ],
+    Topic2: [
+
+    ],
+    Topic3: [
+
+    ],
 }
 
 function reducer(state, action) {
@@ -53,7 +60,7 @@ function Store(props) {
         });
     }
 
-    const user = 'desi' + Math.random(100).toFixed(2);
+    const user = 'user' + Math.random(100).toFixed(2);
 
     return (
         <CTX.Provider value={{allChats, sendChatAction, user}}>

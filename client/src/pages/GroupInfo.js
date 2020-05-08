@@ -1,27 +1,25 @@
 import React from 'react';
-import Container2 from '../components/Universal/Container2';
-import Col10 from '../components/Universal/Col10';
-import TitleH2 from '../components/Universal/TitleH2';
 import Card1 from '../components/Universal/Card1';
-import GroupName from '../components/GroupInfo/GroupName';
-import GroupID from '../components/GroupInfo/GroupID';
-import MemberSegment from '../components/GroupInfo/MemberSegment';
-import NavBar from '../components/Universal/NavBar';
+import GroupSegment from '../components/NavItems/GroupSegment';
+import MemberSegment from '../components/NavItems/MemberSegment';
+import NavBar from '../components/NavItems/NavBar';
+import { Container, Col, Row } from 'react-bootstrap';
 
 function GroupInfo(props) {
     return (
         <div>
             <NavBar />
-            <Container2>
-                <Col10>
-                    <TitleH2 title="Group Information" />
-                    <Card1>
-                        <GroupName />
-                        <GroupID />
-                        <MemberSegment title="Group Members:" />
-                    </Card1>
-                </Col10>
-            </Container2>
+            <Container className="pb-4">
+                <Row className="mx-auto">
+                    <Col md={10} sm={12} className="mx-auto">
+                        <h2 className="text-center mb-4 text-3d">Group Information</h2>
+                        <Card1>
+                            <GroupSegment />
+                            <MemberSegment title="Group Members:" />
+                        </Card1>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 }
