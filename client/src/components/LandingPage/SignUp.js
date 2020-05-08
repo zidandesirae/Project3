@@ -51,7 +51,7 @@ function SignUp(props) {
                                 name="birthday"
                                 placeholder="Birthday (MM/DD)"
                             />
-                            <button type="submit" className="btn btn-lg btn-block mb-4">Create Account</button>
+                            <button onClick={() => props.onHomeClick()} type="submit" className="btn btn-lg btn-block mb-4">Create Account</button>
                         </Form>
                     </Card1>
                 </Col>

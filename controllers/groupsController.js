@@ -10,15 +10,16 @@ module.exports = {
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       },
-      findById: function(req, res) {
+      findOne: function(req, res) {
         db.Group
-        .find({
-            where: {name: req.params.name}
+        .findOne({
+            where: {id: req.params.id, name: req.params.name}
         })
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       },
       create: function(req, res) {
+        // await db.User.addProfile(Group, { through: "User_Group" });
         db.Group
           .create(req.body)
           .then(dbModel => res.json(dbModel))

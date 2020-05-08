@@ -1,19 +1,21 @@
-import React, { useState } from "react";
-import Card1 from '../components/Universal/Card1';
-import OurCircle from "../components/Images/OurCircleLogoMed.png";
+import React, { useState, useContext } from "react";
 import ECform from "../components/LandingPage/ECform";
-import API from '../utils/API';
 import Login from '../components/LandingPage/Login';
 import SignUp from '../components/LandingPage/SignUp';
+import Card1 from '../components/Universal/Card1';
+import OurCircle from "../components/Images/OurCircleLogoMed.png";
 import { Container, Row, Col, Image, FormLabel } from 'react-bootstrap';
+
+import API from '../utils/API';
+import { UserContext } from '../UserContext';
 
 function ExistingCircle(props) {
     const [renderLogin, setRenderLogin] = useState();
     const [renderSignUp, setRenderSignUp] = useState();
-    // Existing Group
+
     const [group, setGroup] = useState({
-        name: "",
-        id: ""
+        id: "",
+        name: ""
     });
     const [newUser, setNewUser] = useState({
         fullname: "",
@@ -21,13 +23,17 @@ function ExistingCircle(props) {
         password: "",
         phone: "",
         birthday: "",
+        groupId: ""
     });
     const [user, setUser] = useState({
         email: "",
-        password: ""
+        password: "",
+        groupId: ""
     });
 
-    // EXISTING GROUP
+    const { userContext, setUserContext } = useContext(UserContext);
+
+    // GROUP
     const handleGroupInputChange = e => {
         const { name, value } = e.target;
         setGroup(prevGroup => ({ ...prevGroup, [name]: value }))
@@ -35,7 +41,14 @@ function ExistingCircle(props) {
 
     const onGroupSubmit = e => {
         e.preventDefault();
-        console.log(group);
+        API.findGroup({ name: group.name, id: group.id })
+            .then(res => {
+                console.log(res)
+                setNewUser(data =>
+                    ({ ...data, groupId: res.data.id }))
+                // setUser(
+                // { ...newUser, groupId: res.data.id })
+            });
     };
 
     // SIGN UP
@@ -45,10 +58,12 @@ function ExistingCircle(props) {
     }
     const onNewUserSubmit = e => {
         e.preventDefault();
-        console.log(newUser);
-
-        API.saveNewUser(newUser);
-
+        API.saveUser(newUser)
+            .then(res => {
+                console.log(res)
+                setUserContext(res.data)
+                //Add Redirect to <Main />
+            });
     };
 
     // LOGIN
@@ -58,9 +73,14 @@ function ExistingCircle(props) {
     }
     const onUserSubmit = e => {
         e.preventDefault();
-        console.log(user);
-
+        API.loginUser({ email: user.email, password: user.password })
+            .then(res => {
+                console.log(res)
+                setUserContext(res.data)
+                //Add Redirect to <Main />
+            });
     };
+
     return (<>
         {!renderSignUp && !renderLogin &&
             <Container className="my-4 py-4">
@@ -74,7 +94,7 @@ function ExistingCircle(props) {
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={8} className="mx-auto">
+                    <Col md={10} className="mx-auto">
                         <Card1>
                             <ECform group={group} handleGroupInputChange={handleGroupInputChange} onGroupSubmit={onGroupSubmit} />
                             <hr className="my-4" style={{ borderTop: "2px solid black" }} />

@@ -22,10 +22,9 @@ const Group = sequelize.import(__dirname + "/groups");
 
 User.belongsToMany(Group, { through: 'User_Group' });
 Group.belongsToMany(User, { through: 'User_Group' });
-// User.hasMany(Group);
-// Group.hasMany(User);
 Group.hasMany(Event);
 Event.belongsTo(Group);
+// await User.addProfile(Group, { through: 'User_Group' });
 
 var dbReady = sequelize.sync();
 

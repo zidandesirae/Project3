@@ -17,6 +17,8 @@ router
 
 router
   .route("/login")
-  .post(passport.authenticate("local"), (req, res) => {req.user.password = undefined; res.json(req.user); console.log("Hi")});
+  .post(passport.authenticate("local"), (req, res) => {req.user.password = undefined; res.json(req.user);});
+
+
 module.exports = router;
 

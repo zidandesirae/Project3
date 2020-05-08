@@ -1,12 +1,14 @@
-import React, { useState } from "react";
-import Card1 from '../components/Universal/Card1';
-import OurCircle from "../components/Images/OurCircleLogoMed.png";
+import React, { useState, useContext } from "react";
 import NCform from '../components/LandingPage/NCform';
-import API from '../utils/API';
 import Login from '../components/LandingPage/Login';
 import SignUp from '../components/LandingPage/SignUp';
+import Card1 from '../components/Universal/Card1';
+import OurCircle from "../components/Images/OurCircleLogoMed.png";
 import { Container, Row, Col, Image, FormLabel } from 'react-bootstrap';
 
+import API from '../utils/API';
+import { UserContext } from '../UserContext';
+import { useHistory } from 'react-router-dom';
 
 function NewCircle(props) {
     const [renderLogin, setRenderLogin] = useState();
@@ -17,7 +19,6 @@ function NewCircle(props) {
     });
 
     const [newUser, setNewUser] = useState({
-        id: null,
         fullname: "",
         email: "",
         password: "",
@@ -27,12 +28,14 @@ function NewCircle(props) {
     });
 
     const [user, setUser] = useState({
-        id: null,
         email: "",
-        password: ""
+        password: "",
+        groupId: ""
     });
 
-    // NEW GROUP
+    const { userContext, setUserContext } = useContext(UserContext);
+    
+    // GROUP
     const handleGroupInputChange = e => {
         const { name, value } = e.target;
         setGroup(prevGroup => ({ ...prevGroup, [name]: value }))
@@ -41,20 +44,33 @@ function NewCircle(props) {
     const onGroupSubmit = e => {
         e.preventDefault();
         API.saveGroup(group)
-        .then(res => {console.log(res)
-        setNewUser({... newUser, groupId: res.data.id})});
+            .then(res => {
+                console.log(res)
+                setNewUser(data =>
+                    ({ ...data, groupId: res.data.id }))
+                // setUser(
+                //     {... user, groupId: res.data.id})
+            });
     };
 
     // SIGN UP
+    let history = useHistory();
+    const onHomeClick = () => {
+        history.push('/home');
+    }
+
     const handleNewUserInputChange = e => {
         const { name, value } = e.target;
         setNewUser(prevNewUser => ({ ...prevNewUser, [name]: value }))
     }
     const onNewUserSubmit = e => {
         e.preventDefault();
-        console.log(newUser);
         API.saveUser(newUser)
-        .then(res => console.log(res));
+            .then(res => {
+                console.log(res)
+                setUserContext(res.data)
+                //Add Redirect to <Main />
+            });
     };
 
     // LOGIN
@@ -64,9 +80,12 @@ function NewCircle(props) {
     }
     const onUserSubmit = e => {
         e.preventDefault();
-        console.log(user);
-        API.loginUser({email: user.email, password: user.password})
-        .then(res => console.log(res));
+        API.loginUser({ email: user.email, password: user.password })
+            .then(res => {
+                console.log(res)
+                setUserContext(res.data)
+                //Add Redirect to <Main />
+            });
     };
 
 
@@ -101,8 +120,8 @@ function NewCircle(props) {
                 </Row>
             </Container>
         }
-        {renderLogin && <Login user={user} handleUserInputChange={handleUserInputChange} onUserSubmit={onUserSubmit} />}
-        {renderSignUp && <SignUp newUser={newUser} handleNewUserInputChange={handleNewUserInputChange} onNewUserSubmit={onNewUserSubmit} />}
+        {renderLogin && <Login user={user} handleUserInputChange={handleUserInputChange} onUserSubmit={onUserSubmit} onHomeClick={onHomeClick}/>}
+        {renderSignUp && <SignUp newUser={newUser} handleNewUserInputChange={handleNewUserInputChange} onNewUserSubmit={onNewUserSubmit} onHomeClick={onHomeClick}/>}
     </>
     );
 }
