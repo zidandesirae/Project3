@@ -6,31 +6,31 @@ const userSeg = [
         id: 1,
         description: "Name:",
         // TABLE INSERT 
-        placeholder: "INSERT FROM TABLE"
+        placeholder: ""
     },
     {
         id: 2,
         description: "Email:",
         // TABLE INSERT 
-        placeholder: "INSERT FROM TABLE"
+        placeholder: ""
     },
     {
         id: 3,
         description: "Password:",
         // TABLE INSERT 
-        placeholder: "INSERT FROM TABLE"
+        placeholder: ""
     },
     {
         id: 4,
         description: "Phone Number:",
         // TABLE INSERT 
-        placeholder: "INSERT FROM TABLE"
+        placeholder: ""
     },
     {
         id: 5,
         description: "Birthday:",
         // TABLE INSERT 
-        placeholder: "INSERT FROM TABLE"
+        placeholder: ""
     }
 ];
 

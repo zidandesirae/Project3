@@ -8,33 +8,37 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+
 import { CTX } from './Store';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        margin: '50px',
-        padding: theme.spacing(3, 2),
+        // padding: theme.spacing(1),
     },
     flex: {
         display: 'flex',
         alignItems: 'center'
     },
     topicWindow: {
-        width: '30%',
+        width: '20%',
         height: '300px',
-        borderRight: '1px solid black'
     },
     chatWindow: {
-        width: '70%',
+        width: '80%',
         height: '300px',
         padding: '20px'
     },
     chatBox: {
-        width: '85%'
+        width: '80%'
     },
     button: {
-        width: '15%'
+        marginLeft: '20px',
+        width: '15%',
+        height: '56px'
     },
+    chip: {
+        margin: "10px 10px 10px 0px"
+    }
 }));
 
 function MessageBoardSetup() {
@@ -49,19 +53,14 @@ function MessageBoardSetup() {
     const [textValue, changeTextValue] = React.useState('');
 
     return (
-        <Paper className={classes.root} elevation={3}>
-            <Typography variant='h4' component='h4'>
-                Chat App
-                </Typography>
-            <Typography variant='h5' component='h5'>
-                {activeTopic}
-            </Typography>
+        <Paper className={classes.root} elevation={0}>
+            <h2 className="text-center">{activeTopic}</h2>
             <div className={classes.flex}>
                 <div className={classes.topicWindow}>
                     <List>
                         {
                             topics.map(topic => (
-                                <ListItem onClick={e => changeActiveTopic(e.target.innerText)} key={topic} button>
+                                <ListItem className="border border-body my-2 p-1 text-center"onClick={e => changeActiveTopic(e.target.innerText)} key={topic} button>
                                     <ListItemText primary={topic} />
                                 </ListItem>
                             ))
@@ -81,7 +80,9 @@ function MessageBoardSetup() {
             </div>
             <div className={classes.flex}>
                 <TextField
-                    label="Send a chat"
+                    id="outlined-basic"
+                    label="Send a Message"
+                    variant="outlined"
                     className={classes.chatBox}
                     value={textValue}
                     onChange={e => changeTextValue(e.target.value)}
@@ -97,7 +98,7 @@ function MessageBoardSetup() {
                     Send
                 </Button>
             </div>
-        </Paper>
+        </Paper >
     );
 }
 

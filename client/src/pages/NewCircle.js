@@ -7,6 +7,7 @@ import Login from '../components/LandingPage/Login';
 import SignUp from '../components/LandingPage/SignUp';
 import { Container, Row, Col, Image, FormLabel } from 'react-bootstrap';
 
+
 function NewCircle(props) {
     const [renderLogin, setRenderLogin] = useState();
     const [renderSignUp, setRenderSignUp] = useState();
@@ -34,6 +35,7 @@ function NewCircle(props) {
         e.preventDefault();
         console.log(group);
         API.saveGroup(group)
+            .then(res => console.log(res));
     };
 
     // SIGN UP
@@ -44,7 +46,8 @@ function NewCircle(props) {
     const onNewUserSubmit = e => {
         e.preventDefault();
         console.log(newUser);
-        API.saveUser(newUser)
+        API.saveUsers()
+            .then(res => console.log(res));
     };
 
     // LOGIN
@@ -55,6 +58,8 @@ function NewCircle(props) {
     const onUserSubmit = e => {
         e.preventDefault();
         console.log(user);
+        API.getUser(user, user)
+        .then(res => console.log(res));
 
     };
 

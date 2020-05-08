@@ -8,17 +8,17 @@ const memberInfo = [
     {
         id: 1,
         description: "Email:",
-        userData: "INSERT FROM TABLE"
+        userData: ""
     },
     {
         id: 2,
         description: "Phone:",
-        userData: "INSERT FROM TABLE"
+        userData: ""
     },
     {
         id: 3,
         description: "Birthday:",
-        userData: "INSERT FROM TABLE"
+        userData: ""
     }
 ];
 
