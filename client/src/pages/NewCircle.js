@@ -11,16 +11,24 @@ import { Container, Row, Col, Image, FormLabel } from 'react-bootstrap';
 function NewCircle(props) {
     const [renderLogin, setRenderLogin] = useState();
     const [renderSignUp, setRenderSignUp] = useState();
-    // New Group
-    const [group, setGroup] = useState({ name: "" });
+
+    const [group, setGroup] = useState({
+        id: null,
+        name: ""
+    });
+
     const [newUser, setNewUser] = useState({
+        id: null,
         fullname: "",
         email: "",
         password: "",
         phone: "",
         birthday: "",
+        groupId: ""
     });
+
     const [user, setUser] = useState({
+        id: null,
         email: "",
         password: ""
     });
@@ -33,9 +41,9 @@ function NewCircle(props) {
 
     const onGroupSubmit = e => {
         e.preventDefault();
-        console.log(group);
         API.saveGroup(group)
-            .then(res => console.log(res));
+        .then(res => console.log(res));
+        setNewUser({... newUser, groupId: res.data.id})
     };
 
     // SIGN UP
@@ -46,8 +54,8 @@ function NewCircle(props) {
     const onNewUserSubmit = e => {
         e.preventDefault();
         console.log(newUser);
-        API.saveUsers()
-            .then(res => console.log(res));
+        API.saveUser(newUser)
+        .then(res => console.log(res));
     };
 
     // LOGIN
@@ -58,9 +66,8 @@ function NewCircle(props) {
     const onUserSubmit = e => {
         e.preventDefault();
         console.log(user);
-        API.getUser(user, user)
+        API.getUser({email: user.email, password: user.password})
         .then(res => console.log(res));
-
     };
 
 

@@ -5,15 +5,15 @@ module.exports = {
     findAll: function(req, res) {
         db.Group
           .findAll({
-              attributes: ["name", "circlcode"]
+              attributes: ["name"]
           })
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       },
       findById: function(req, res) {
         db.Group
-        .findAll({
-            where: {name: req.params.name, circlecode: req.params.circlecode}
+        .find({
+            where: {name: req.params.name}
         })
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
