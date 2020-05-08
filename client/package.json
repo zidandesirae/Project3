@@ -4,9 +4,6 @@
   "description": "Family and group organization",
   "private": true,
   "proxy": "http://localhost:3001/",
-  "engines": {
-    "node": "12.13.x"
-  },
   "dependencies": {
     "@material-ui/core": "^4.9.13",
     "@testing-library/jest-dom": "^4.2.4",
@@ -15,10 +12,7 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "cloudinary-react": "^1.5.0",
-    "jquery": "^3.5.1",
     "moment": "^2.24.0",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.1.0",
     "node-sass": "^4.14.0",
     "react": "^16.13.1",
     "react-big-calendar": "^0.24.5",
@@ -26,7 +20,10 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+<<<<<<< HEAD
     "socket.io": "^2.3.0",
+=======
+>>>>>>> 24d7df06aa0fc7977543e5c57b19284ca1f1538d
     "socket.io-client": "^2.3.0"
   },
   "scripts": {

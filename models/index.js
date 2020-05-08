@@ -1,10 +1,11 @@
 const Sequelize = require("sequelize");
 // const config = require("../config/config.json");
+require ("dotenv").config();
 
 // // Connect to the MySQL DB
 // User and password points for MSQL DB
-const sequelize = new Sequelize("test", "root", "", {
-	host: "localhost",
+const sequelize = new Sequelize(process.env.JDATABASE, process.env.JUSERNAME, process.env.JPASSWORD, {
+	host: process.env.JHOST,
 	dialect: "mysql"
 });
 
