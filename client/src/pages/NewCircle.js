@@ -17,6 +17,7 @@ function NewCircle(props) {
     });
 
     const [newUser, setNewUser] = useState({
+        id: null,
         fullname: "",
         email: "",
         password: "",
@@ -26,6 +27,7 @@ function NewCircle(props) {
     });
 
     const [user, setUser] = useState({
+        id: null,
         email: "",
         password: ""
     });
