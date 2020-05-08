@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes, both API and view
-app.use(express.static("../../client/build"));
+// app.use(express.static("../client/build"));
 app.use('/static', express.static(path.join(__dirname, '../client/build/static')))
 
 app.use(fileUpload()); 
