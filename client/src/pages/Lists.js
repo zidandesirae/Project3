@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from '../components/NavItems/NavBar';
 import ListsPage from '../components/Lists/ListsPage';
-import './Lists.css';
+import Card1 from '../components/Universal/Card1';
 import { Container, Row, Col } from 'react-bootstrap';
 
 class Lists extends Component {
@@ -13,7 +13,9 @@ class Lists extends Component {
                     <Row className="mx-auto">
                         <Col md={10} sm={12} className="mx-auto">
                             <h2 className="text-center mb-4 text-3d">Lists</h2>
-                            <ListsPage />
+                            <Card1>
+                                <ListsPage />
+                            </Card1>
                         </Col>
                     </Row>
                 </Container>
@@ -23,3 +25,4 @@ class Lists extends Component {
 }
 
 export default Lists;
+
