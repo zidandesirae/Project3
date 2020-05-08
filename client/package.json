@@ -12,17 +12,14 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "cloudinary-react": "^1.5.0",
-    "jquery": "^3.5.1",
     "moment": "^2.24.0",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.1.0",
     "node-sass": "^4.14.0",
     "react": "^16.13.1",
     "react-big-calendar": "^0.24.5",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "socket.io": "^2.3.0"
+    "socket.io-client": "^2.3.0"
   },
   "scripts": {
     "start": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js start",
