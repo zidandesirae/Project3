@@ -32,8 +32,6 @@ app.post('/upload', (req, res) => {
 
   const file = req.files.file;
 
-  Photos.create(file);
-
   file.mv(`${__dirname}/client/public/uploads/${file.name}`, err => {
     if (err) {
       console.error(err);
