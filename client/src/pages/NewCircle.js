@@ -13,12 +13,10 @@ function NewCircle(props) {
     const [renderSignUp, setRenderSignUp] = useState();
 
     const [group, setGroup] = useState({
-        id: null,
         name: ""
     });
 
     const [newUser, setNewUser] = useState({
-        id: null,
         fullname: "",
         email: "",
         password: "",
@@ -28,7 +26,6 @@ function NewCircle(props) {
     });
 
     const [user, setUser] = useState({
-        id: null,
         email: "",
         password: ""
     });
@@ -42,8 +39,8 @@ function NewCircle(props) {
     const onGroupSubmit = e => {
         e.preventDefault();
         API.saveGroup(group)
-        .then(res => console.log(res));
-        setNewUser({... newUser, groupId: res.data.id})
+        .then(res => {console.log(res)
+        setNewUser({... newUser, groupId: res.data.id})});
     };
 
     // SIGN UP
@@ -66,7 +63,7 @@ function NewCircle(props) {
     const onUserSubmit = e => {
         e.preventDefault();
         console.log(user);
-        API.getUser({email: user.email, password: user.password})
+        API.loginUser({email: user.email, password: user.password})
         .then(res => console.log(res));
     };
 

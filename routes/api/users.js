@@ -1,3 +1,5 @@
+const passport = require('passport');
+
 const router = require("express").Router();
 const usersController = require("../../controllers/usersController");
 
@@ -13,5 +15,8 @@ router
   .put(usersController.update)
   .delete(usersController.remove);
 
+router
+  .route("/login")
+  .post(passport.authenticate("local"), (req, res) => {req.user.password = undefined; res.json(req.user); console.log("Hi")});
 module.exports = router;
 
