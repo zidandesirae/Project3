@@ -1,0 +1,50 @@
+.notes-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.list-notes-top{
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.current-note{
+  height: 100%;
+}
+
+.list-item-top{
+  border-bottom: 1px solid black;
+  text-align: left;
+}
+
+.list-item{
+  text-align: left;
+  display: inline-flex;
+  width: 70%;
+}
+
+.delete-note{
+  position: absolute;
+}
+
+.add-note, .delete-note{
+  float: right;
+}
+
+input[type='text']{
+  width: 90%;
+  border: none;
+  resize: none;
+  font-size: 25px;
+}
+
+textarea{
+  height: 350px;
+  width: 90%;
+  /* resize: none; */
+  scroll-behavior: auto;
+}
+

@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
-import Container2 from '../components/Universal/Container2';
-import TitleH2 from '../components/Universal/TitleH2';
-import Col10 from '../components/Universal/Col10';
-import NavBar from '../components/Universal/NavBar';
-
-import './Lists.css';
+import NavBar from '../components/NavItems/NavBar';
 import ListsPage from '../components/Lists/ListsPage';
+import Card1 from '../components/Universal/Card1';
+import { Container, Row, Col } from 'react-bootstrap';
 
 class Lists extends Component {
     render() {
         return (
             <div>
                 <NavBar />
-                <Container2>
-                    <Col10>
-                        <TitleH2 title="Lists" />
-                        <ListsPage />
-                    </Col10>
-                </Container2>
+                <Container className="pb-4">
+                    <Row className="mx-auto">
+                        <Col md={10} sm={12} className="mx-auto">
+                            <h2 className="text-center mb-4 text-3d">Lists</h2>
+                            <Card1>
+                                <ListsPage />
+                            </Card1>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
         );
     }
 }
 
 export default Lists;
+
