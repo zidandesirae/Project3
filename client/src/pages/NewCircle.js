@@ -11,16 +11,23 @@ import { Container, Row, Col, Image, FormLabel } from 'react-bootstrap';
 function NewCircle(props) {
     const [renderLogin, setRenderLogin] = useState();
     const [renderSignUp, setRenderSignUp] = useState();
-    // New Group
-    const [group, setGroup] = useState({ name: "" });
+
+    const [group, setGroup] = useState({
+        id: null,
+        name: ""
+    });
+
     const [newUser, setNewUser] = useState({
+        id: null,
         fullname: "",
         email: "",
         password: "",
         phone: "",
         birthday: "",
     });
+
     const [user, setUser] = useState({
+        id: null,
         email: "",
         password: ""
     });
@@ -33,9 +40,19 @@ function NewCircle(props) {
 
     const onGroupSubmit = e => {
         e.preventDefault();
-        console.log(group);
-        API.saveGroup(group)
-            .then(res => console.log(res));
+        const createGroup = () => {
+            var data = {
+                id: group.id,
+                name: group.name
+            };
+            API.saveGroup(data)
+            .then(res => {
+                setGroup({
+                    id: res.data.id,
+                    name: res.data.name
+                });
+            })
+        }; 
     };
 
     // SIGN UP
@@ -46,7 +63,7 @@ function NewCircle(props) {
     const onNewUserSubmit = e => {
         e.preventDefault();
         console.log(newUser);
-        API.saveUsers()
+        API.saveUser()
             .then(res => console.log(res));
     };
 
@@ -58,8 +75,8 @@ function NewCircle(props) {
     const onUserSubmit = e => {
         e.preventDefault();
         console.log(user);
-        API.getUser(user, user)
-        .then(res => console.log(res));
+        API.getUser(e)
+            .then(res => console.log(res));
 
     };
 
