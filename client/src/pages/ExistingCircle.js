@@ -8,6 +8,7 @@ import { Container, Row, Col, Image, FormLabel } from 'react-bootstrap';
 
 import API from '../utils/API';
 import { UserContext } from '../UserContext';
+import { useHistory } from 'react-router-dom';
 
 function ExistingCircle(props) {
     const [renderLogin, setRenderLogin] = useState();
@@ -46,12 +47,15 @@ function ExistingCircle(props) {
                 console.log(res)
                 setNewUser(data =>
                     ({ ...data, groupId: res.data.id }))
+                // NEED to add when we have the connection of many groups to user
                 // setUser(
                 // { ...newUser, groupId: res.data.id })
             });
     };
 
     // SIGN UP
+    let history = useHistory();
+
     const handleNewUserInputChange = e => {
         const { name, value } = e.target;
         setNewUser(prevNewUser => ({ ...prevNewUser, [name]: value }))
@@ -62,7 +66,7 @@ function ExistingCircle(props) {
             .then(res => {
                 console.log(res)
                 setUserContext(res.data)
-                //Add Redirect to <Main />
+                history.push('/home');
             });
     };
 
@@ -77,7 +81,7 @@ function ExistingCircle(props) {
             .then(res => {
                 console.log(res)
                 setUserContext(res.data)
-                //Add Redirect to <Main />
+                history.push('/home');
             });
     };
 

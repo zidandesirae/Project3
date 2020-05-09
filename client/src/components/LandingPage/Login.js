@@ -31,7 +31,7 @@ function Login(props) {
                                 value={props.user.password}
                                 onChange={e => props.handleUserInputChange(e)}
                             />
-                            <button onClick={() => props.onHomeClick()} type="submit" className="btn btn-lg btn-block mb-4">LOGIN</button>
+                            <button type="submit" className="btn btn-lg btn-block mb-4">LOGIN</button>
                         </Form>
                     </Card1>
                 </Col>

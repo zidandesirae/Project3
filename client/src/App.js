@@ -21,20 +21,20 @@ function App() {
   return (
     <Router>
       <UserContextProvider>
-        <Route exact path="/"><Landing /></Route>
+        <Route exact path="/" component={Landing} />
         <Switch>
-          <Route path="/home"><Main /></Route>
-          <Route path="/settings"><Settings /></Route>
-          <Route path="/groupinfo"><GroupInfo /></Route>
-          <Route path="/calendar"><CalendarShare /></Route>
-          <Route path="/messageboard"><MessageBoard /></Route>
-          <Route path="/lists"><Lists /></Route>
-          <Route path="/photoalbum"><PhotoAlbum /></Route>
-
-          <Route path="/signup"><SignUp /></Route>
-          <Route path="/login"><Login /></Route>
-          <Route path="/newcircle"><NewCircle /></Route>
-          <Route path="/existingcircle"><ExistingCircle /></Route>
+          <Route path="/home" component={Main} />
+          <Route path="/settings" component={Settings} />
+          <Route path="/groupinfo" component={GroupInfo} />
+          <Route path="/calendar" component={CalendarShare} />
+          <Route path="/messageboard" component={MessageBoard} />
+          <Route path="/lists" component={Lists} />
+          <Route path="/photoalbum" component={PhotoAlbum} />
+          
+          <Route path="/signup" component={SignUp} />
+          <Route path="/login" component={Login} />
+          <Route path="/newcircle" component={NewCircle} />
+          <Route path="/existingcircle" component={ExistingCircle} />
         </Switch>
       </UserContextProvider>
       <Footer />

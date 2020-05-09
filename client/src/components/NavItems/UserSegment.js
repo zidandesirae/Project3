@@ -1,40 +1,39 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Row, Col, Form } from 'react-bootstrap';
-
-const userSeg = [
-    {
-        id: 1,
-        description: "Name:",
-        // TABLE INSERT 
-        placeholder: ""
-    },
-    {
-        id: 2,
-        description: "Email:",
-        // TABLE INSERT 
-        placeholder: ""
-    },
-    {
-        id: 3,
-        description: "Password:",
-        // TABLE INSERT 
-        placeholder: ""
-    },
-    {
-        id: 4,
-        description: "Phone Number:",
-        // TABLE INSERT 
-        placeholder: ""
-    },
-    {
-        id: 5,
-        description: "Birthday:",
-        // TABLE INSERT 
-        placeholder: ""
-    }
-];
+import { UserContext } from '../../UserContext';
 
 function UserSegment(props) {
+
+    const { userContext } = useContext(UserContext);
+
+    const userSeg = [
+        {
+            id: 1,
+            description: "Name:",
+            placeholder: (userContext && userContext.fullname) || ""
+        },
+        {
+            id: 2,
+            description: "Email:",
+            placeholder: (userContext && userContext.email) || ""
+        },
+        {
+            id: 3,
+            description: "Password:",
+            placeholder: (userContext && userContext.password) || ""
+        },
+        {
+            id: 4,
+            description: "Phone Number:",
+            placeholder: (userContext && userContext.phone) || ""
+        },
+        {
+            id: 5,
+            description: "Birthday:",
+            placeholder: (userContext && userContext.birthday) || ""
+        }
+    ];
+
     return (
         <div>
             {userSeg.map(user => (

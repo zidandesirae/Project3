@@ -34,7 +34,7 @@ function NewCircle(props) {
     });
 
     const { userContext, setUserContext } = useContext(UserContext);
-    
+
     // GROUP
     const handleGroupInputChange = e => {
         const { name, value } = e.target;
@@ -48,16 +48,14 @@ function NewCircle(props) {
                 console.log(res)
                 setNewUser(data =>
                     ({ ...data, groupId: res.data.id }))
+                // NEED to add when we have the connection of many groups to user
                 // setUser(
-                //     {... user, groupId: res.data.id})
+                // {... user, groupId: res.data.id})
             });
     };
 
     // SIGN UP
     let history = useHistory();
-    const onHomeClick = () => {
-        history.push('/home');
-    }
 
     const handleNewUserInputChange = e => {
         const { name, value } = e.target;
@@ -69,7 +67,7 @@ function NewCircle(props) {
             .then(res => {
                 console.log(res)
                 setUserContext(res.data)
-                //Add Redirect to <Main />
+                history.push('/home');
             });
     };
 
@@ -84,7 +82,7 @@ function NewCircle(props) {
             .then(res => {
                 console.log(res)
                 setUserContext(res.data)
-                //Add Redirect to <Main />
+                history.push('/home');
             });
     };
 
@@ -120,8 +118,8 @@ function NewCircle(props) {
                 </Row>
             </Container>
         }
-        {renderLogin && <Login user={user} handleUserInputChange={handleUserInputChange} onUserSubmit={onUserSubmit} onHomeClick={onHomeClick}/>}
-        {renderSignUp && <SignUp newUser={newUser} handleNewUserInputChange={handleNewUserInputChange} onNewUserSubmit={onNewUserSubmit} onHomeClick={onHomeClick}/>}
+        {renderLogin && <Login user={user} handleUserInputChange={handleUserInputChange} onUserSubmit={onUserSubmit} />}
+        {renderSignUp && <SignUp newUser={newUser} handleNewUserInputChange={handleNewUserInputChange} onNewUserSubmit={onNewUserSubmit} />}
     </>
     );
 }
