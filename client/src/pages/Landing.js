@@ -16,8 +16,8 @@ function Landing(props) {
                 </Col>
                 <Col md={5} className="mx-auto text-center">
                     <Link to="/newcircle" type="button" className="btn btn-lg btn-block mb-4">Create a New Circle</Link>
-                    <Link to="/existingcircle" type="button" className="btn btn-lg btn-block mb-4">Join an Existing Circle</Link>
-                    <Link to="/login" type="button" className="btn btn-lg btn-block mb-4">Login</Link>
+                    <Link to="/existingcircle" type="button" className="btn btn-lg btn-block mb-4">Enter a Circle Code or Login</Link>
+                    {/* <Link to="/login" type="button" className="btn btn-lg btn-block mb-4">Login</Link> */}
                 </Col>
             </Row>
         </Container>

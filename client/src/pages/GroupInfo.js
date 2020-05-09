@@ -6,6 +6,7 @@ import NavBar from '../components/NavItems/NavBar';
 import { Container, Col, Row } from 'react-bootstrap';
 
 function GroupInfo(props) {
+
     return (
         <div>
             <NavBar />
@@ -15,7 +16,7 @@ function GroupInfo(props) {
                         <h2 className="text-center mb-4 text-3d">Group Information</h2>
                         <Card1>
                             <GroupSegment />
-                            <MemberSegment title="Group Members:" />
+                            <MemberSegment />
                         </Card1>
                     </Col>
                 </Row>

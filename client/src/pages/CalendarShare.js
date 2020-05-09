@@ -36,10 +36,12 @@ class CalendarShare extends Component {
             //TODO: when group is figured out, add groupId to post info (and make sure it shouws in db)
             axios.post("/api/events", { start: start, end: end, name: title, description: description}).then(
                 (res) => {
+                    var id = res.data.id;
                     this.setState({
                         events: [
                             ...this.state.events,
                             {
+                                id: id,
                                 start,
                                 end,
                                 title,
