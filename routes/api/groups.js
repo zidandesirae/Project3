@@ -9,8 +9,13 @@ router.route("/")
 // Matches with "/api/groups/:id"
 router
   .route("/:id")
-  .get(groupsController.findById)
+  .get(groupsController.findOne)
   .put(groupsController.update)
   .delete(groupsController.remove);
 
+router
+  .route("/:id/:name")
+  .get(groupsController.findOne);
+
+  
 module.exports = router;

@@ -24,7 +24,8 @@ module.exports = (sequelize, DataTypes) => {
         birthday: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
+        groupId: DataTypes.INTEGER
     },
     { sequelize, modelName: 'user' });
 

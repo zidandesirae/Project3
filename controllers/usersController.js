@@ -12,8 +12,8 @@ module.exports = {
   },
   findById: function(req, res) {
     db.User
-    .findAll({
-        attributes: {exclude: ['password'] },
+    .find({
+        // attributes: {exclude: ['password'] },
         where: {id: req.params.id}
     })
       .then(dbModel => res.json(dbModel))

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Family and group organization",
   "private": true,
-  "proxy": "http://localhost:3001/",
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@material-ui/core": "^4.9.13",
     "@testing-library/jest-dom": "^4.2.4",
@@ -20,10 +20,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-<<<<<<< HEAD
     "socket.io": "^2.3.0",
-=======
->>>>>>> 24d7df06aa0fc7977543e5c57b19284ca1f1538d
     "socket.io-client": "^2.3.0"
   },
   "scripts": {

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
 const navbtns = [
     {
         id: 1,
@@ -26,7 +26,7 @@ const navbtns = [
 function NavBtns(props) {
     return (
         navbtns.map(btn => (
-            <a className="nav-item nav-link" href={btn.route} key={btn.id}>{btn.title}</a>
+            <Link to={btn.route} className="nav-item nav-link"  key={btn.id}>{btn.title} </Link>
         ))
     );
 }

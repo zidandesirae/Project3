@@ -5,6 +5,8 @@ import NavBar from '../components/NavItems/NavBar';
 import { Container, Row, Col } from 'react-bootstrap';
 
 function Settings(props) {
+
+
     return (
         <div>
             <NavBar />
