@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Row, Col } from 'react-bootstrap';
+import { GroupContext } from '../../GroupContext';
+import API from '../../utils/API';
+
 function GroupName(props) {
+
+    const { groupContext } = useContext(GroupContext);
+
     return (
         <div>
             <Row>
@@ -9,7 +15,7 @@ function GroupName(props) {
                 </Col>
                 <Col>
                     {/* TABLE INSERT  */}
-                    <h5>INSERT FROM TABLE</h5>
+                    <h5>{(groupContext && groupContext.name) || ""}</h5>
                 </Col>
             </Row>
             <hr className="my-2" />
@@ -19,7 +25,7 @@ function GroupName(props) {
                 </Col>
                 <Col>
                     {/* TABLE INSERT  */}
-                    <h5>INSERT FROM TABLE</h5>
+                    <h5>{(groupContext && groupContext.id) || ""}</h5>
                 </Col>
             </Row>
             <hr className="my-2" />

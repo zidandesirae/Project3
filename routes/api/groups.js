@@ -17,5 +17,5 @@ router
   .route("/:id/:name")
   .get(groupsController.findOne);
 
-  
+
 module.exports = router;
