@@ -4,9 +4,9 @@ import Titles from './Titles'
 import './Lists.css';
 
 const notesArray = [
-    { id: 1, heading: 'List 3', value: 'Create a new list!' },
-    { id: 2, heading: 'List 2', value: 'Create a new list!' },
-    { id: 3, heading: 'List 1', value: 'Create a new list!' }
+    { id: 1, heading: 'To-Do List', value: 'Create a new list!' },
+    { id: 2, heading: 'Grocery List', value: 'Create a new list!' },
+    { id: 3, heading: 'General', value: 'Create a new list!' }
 ];
 
 class Lists extends Component {
