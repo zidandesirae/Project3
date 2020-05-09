@@ -5,8 +5,9 @@ const fileUpload = require('express-fileupload');
 const path = require("path");
 const db = require("./models");
 const routes = require("./routes/index");
+const passport = require("./middleware/index");
+const session = require("express-session");
 //const Photos = require("./models/photos");
-console.log(routes);
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -18,10 +19,14 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes, both API and view
-// app.use(express.static("../client/build"));
-app.use('/static', express.static(path.join(__dirname, '../client/build/static')))
+app.use(express.static("public"));
 
 app.use(fileUpload()); 
+
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 //Upload Endpoint 
 app.post('/upload', (req, res) => {
@@ -29,9 +34,11 @@ app.post('/upload', (req, res) => {
   if(req.files === null) {
     return res.status(400).json({msg: 'No file uploaded'});
   }
-
+  
   const file = req.files.file;
-
+  
+  Photos.create(file);
+  
   file.mv(`${__dirname}/client/public/uploads/${file.name}`, err => {
     if (err) {
       console.error(err);

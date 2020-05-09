@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Card1 from '../components/Universal/Card1';
 import NavBar from '../components/NavItems/NavBar';
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
+// import { UserContext } from '../../UserContext';
 
-const eachSeg = [
+function Main(props) {
+
+    const eachSeg = [
     {
         id: 1,
         route: '/calendar',
@@ -35,7 +38,6 @@ const eachSeg = [
 ];
 
 
-function Main(props) {
     return (
         <div>
             <NavBar />

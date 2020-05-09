@@ -1,38 +1,41 @@
-import React, { useState } from "react";
-import Card1 from '../components/Universal/Card1';
-import OurCircle from "../components/Images/OurCircleLogoMed.png";
+import React, { useState, useContext } from "react";
 import NCform from '../components/LandingPage/NCform';
-import API from '../utils/API';
 import Login from '../components/LandingPage/Login';
 import SignUp from '../components/LandingPage/SignUp';
+import Card1 from '../components/Universal/Card1';
+import OurCircle from "../components/Images/OurCircleLogoMed.png";
 import { Container, Row, Col, Image, FormLabel } from 'react-bootstrap';
 
+import API from '../utils/API';
+import { UserContext } from '../UserContext';
+import { useHistory } from 'react-router-dom';
 
 function NewCircle(props) {
     const [renderLogin, setRenderLogin] = useState();
     const [renderSignUp, setRenderSignUp] = useState();
 
     const [group, setGroup] = useState({
-        id: null,
         name: ""
     });
 
     const [newUser, setNewUser] = useState({
-        id: null,
         fullname: "",
         email: "",
         password: "",
         phone: "",
         birthday: "",
+        groupId: ""
     });
 
     const [user, setUser] = useState({
-        id: null,
         email: "",
-        password: ""
+        password: "",
+        groupId: ""
     });
 
-    // NEW GROUP
+    const { userContext, setUserContext } = useContext(UserContext);
+
+    // GROUP
     const handleGroupInputChange = e => {
         const { name, value } = e.target;
         setGroup(prevGroup => ({ ...prevGroup, [name]: value }))
@@ -40,31 +43,32 @@ function NewCircle(props) {
 
     const onGroupSubmit = e => {
         e.preventDefault();
-        const createGroup = () => {
-            var data = {
-                id: group.id,
-                name: group.name
-            };
-            API.saveGroup(data)
+        API.saveGroup(group)
             .then(res => {
-                setGroup({
-                    id: res.data.id,
-                    name: res.data.name
-                });
-            })
-        }; 
+                console.log(res)
+                setNewUser(data =>
+                    ({ ...data, groupId: res.data.id }))
+                // NEED to add when we have the connection of many groups to user
+                // setUser(
+                // {... user, groupId: res.data.id})
+            });
     };
 
     // SIGN UP
+    let history = useHistory();
+
     const handleNewUserInputChange = e => {
         const { name, value } = e.target;
         setNewUser(prevNewUser => ({ ...prevNewUser, [name]: value }))
     }
     const onNewUserSubmit = e => {
         e.preventDefault();
-        console.log(newUser);
-        API.saveUsers()
-            .then(res => console.log(res));
+        API.saveUser(newUser)
+            .then(res => {
+                console.log(res)
+                setUserContext(res.data)
+                history.push('/home');
+            });
     };
 
     // LOGIN
@@ -74,10 +78,12 @@ function NewCircle(props) {
     }
     const onUserSubmit = e => {
         e.preventDefault();
-        console.log(user);
-        API.getUser(e)
-            .then(res => console.log(res));
-
+        API.loginUser({ email: user.email, password: user.password })
+            .then(res => {
+                console.log(res)
+                setUserContext(res.data)
+                history.push('/home');
+            });
     };
 
 

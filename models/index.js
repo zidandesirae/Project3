@@ -9,6 +9,11 @@ const sequelize = new Sequelize(process.env.JDATABASE, process.env.JUSERNAME, pr
 	dialect: "mysql"
 });
 
+// const sequelize = new Sequelize("test", "root", "", {
+//     host: "localhost",
+//     dialect: "mysql"
+// });
+
 const User = sequelize.import(__dirname + "/users");
 const Event = sequelize.import(__dirname + "/events");
 const Group = sequelize.import(__dirname + "/groups");
@@ -17,10 +22,9 @@ const Group = sequelize.import(__dirname + "/groups");
 
 User.belongsToMany(Group, { through: 'User_Group' });
 Group.belongsToMany(User, { through: 'User_Group' });
-// User.hasMany(Group);
-// Group.hasMany(User);
 Group.hasMany(Event);
 Event.belongsTo(Group);
+// await User.addProfile(Group, { through: 'User_Group' });
 
 var dbReady = sequelize.sync();
 

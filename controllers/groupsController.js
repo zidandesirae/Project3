@@ -5,20 +5,21 @@ module.exports = {
     findAll: function(req, res) {
         db.Group
           .findAll({
-              attributes: ["name", "circlcode"]
+              attributes: ["name"]
           })
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       },
-      findById: function(req, res) {
+      findOne: function(req, res) {
         db.Group
-        .findAll({
-            where: {name: req.params.name, circlecode: req.params.circlecode}
+        .findOne({
+            where: {id: req.params.id, name: req.params.name}
         })
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       },
       create: function(req, res) {
+        // await db.User.addProfile(Group, { through: "User_Group" });
         db.Group
           .create(req.body)
           .then(dbModel => res.json(dbModel))
