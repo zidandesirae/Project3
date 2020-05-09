@@ -8,6 +8,7 @@ import { Container, Row, Col, Image, FormLabel } from 'react-bootstrap';
 
 import API from '../utils/API';
 import { UserContext } from '../UserContext';
+import { GroupContext } from '../GroupContext';
 import { useHistory } from 'react-router-dom';
 
 function ExistingCircle(props) {
@@ -33,6 +34,7 @@ function ExistingCircle(props) {
     });
 
     const { userContext, setUserContext } = useContext(UserContext);
+    const { groupContext, setGroupContext } = useContext(GroupContext);
 
     // GROUP
     const handleGroupInputChange = e => {
@@ -45,6 +47,7 @@ function ExistingCircle(props) {
         API.findGroup({ name: group.name, id: group.id })
             .then(res => {
                 console.log(res)
+                setGroupContext(res.data)
                 setNewUser(data =>
                     ({ ...data, groupId: res.data.id }))
                 // NEED to add when we have the connection of many groups to user

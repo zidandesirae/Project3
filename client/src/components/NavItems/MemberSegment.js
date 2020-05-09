@@ -1,53 +1,69 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Row, Col } from 'react-bootstrap';
-
-// TABLE INSERT 
-// const members = [];
-
-const memberInfo = [
-    {
-        id: 1,
-        description: "Email:",
-        userData: ""
-    },
-    {
-        id: 2,
-        description: "Phone:",
-        userData: ""
-    },
-    {
-        id: 3,
-        description: "Birthday:",
-        userData: ""
-    }
-];
+import { UserContext } from '../../UserContext';
+import API from "../../utils/API";
 
 function MemberSegment(props) {
+    const { userContext } = useContext(UserContext);
+
+    // const [members, setMembers] = useState({
+    //     fullname: "",
+    //     email: "",
+    //     phone: "",
+    //     birthday: "",
+    //     groupId: ""
+    // });
+
+    const groupId = userContext.groupId
+    let members = [];
+
+    const findMembers = groupId => {
+        API.findAllMembers({ groupId: userContext.groupId })
+            .then(res => {
+                members(res.data)
+                console.log(res.data);
+            });
+    }
+
+
     return (
         <Row>
             <Col>
-                <h5>{props.title}</h5>
+                <h5>Group Members:</h5>
                 {/* {members.map(member => ( */}
-                    <div className="card">
-                        <div className="card-body border">
-                            <Row>
-                                <Col>
-                                    {/* TABLE INSERT OF ALL MEMEBERS  */}
-                                    <h5>INSERT NAME FROM TABLE</h5>
-                                </Col>
-                            </Row>
-                            {memberInfo.map(info => (
-                                <Row key={info.id}>
-                                    <Col>
-                                        <h5>{info.description}</h5>
-                                    </Col>
-                                    <Col>
-                                        <h5>{info.userData}</h5>
-                                    </Col>
-                                </Row>
-                            ))}
-                        </div>
+                <div className="card">
+                    <div className="card-body border">
+                        <Row>
+                            <Col>
+                                {/* <h5>{member.fullname}</h5> */}
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <h5>Email:</h5>
+                            </Col>
+                            <Col>
+                                <h5>ENTER EMAIL</h5>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <h5>Phone Number:</h5>
+                            </Col>
+                            <Col>
+                                <h5>ENTER PHONE</h5>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <h5>Birthday:</h5>
+                            </Col>
+                            <Col>
+                                <h5>ENTER BIRTHDAY</h5>
+                            </Col>
+                        </Row>
                     </div>
+                </div>
                 {/* ))} */}
             </Col>
         </Row>

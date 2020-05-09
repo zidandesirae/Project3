@@ -8,6 +8,11 @@ router.route("/")
   .get(usersController.findAll)
   .post(usersController.create);
 
+router
+  .route("/:groupId")
+  .get(usersController.findAllMembers);
+
+
 // Matches with "/api/users/:id"
 router
   .route("/:id")
@@ -17,7 +22,7 @@ router
 
 router
   .route("/login")
-  .post(passport.authenticate("local"), (req, res) => {req.user.password = undefined; res.json(req.user);});
+  .post(passport.authenticate("local"), (req, res) => { req.user.password = undefined; res.json(req.user); });
 
 
 module.exports = router;

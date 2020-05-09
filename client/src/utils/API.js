@@ -20,6 +20,10 @@ export default {
         return axios.get(`/api/groups/${id.id}/${id.name}`)
     },
 
+    //Find members by groupId
+    findAllMembers: function(groupId) {
+        return axios.get(`/api/groups/${groupId.groupId}`)
+    },
 
 
     // Create Event
