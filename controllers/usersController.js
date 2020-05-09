@@ -10,6 +10,14 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findAllMembers: function(req, res) {
+    db.User
+      .findAll({
+          where: {groupId: req.params.groupId }
+      })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   findById: function(req, res) {
     db.User
     .find({

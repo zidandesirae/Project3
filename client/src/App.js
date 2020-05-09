@@ -15,11 +15,13 @@ import MessageBoard from './pages/MessageBoard';
 import Lists from './pages/Lists';
 import PhotoAlbum from './pages/PhotoAlbum';
 import { UserContextProvider } from './UserContext';
+import { GroupContextProvider } from './GroupContext';
 
 
 function App() {
   return (
     <Router>
+      <GroupContextProvider>
       <UserContextProvider>
         <Route exact path="/" component={Landing} />
         <Switch>
@@ -37,6 +39,7 @@ function App() {
           <Route path="/existingcircle" component={ExistingCircle} />
         </Switch>
       </UserContextProvider>
+      </GroupContextProvider>
       <Footer />
     </Router>
   );
