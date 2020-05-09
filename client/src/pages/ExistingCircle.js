@@ -104,15 +104,16 @@ function ExistingCircle(props) {
                     <Col md={10} className="mx-auto">
                         <Card1>
                             <ECform group={group} handleGroupInputChange={handleGroupInputChange} onGroupSubmit={onGroupSubmit} />
+                            <button onClick={() => setRenderSignUp(true)} type="button" className="btn btn-lg btn-block mb-4">SIGN UP</button>
                             <hr className="my-4" style={{ borderTop: "2px solid black" }} />
-                            <FormLabel className="text-left h5 pt-4 pb-2">Select an Option to Join Your New Circle:</FormLabel>
+                            <FormLabel className="text-left h5 pt-4 pb-2">Returning User? Login Now!</FormLabel>
                             <Row className="mx-auto">
                                 <Col>
                                     <button onClick={() => setRenderLogin(true)} type="button" className="btn btn-lg btn-block mb-4">LOGIN</button>
                                 </Col>
-                                <Col>
+                                {/* <Col>
                                     <button onClick={() => setRenderSignUp(true)} type="button" className="btn btn-lg btn-block mb-4">SIGN UP</button>
-                                </Col>
+                                </Col> */}
                             </Row>
                         </Card1>
                     </Col>
