@@ -4,6 +4,8 @@ Our Circle is an app designed for families, friends, and even colleagues to crea
 
 Landing Page:
 
+![Landing Page](https://github.com/zidandesirae/Project3/blob/master/readme-images/Our-Circle-Screenshot.png)
+
 Create an New Circle or Sign Up:
 
 Sign Up:
