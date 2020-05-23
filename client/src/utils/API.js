@@ -9,15 +9,18 @@ export default {
     postGroup: function (groupData) {
         return axios.post("/api/groups", groupData);
     },
-
-
+    
     // Looks up User in table and then matches to account to login 
     loginUser: function (id) {
         return axios.post("/api/users/login", id);
     },
-    // Find(GET) group based on name and id
-    getGroup: function (id) {
+    // Find(GET) group by on name and id
+    getExistingGroup: function (id) {
         return axios.get(`/api/groups/${id.id}/${id.name}`)
+    },
+    //Find(GET) group by ID
+    findGroup: function (id) {
+        return axios.get(`/api/groups/${id.id}`)
     },
 
     // //Find members by groupId
@@ -29,5 +32,5 @@ export default {
     // Create Event
     saveEvent: function (eventData) {
         return axios.post("/api/events", eventData);
-    },
+    }
 }

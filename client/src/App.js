@@ -5,6 +5,7 @@ import NewCircle from './pages/Landing/NewCircle';
 import ExistingCircle from './pages/Landing/ExistingCircle';
 import Login from './pages/Landing/Login';
 import SignUp from './pages/Landing/SignUp';
+import SignUpForm from './pages/Landing/SignUpForm';
 import Settings from "./pages/Navbar/Settings";
 import GroupInfo from './pages/Navbar/GroupInfo';
 import Home from './pages/Home';
@@ -17,29 +18,33 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { UserContextProvider } from './utils/UserContext';
 import { GroupContextProvider } from './utils/GroupContext';
+import { MembersContextProvider } from './utils/MembersContext';
 
 
 function App() {
   return (
     <Router>
-      <UserContextProvider>
       <GroupContextProvider>
-        <Route exact path="/" component={Landing} />
-        <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/newcircle" component={NewCircle} />
-          <Route path="/existingcircle" component={ExistingCircle} />
-          <Route path="/home" component={Home} />
-          <Route path="/settings" component={Settings} />
-          <Route path="/groupinfo" component={GroupInfo} />
-          <Route path="/calendar" component={CalendarShare} />
-          <Route path="/messageboard" component={MessageBoard} />
-          <Route path="/lists" component={Lists} />
-          <Route path="/photos" component={Photos} />
-        </Switch>
+        <UserContextProvider>
+          <MembersContextProvider>
+            <Route exact path="/" component={Landing} />
+            <Switch>
+              <Route path="/login" component={Login} />
+              <Route path="/signup" component={SignUp} />
+              <Route path="/newcircle" component={NewCircle} />
+              <Route path="/existingcircle" component={ExistingCircle} />
+              <Route path="/signupform" component={SignUpForm} />
+              <Route path="/home" component={Home} />
+              <Route path="/settings" component={Settings} />
+              <Route path="/groupinfo" component={GroupInfo} />
+              <Route path="/calendar" component={CalendarShare} />
+              <Route path="/messageboard" component={MessageBoard} />
+              <Route path="/lists" component={Lists} />
+              <Route path="/photos" component={Photos} />
+            </Switch>
+          </MembersContextProvider>
+        </UserContextProvider>
       </GroupContextProvider>
-      </UserContextProvider>
       <Footer />
     </Router>
   );

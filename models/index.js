@@ -20,11 +20,20 @@ const Group = sequelize.import(__dirname + "/groups");
 //const Photos = sequelize.import(__dirname + "/photos");
 
 
-User.belongsToMany(Group, { through: 'User_Group' });
-Group.belongsToMany(User, { through: 'User_Group' });
+// User.belongsToMany(Group, { through: 'User_Group' });
+// Group.belongsToMany(User, { through: 'User_Group' });
+Group.belongsToMany(User, {
+    through: "User_Group",
+    as: "users",
+    foreignKey: "group_id",
+});
+User.belongsToMany(Group, {
+    through: "User_Group",
+    as: "groups",
+    foreignKey: "user_id",
+});
 Group.hasMany(Event);
 Event.belongsTo(Group);
-// await User.addProfile(Group, { through: 'User_Group' });
 
 var dbReady = sequelize.sync();
 
