@@ -3,10 +3,6 @@ body {
   color: #212529
 }
 
-.heading-text {
-  color: rgb(0, 0, 0)
-}
-
 .logo {
   width: 56px;
 }
@@ -27,10 +23,8 @@ body {
   padding: 5px;
   box-shadow: 5px 5px 5px rgb(0, 0, 0), 10px 10px 8px rgb(255, 33, 33), 15px 15px 8px rgb(124, 251, 255);
   border-radius: 1rem;
-  /* background-repeat: no-repeat; */
-  /* border-left: 3px solid rgb(0, 0, 0); */
-  /* border-right: 3px solid rgb(47, 255, 245); */
 }
+
 .card-body1 {
   border-radius: .75rem;
   background-color: white;
@@ -44,12 +38,7 @@ body {
   background-color: #212529;
   color: white;
 }
-.signupLink {
-  color: black;
-}
-.signupLink:hover {
-  color: black;
-}
+
 .form-control {
   border: 2px solid #212529;
 }
@@ -58,7 +47,6 @@ body {
   min-height: 100vh
 }
 
-/* @import url('https://fonts.googleapis.com/css?family=Roboto:700'); */
 
 .bodyTextScroll {
   margin:0px;
@@ -121,7 +109,6 @@ body {
   position: static;
   top:50%;
   left:50%;
-  /* transform: translate(-50% ,-50%); */
   text-shadow:
     0 1px 0 rgb(190,190,190),
     0 2px 0 rgb(185,185,185),
@@ -164,7 +151,6 @@ body {
     position: static;
     top:50%;
     left:50%;
-    /* transform: translate(-50% ,-50%); */
     text-shadow:
       0 1px 0 rgb(160,160,160),
       0 2px 0 rgb(155,155,155),
@@ -199,5 +185,3 @@ body {
       0 20px 15px rgb(0, 247, 255);
     transition: all 1s ease-in-out;
   }
-
-
