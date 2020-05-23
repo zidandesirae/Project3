@@ -5,8 +5,12 @@ import { Col } from 'react-bootstrap';
 
 function Landing(props) {
     return (
-        <LandingContainer title="Our Circle" subtitle="Always in the Loop">
-            <Col md={8} className="mx-auto text-center">
+        <LandingContainer 
+            title="Our Circle" 
+            subtitle="Always in the Loop" 
+            className="signUpLogo"
+        >
+            <Col md={7} className="mx-auto text-center">
                 <Link 
                     to="/signup" 
                     type="button" 

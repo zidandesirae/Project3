@@ -3,19 +3,19 @@ const groupsController = require("../../controllers/groupsController");
 
 // Matches with "/api/groups"
 router.route("/")
-  .get(groupsController.findAll)
+  // .get(groupsController.findAll)
   .post(groupsController.create);
 
 // Matches with "/api/groups/:id"
 router
   .route("/:id")
   .get(groupsController.findOne)
-  .put(groupsController.update)
-  .delete(groupsController.remove);
+  // .put(groupsController.update)
+  // .delete(groupsController.remove);
 
 router
   .route("/:id/:name")
-  .get(groupsController.findOne);
+  .get(groupsController.findAll);
 
 
 module.exports = router;

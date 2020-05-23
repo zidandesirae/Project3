@@ -5,11 +5,10 @@ import { GroupContext } from '../../utils/GroupContext';
 import API from '../../utils/API';
 import LandingContainer from '../../components/Landing/LandingContainer';
 import LoginForm from "../../components/Landing/LoginForm";
-import Card1 from '../../components/General/Card1';
+import { Col } from 'react-bootstrap';
 
 
 function Login(props) {
-
     const { userContext, setUserContext } = useContext(UserContext);
     const { groupContext, setGroupContext } = useContext(GroupContext);
 
@@ -32,8 +31,11 @@ function Login(props) {
             .then(res => {
                 console.log(res)
                 setUserContext(res.data)
-                //API call here groupId(UT) = id(GT) and get the group name
-                //Set the GroupContext equal to the above info
+                API.findGroup({id: res.data.groupId})
+                .then(res => {
+                    console.log(res.data)
+                    setGroupContext({id: res.data.id, name:res.data.name})
+                });
                 history.push('/home');
             });
     };
@@ -44,13 +46,13 @@ function Login(props) {
             subtitle="Always in the Loop" 
             className="signUpLogo"
         >
-            <Card1>
+            <Col md={7} className="mx-auto">
                 <LoginForm 
                     user={user} 
                     handleUserInputChange={handleUserInputChange} 
                     onUserSubmit={onUserSubmit}
                 />
-            </Card1>
+            </Col>
         </LandingContainer>
     );
 }
