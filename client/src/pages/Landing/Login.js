@@ -27,11 +27,11 @@ function Login(props) {
 
     const onUserSubmit = e => {
         e.preventDefault();
-        API.loginUser({ email: user.email, password: user.password })
+        API.postUserLogin({ email: user.email, password: user.password })
             .then(res => {
                 console.log(res)
                 setUserContext(res.data)
-                API.findGroup({id: res.data.groupId})
+                API.getGroupById({id: res.data.groupId})
                 .then(res => {
                     console.log(res.data)
                     setGroupContext({id: res.data.id, name:res.data.name})

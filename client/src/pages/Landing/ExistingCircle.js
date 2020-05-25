@@ -1,24 +1,15 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from 'react-router-dom';
-import { UserContext } from '../../utils/UserContext';
 import { GroupContext } from '../../utils/GroupContext';
 import API from '../../utils/API';
 import LandingContainer from '../../components/Landing/LandingContainer';
-// import SignUpForm from "./SignUpForm";
 import { Form, Col } from 'react-bootstrap';
 
 function ExistingCircle(props) {
-    //useContext
-    const { userContext, setUserContext } = useContext(UserContext);
     const { groupContext, setGroupContext } = useContext(GroupContext);
-
-    // Render SignUpForm
-    const [renderForm, setRenderForm] = useState();
-
-    // useHistory
+    
     const history = useHistory();
 
-    // Existing Group
     const [group, setGroup] = useState({
         id: "",
         name: ""
@@ -31,38 +22,10 @@ function ExistingCircle(props) {
 
     const onGroupSubmit = e => {
         e.preventDefault();
-        API.getExistingGroup({ name: group.name, id: group.id })
+        API.getGroupByIdName({ name: group.name, id: group.id })
             .then(res => {
-                console.log(res.data[0])
-                setGroupContext({id: res.data[0].id, name: res.data[0].name})
-                setNewUser(data =>
-                    ({ ...data, groupId: res.data[0].id }))
-            });
-    };
-
-    // New User
-    const [newUser, setNewUser] = useState({
-        fullname: "",
-        email: "",
-        password: "",
-        phone: "",
-        birthday: "",
-        groupId: ""
-    });
-
-    const handleNewUserInputChange = e => {
-        const { name, value } = e.target;
-        setNewUser(prevNewUser => ({ ...prevNewUser, [name]: value }))
-    }
-
-    const onNewUserSubmit = e => {
-        e.preventDefault();
-        console.log(newUser);
-        API.postUser(newUser)
-            .then(res => {
-                console.log(res)
-                setUserContext(res.data)
-                history.push('/home');
+                setGroupContext({id: res.data.id, name: res.data.name})
+                history.push('/signupform');
             });
     };
 
