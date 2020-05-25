@@ -4,15 +4,15 @@ require ("dotenv").config();
 
 // // Connect to the MySQL DB
 // User and password points for MSQL DB
-// const sequelize = new Sequelize(process.env.JDATABASE, process.env.JUSERNAME, process.env.JPASSWORD, {
-// 	host: process.env.JHOST,
-// 	dialect: "mysql"
-// });
-
-const sequelize = new Sequelize("test", "root", "", {
-    host: "localhost",
-    dialect: "mysql"
+const sequelize = new Sequelize(process.env.JDATABASE, process.env.JUSERNAME, process.env.JPASSWORD, {
+	host: process.env.JHOST,
+	dialect: "mysql"
 });
+
+// const sequelize = new Sequelize("test", "root", "", {
+//     host: "localhost",
+//     dialect: "mysql"
+// });
 
 const User = sequelize.import(__dirname + "/users");
 const Event = sequelize.import(__dirname + "/events");
