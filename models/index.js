@@ -22,16 +22,16 @@ const Group = sequelize.import(__dirname + "/groups");
 
 // User.belongsToMany(Group, { through: 'User_Group' });
 // Group.belongsToMany(User, { through: 'User_Group' });
-Group.belongsToMany(User, {
-    through: "User_Group",
-    as: "users",
-    foreignKey: "group_id",
-});
-User.belongsToMany(Group, {
-    through: "User_Group",
-    as: "groups",
-    foreignKey: "user_id",
-});
+// Group.belongsToMany(User, {
+//     through: "User_Group",
+//     as: "users",
+//     foreignKey: "group_id",
+// });
+// User.belongsToMany(Group, {
+//     through: "User_Group",
+//     as: "groups",
+//     foreignKey: "user_id",
+// });
 Group.hasMany(Event);
 Event.belongsTo(Group);
 

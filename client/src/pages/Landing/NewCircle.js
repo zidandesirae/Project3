@@ -1,17 +1,17 @@
 import React, { useState, useContext } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { UserContext } from '../../utils/UserContext';
 import { GroupContext } from '../../utils/GroupContext';
 import API from '../../utils/API';
 import LandingContainer from '../../components/Landing/LandingContainer';
-// import SignUpForm from "./SignUpForm";
+import SignUpForm from "./SignUpForm";
 import { Form, Col } from 'react-bootstrap';
 
 function NewCircle(props) {
     //useContext
     const { userContext, setUserContext } = useContext(UserContext);
     const { groupContext, setGroupContext } = useContext(GroupContext);
-    
+
     // Render SignUpForm
     const [renderForm, setRenderForm] = useState();
 
@@ -38,7 +38,8 @@ function NewCircle(props) {
                 setGroupContext(res.data)
                 setUser(data =>
                     ({ ...data, groupId: res.data.id }));
-                });
+                history.push('/signupform');
+            });
     };
 
     // New User
@@ -68,40 +69,43 @@ function NewCircle(props) {
     };
 
     return (
-    // <>
-    //     {!renderForm &&
-            <LandingContainer
-                title="Your New Circle"
-                subtitle="Enter a Name for your new Circle"
-                className="signUpLogo"
-            >
-                <Col md={7} className="mx-auto">
-                    <Form onSubmit={e => onNewGroupSubmit(e)}>
-                        <input
-                            value={newGroup.name}
-                            onChange={e => handleNewGroupInputChange(e)}
-                            className="form-control mb-4"
-                            name="name"
-                            placeholder=""
-                        />
-                        <button
-                            // onClick={() => setRenderForm(true)}
-                            type="submit"
-                            className="btn btn-lg btn-block mb-4">
-                            Submit
-                        </button>
-                    </Form>
-                </Col>
-            </LandingContainer>
-        // }
-    //     {renderForm &&
-    //         <SignUpForm 
-    //             newUser={newUser} 
-    //             handleNewUserInputChange={handleNewUserInputChange} 
-    //             onNewUserSubmit={onNewUserSubmit} 
-    //         />
-    //     }
-    // </>
+        // <>
+        //     {!renderForm &&
+        <LandingContainer
+            title="Your New Circle"
+            subtitle="Enter a Name for your new Circle"
+            className="signUpLogo"
+        >
+            <Col md={7} className="mx-auto">
+                <Form onSubmit={e => onNewGroupSubmit(e)}>
+                    <input
+                        value={newGroup.name}
+                        onChange={e => handleNewGroupInputChange(e)}
+                        className="form-control mb-4"
+                        name="name"
+                        placeholder=""
+                    />
+                    <button 
+                        user={user}
+                        handleUserInputChange={handleUserInputChange}
+                        onUserSubmit={onUserSubmit}
+                        // onClick={() => setRenderForm(true)}
+                        type="submit"
+                        className="btn btn-lg btn-block mb-4">
+                        Submit
+                    </button>
+                </Form>
+            </Col>
+        </LandingContainer>
+        //     }
+        //     {renderForm &&
+        //         <SignUpForm 
+        // user={user} 
+        // handleUserInputChange={handleUserInputChange} 
+        // onUserSubmit={onUserSubmit} 
+        //         />
+        //     }
+        // </>
     );
 }
 
