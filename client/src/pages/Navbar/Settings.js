@@ -47,7 +47,7 @@ function Settings(props) {
                             </Col>
                             <Col md={6} sm={12}>
                                 <Form>
-                                    <input className="form-control" type="text" placeholder={item.placeholder} />
+                                    <input className="form-control border w-100" type="text" placeholder={item.placeholder} style={{fontSize: "16px"}}/>
                                 </Form>
                             </Col>
                         </Row>
