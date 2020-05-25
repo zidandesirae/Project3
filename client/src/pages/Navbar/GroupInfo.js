@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../utils/UserContext';
 import { GroupContext } from '../../utils/GroupContext';
-import { MembersContext } from '../../utils/MembersContext';
 import PageContainer from '../../components/General/PageContainer';
 import { Row, Col, Card } from 'react-bootstrap';
 import API from '../../utils/API';
@@ -10,12 +9,13 @@ function GroupInfo(props) {
 
     const { groupContext } = useContext(GroupContext);
     const { userContext } = useContext(UserContext);
-    const { membersContext, setMembersContext } = useContext(MembersContext);
+    
     const [allMembers, setAllMembers] = useState();
 
     API.getAllUsersByGroupId({ groupId: (userContext && userContext.groupId) || "" })
         .then(res => {
             console.log(res.data)
+            // need to add spread for array and then map
         });
 
     return (
