@@ -16,7 +16,7 @@ function NavLinks(props) {
         },
         {
             id: 3,
-            title: "Group Information",
+            title: "Circle Information",
             route: '/groupinfo'
         },
         {
