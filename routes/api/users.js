@@ -8,9 +8,9 @@ router
   // .get(usersController.getAllUsers)
   .post(usersController.postUser);
 
-// router
-//   .route("/:id")
-//   .put(usersController.updateUserById)
+router
+  .route("/:id")
+  .put(usersController.updateUserById)
 //   .delete(usersController.removeUserById);
 
 router

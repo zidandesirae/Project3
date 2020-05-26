@@ -13,6 +13,7 @@ function GroupInfo(props) {
         API.getAllUsersByGroupId({ groupId: (groupContext && groupContext.id) || "Not Logged In" })
         .then(res => {
             setMembers(res.data)
+            console.log(res.data)
         })
         .catch(err => console.log(err));
     }, []);

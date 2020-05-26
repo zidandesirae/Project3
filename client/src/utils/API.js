@@ -10,7 +10,9 @@ export default {
     getAllUsersByGroupId: function(groupId) {
         return axios.get(`/api/users/${groupId.groupId}`)
     },
-
+    // updateUserById: function(id) {
+    //     return axios.put(`api/users/${id}`);
+    // },
 
     postGroup: function (groupData) {
         return axios.post("/api/groups", groupData);
