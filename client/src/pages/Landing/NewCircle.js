@@ -6,13 +6,10 @@ import LandingContainer from '../../components/Landing/LandingContainer';
 import { Form, Col } from 'react-bootstrap';
 
 function NewCircle(props) {
-    //useContext
     const { groupContext, setGroupContext } = useContext(GroupContext);
 
-    // useHistory
     const history = useHistory();
 
-    // New Group
     const [newGroup, setNewGroup] = useState({
         id: "",
         name: ""
@@ -40,7 +37,7 @@ function NewCircle(props) {
             subtitle="Enter a Name for your new Circle"
             className="signUpLogo"
         >
-            <Col md={7} className="mx-auto">
+            <Col md={6} sm={10} className="mx-auto">
                 <Form onSubmit={e => onNewGroupSubmit(e)}>
                     <input
                         value={newGroup.name}

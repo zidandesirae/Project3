@@ -7,9 +7,6 @@ export default {
     postUserLogin: function (id) {
         return axios.post("/api/users/login", id);
     },
-    getAllUsersById: function(id) {
-        return axios.get(`/api/users/${id.id}`)
-    },
     getAllUsersByGroupId: function(groupId) {
         return axios.get(`/api/users/${groupId.groupId}`)
     },
