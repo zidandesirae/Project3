@@ -10,7 +10,7 @@ function Landing(props) {
             subtitle="Always in the Loop" 
             className="signUpLogo"
         >
-            <Col md={7} className="mx-auto text-center">
+            <Col md={6} sm={10} className="mx-auto text-center">
                 <Link 
                     to="/signup" 
                     type="button" 

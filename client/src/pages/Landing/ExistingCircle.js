@@ -35,7 +35,7 @@ function ExistingCircle(props) {
             subtitle="Enter the existing Circle's information below:"
             className="signUpLogo"
         >
-            <Col md={7} className="mx-auto">
+            <Col md={6} sm={10} className="mx-auto">
                 <Form onSubmit={e => onGroupSubmit(e)}>
                     <input
                         value={group.name}

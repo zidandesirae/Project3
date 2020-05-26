@@ -6,7 +6,7 @@ function LandingContainer(props) {
     return (
         <Container className="my-4 py-4">
             <Row>
-                <Col lg={8} md={10} className="mx-auto text-center">
+                <Col lg={8} md={10} sm={12} className="mx-auto text-center">
                     <Image src={logo} className={props.className} fluid />
                     <div className="m-4">
                         <h1 className="text-3d">{props.title}</h1>

@@ -46,7 +46,7 @@ function Login(props) {
             subtitle="Always in the Loop" 
             className="signUpLogo"
         >
-            <Col md={7} className="mx-auto">
+            <Col md={6} sm={10} className="mx-auto">
                 <LoginForm 
                     user={user} 
                     handleUserInputChange={handleUserInputChange} 

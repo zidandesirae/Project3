@@ -1,26 +1,25 @@
-import React, { useContext, useState } from 'react';
-import { UserContext } from '../../utils/UserContext';
+import React, { useContext, useState, useEffect } from 'react';
 import { GroupContext } from '../../utils/GroupContext';
 import PageContainer from '../../components/General/PageContainer';
 import { Row, Col, Card } from 'react-bootstrap';
 import API from '../../utils/API';
 
 function GroupInfo(props) {
-
-    const { groupContext } = useContext(GroupContext);
-    const { userContext } = useContext(UserContext);
     
-    const [allMembers, setAllMembers] = useState();
+    const { groupContext } = useContext(GroupContext);
+    const [members, setMembers] = useState([]);
 
-    API.getAllUsersByGroupId({ groupId: (userContext && userContext.groupId) || "" })
+    useEffect(() => {
+        API.getAllUsersByGroupId({ groupId: (groupContext && groupContext.id) || "Not Logged In" })
         .then(res => {
-            console.log(res.data)
-            // need to add spread for array and then map
-        });
+            setMembers(res.data)
+        })
+        .catch(err => console.log(err));
+    }, []);
 
     return (
         <PageContainer title="Circle Information">
-            <Row>
+            <Row className="my-2">
                 <Col>
                     <h5>Circle Name:</h5>
                 </Col>
@@ -28,8 +27,7 @@ function GroupInfo(props) {
                     <h5>{(groupContext && groupContext.name) || ""}</h5>
                 </Col>
             </Row>
-            <hr className="my-2" />
-            <Row>
+            <Row className="my-2">
                 <Col>
                     <h5>Circle ID:</h5>
                 </Col>
@@ -37,45 +35,44 @@ function GroupInfo(props) {
                     <h5>{(groupContext && groupContext.id) || ""}</h5>
                 </Col>
             </Row>
-            <hr className="my-2" />
-            <Row>
+            <Row className="my-2">
                 <Col>
                     <h5>Circle Members:</h5>
-                    {/* {.map(item => ( */}
-                    <Card>
-                        <div className="card-body border">
+                    {members.map(item => (
+                    <Card key={item.id} className="border border-dark my-2">
+                        <div className="card-body">
                             <Row>
                                 <Col>
-                                    {/* <h5>{item.fullname}</h5> */}
+                                    <h5>{item.fullname}</h5>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <h5>Email:</h5>
+                                    <h6>Email:</h6>
                                 </Col>
                                 <Col>
-                                    {/* <h5>{item.email}</h5> */}
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    <h5>Phone Number:</h5>
-                                </Col>
-                                <Col>
-                                    {/* <h5>{item.phone}</h5> */}
+                                    <h6>{item.email}</h6>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <h5>Birthday:</h5>
+                                    <h6>Phone Number:</h6>
                                 </Col>
                                 <Col>
-                                    {/* <h5>{item.birthday}</h5> */}
+                                    <h6>{item.phone}</h6>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <h6>Birthday:</h6>
+                                </Col>
+                                <Col>
+                                    <h6>{item.birthday}</h6>
                                 </Col>
                             </Row>
                         </div>
                     </Card>
-                    {/* ))} */}
+                    ))}
                 </Col>
             </Row>
         </PageContainer>
