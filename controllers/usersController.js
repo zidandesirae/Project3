@@ -23,13 +23,13 @@ module.exports = {
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  updateUserById: function(req, res) {
+    db.User
+      .update(req.body, { where: { id: req.params.id } })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
-  // updateUserById: function(req, res) {
-  //   db.User
-  //     .update(req.body, { where: { id: req.params.id } })
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
   // removeUserById: function(req, res) {
   //   db.User
   //     .destroy({ where: { id: req.params.id } })
