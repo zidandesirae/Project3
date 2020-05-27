@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        date: DataTypes.STRING,
-        time: DataTypes.STRING,
+        date: DataTypes.DATEONLY,
+        time: DataTypes.TIME,
     },
     { sequelize, modelName: 'message' });
 
