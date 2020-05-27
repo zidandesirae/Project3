@@ -24,6 +24,14 @@ export default {
         return axios.get(`/api/groups/${id.id}/${id.name}`)
     },
 
+    
+    postMessage: function (messageData) {
+        return axios.post("/api/messages", messageData);
+    },
+    getAllMessagesByGroupId: function(groupId) {
+        return axios.get(`/api/messages/${groupId.groupId}`)
+    },
+
 
     postEvent: function (eventData) {
         return axios.post("/api/events", eventData);
