@@ -7,13 +7,5 @@ module.exports = (sequelize, DataTypes) => {
         name: DataTypes.STRING    
     }, { sequelize, modelName: 'group' });
 
-    Group.associate = (models) => {
-        Group.belongsToMany(models.User, {
-            through: "User_Group",
-            as: "users",
-            foreignKey: "group_id",
-        });
-    };
-
     return Group;
 }

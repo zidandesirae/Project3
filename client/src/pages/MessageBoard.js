@@ -3,17 +3,7 @@ import { UserContext } from '../utils/UserContext';
 import API from '../utils/API';
 import PageContainer from '../components/General/PageContainer'
 import { Row, Form, Col, Card, InputGroup, FormControl } from 'react-bootstrap';
-
-const date = new Date();
-// const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-// const m = months[date.getMonth()];
-// const d = date.getDate();
-// const y = date.getFullYear();
-// const hours = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
-// const h = hours[date.getHours()];
-// const min = date.getMinutes();
-// const postDate = `${m} ${d}, ${y}`;
-// const postTime = `${h}:${min}`;
+import moment from 'moment';
 
 function MessageBoard(props) {
     const { userContext } = useContext(UserContext);
@@ -21,9 +11,7 @@ function MessageBoard(props) {
     const [message, setMessage] = useState({
         fullname: (userContext && userContext.fullname) || "",
         groupId: (userContext && userContext.groupId) || "",
-        messagePost: "",
-        // date: date,
-        // time: date
+        messagePost: ""
     });
 
     const [posts, setPosts] = useState([]);
@@ -40,7 +28,6 @@ function MessageBoard(props) {
             })
             .catch(err => console.log(err));
     };
-
 
     const handleMessageInputChange = e => {
         const { name, value } = e.target;
@@ -70,7 +57,6 @@ function MessageBoard(props) {
                                 onChange={e => handleMessageInputChange(e)}
                                 className="form-control border"
                                 name="messagePost"
-                                type="text"
                                 placeholder="Enter Your Message Here..."
                             />
                             <InputGroup.Append>
@@ -87,8 +73,7 @@ function MessageBoard(props) {
                             <Row className="p-3">
                                 <Col md={4} sm={12}>
                                     <h5 className="m-2">{item.fullname}</h5>
-                                    {/* <small className="m-2">{item.date}</small>
-                                    <small className="m-2">{item.time}</small> */}
+                                    <small className="m-2">{moment(item.createdAt).format('MM-DD-YY hh:mm A')}</small>
                                 </Col>
                                 <Col md={8} sm={12}>
                                     <p className="m-2">{item.messagePost}</p>

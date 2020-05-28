@@ -21,18 +21,9 @@ const Group = sequelize.import(__dirname + "/groups");
 const Message = sequelize.import(__dirname + "/messages");
 
 
-// User.belongsToMany(Group, { through: 'User_Group' });
-// Group.belongsToMany(User, { through: 'User_Group' });
-// Group.belongsToMany(User, {
-//     through: "User_Group",
-//     as: "users",
-//     foreignKey: "group_id",
-// });
-// User.belongsToMany(Group, {
-//     through: "User_Group",
-//     as: "groups",
-//     foreignKey: "user_id",
-// });
+User.belongsToMany(Group, { through: 'User_Group' });
+Group.belongsToMany(User, { through: 'User_Group' });
+
 Group.hasMany(Event);
 Event.belongsTo(Group);
 

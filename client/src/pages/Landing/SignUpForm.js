@@ -17,8 +17,7 @@ function SignUpForm(props) {
             email: "",
             password: "",
             phone: "",
-            birthday: "",
-            groupId: (groupContext && groupContext.id) || ""
+            birthday: ""
         });
     
         const handleUserInputChange = e => {
@@ -31,9 +30,13 @@ function SignUpForm(props) {
             console.log(user);
             API.postUser(user)
                 .then(res => {
-                    console.log(res)
+                    console.log(res.data)
                     setUserContext(res.data)
-                    history.push('/home');
+                    API.addUserToGroup(res.data.id, (groupContext && groupContext.id) || "")
+                    .then(data => {
+                        console.log(data.data)
+                        history.push('/home')
+                    });
                 });
         };
     

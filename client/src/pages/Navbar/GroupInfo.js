@@ -10,7 +10,7 @@ function GroupInfo(props) {
     const [members, setMembers] = useState([]);
 
     useEffect(() => {
-        API.getAllUsersByGroupId({ groupId: (groupContext && groupContext.id) || "Not Logged In" })
+        API.getAllUsersByGroupId({ id: (groupContext && groupContext.id) || "Not Logged In" })
         .then(res => {
             setMembers(res.data)
             console.log(res.data)
