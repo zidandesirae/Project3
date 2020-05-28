@@ -7,21 +7,17 @@ import LandingContainer from '../../components/Landing/LandingContainer';
 import { Form, Col } from 'react-bootstrap';
 
 function SignUpForm(props) {
-        //useContext
         const { userContext, setUserContext } = useContext(UserContext);
         const { groupContext } = useContext(GroupContext);
         
-        // useHistory
         const history = useHistory();
 
-        // New User
         const [user, setUser] = useState({
             fullname: "",
             email: "",
             password: "",
             phone: "",
-            birthday: "",
-            groupId: (groupContext && groupContext.id) || ""
+            birthday: ""
         });
     
         const handleUserInputChange = e => {
@@ -34,9 +30,13 @@ function SignUpForm(props) {
             console.log(user);
             API.postUser(user)
                 .then(res => {
-                    console.log(res)
+                    console.log(res.data)
                     setUserContext(res.data)
-                    history.push('/home');
+                    API.addUserToGroup(res.data.id, (groupContext && groupContext.id) || "")
+                    .then(data => {
+                        console.log(data.data)
+                        history.push('/home')
+                    });
                 });
         };
     

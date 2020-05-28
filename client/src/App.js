@@ -18,15 +18,12 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { UserContextProvider } from './utils/UserContext';
 import { GroupContextProvider } from './utils/GroupContext';
-import { MembersContextProvider } from './utils/MembersContext';
-
 
 function App() {
   return (
     <Router>
       <GroupContextProvider>
         <UserContextProvider>
-          <MembersContextProvider>
             <Route exact path="/" component={Landing} />
             <Switch>
               <Route path="/login" component={Login} />
@@ -42,7 +39,6 @@ function App() {
               <Route path="/lists" component={Lists} />
               <Route path="/photos" component={Photos} />
             </Switch>
-          </MembersContextProvider>
         </UserContextProvider>
       </GroupContextProvider>
       <Footer />

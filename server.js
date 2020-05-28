@@ -51,18 +51,6 @@ app.post('/upload', (req, res) => {
 
 app.use(routes);
 
-//Message Board
-var http = require('http').createServer(app);
-var io = require('socket.io')(http);
-
-io.on('connection', (socket) => {
-  console.log('a user connected');
-  socket.on('chat message', function(msg) {
-    console.log('message: ' + JSON.stringify(msg));
-    io.emit('chat message', msg);
-  });
-});
-
 // Start the API server
 db.sequelize.sync({}).then(function() {
   http.listen(PORT, function() {

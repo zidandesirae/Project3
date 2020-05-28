@@ -5,18 +5,14 @@ const usersController = require("../../controllers/usersController");
 
 router
   .route("/")
-  .get(usersController.getAllUsers)
+  // .get(usersController.getAllUsers)
   .post(usersController.postUser);
 
 router
   .route("/:id")
-  .get(usersController.getUserById)
-  .put(usersController.updateUserById)
-  .delete(usersController.removeUserById);
-
-router
-  .route("/:groupId")
-  .get(usersController.getAllUsersByGroupId);
+  .get(usersController.getAllUsersByGroupId)
+  // .put(usersController.updateUserById);
+  // .delete(usersController.removeUserById);
 
 router
   .route("/login")

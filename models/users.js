@@ -1,5 +1,3 @@
-'use strict';
-
 const Sequelize = require("sequelize");
 const Model = Sequelize.Model;
 
@@ -32,22 +30,13 @@ module.exports = (sequelize, DataTypes) => {
         birthday: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        groupId: DataTypes.INTEGER
+        }
     },
     { sequelize, modelName: 'user' });
 
     User.prototype.validPassword = function(password) {
         return this.password === password;
         //return bcrypt.compareSync(password, this.password); - use if switching to bcrypt
-    };
-
-    User.associate = (models) => {
-        User.belongsToMany(models.Group, {
-                through: "User_Group",
-                as: "groups",
-                foreignKey: "user_id",
-        });
     };
 
     return User;
