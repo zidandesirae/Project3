@@ -10,12 +10,9 @@ router
 
 router
   .route("/:id")
-  .put(usersController.updateUserById)
-//   .delete(usersController.removeUserById);
-
-router
-  .route("/:groupId")
-  .get(usersController.getAllUsersByGroupId);
+  .get(usersController.getAllUsersByGroupId)
+  // .put(usersController.updateUserById);
+  // .delete(usersController.removeUserById);
 
 router
   .route("/login")

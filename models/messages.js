@@ -10,10 +10,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        date: DataTypes.DATEONLY,
-        time: DataTypes.TIME,
-    },
-    { sequelize, modelName: 'message' });
+        createdAt: {
+            type: DataTypes.DATE
+        }
+    },  { sequelize, modelName: 'message' });
 
     return Message;
 }

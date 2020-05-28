@@ -30,8 +30,8 @@ module.exports = (sequelize, DataTypes) => {
         birthday: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        groupId: DataTypes.INTEGER
+        }
+        // groupId: DataTypes.INTEGER
     },
     { sequelize, modelName: 'user' });
 
@@ -40,13 +40,13 @@ module.exports = (sequelize, DataTypes) => {
         //return bcrypt.compareSync(password, this.password); - use if switching to bcrypt
     };
 
-    User.associate = (models) => {
-        User.belongsToMany(models.Group, {
-                through: "User_Group",
-                as: "groups",
-                foreignKey: "user_id",
-        });
-    };
+    // User.associate = (models) => {
+    //     User.belongsToMany(models.Group, {
+    //             through: "User_Group",
+    //             as: "groups",
+    //             foreignKey: "user_id",
+    //     });
+    // };
 
     return User;
 }

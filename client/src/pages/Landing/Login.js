@@ -17,7 +17,7 @@ function Login(props) {
     const [user, setUser] = useState({
         email: "",
         password: "",
-        groupId: ""
+        id: ""
     });
 
     const handleUserInputChange = e => {
@@ -29,12 +29,13 @@ function Login(props) {
         e.preventDefault();
         API.postUserLogin({ email: user.email, password: user.password })
             .then(res => {
-                console.log(res)
+                console.log(res.data)
                 setUserContext(res.data)
-                API.getGroupById({id: res.data.groupId})
+                API.getAllGroupsByUserId({id: res.data.id})
                 .then(res => {
-                    console.log(res.data)
-                    setGroupContext({id: res.data.id, name:res.data.name})
+                    console.log(res);
+                    //Set up to log into first group
+                    setGroupContext({id: res.data[0].id, name:res.data[0].name})
                 });
                 history.push('/home');
             });

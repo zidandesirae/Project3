@@ -46,7 +46,7 @@ function Settings(props) {
 
     return (
         <PageContainer title="Settings">
-            <h4 className="pb-4">Personal Information</h4>
+            <h4 className="pb-3">Personal Information</h4>
             {
                 user.map(item => (
                     <Row className="my-2" key={item.id}>
@@ -62,6 +62,27 @@ function Settings(props) {
                 ))
             }
             <button type="button" className="btn">Save Changes</button>
+            <hr className="my-4 border-dark" />
+            <h4 className="pb-3">Additional Circles</h4>
+            <Row className="my-2">
+                <Col sm={12}>
+                    <h6>Looking to create a new circle or join an exising circle?</h6>
+                </Col>
+                <Col md={6} sm={12}>
+                    <button type="button" className="btn btn-block my-2">Create a New Circle</button>
+                </Col>
+                <Col md={6} sm={12}>
+                    <button type="button" className="btn btn-block my-2">Join an Existing Circle</button>
+                </Col>
+            </Row>
+            <Row className="mt-4 mb-2">
+                <Col sm={12}>
+                    <h6>Already a member of another Circle?</h6>
+                </Col>
+                <Col md={6} sm={12}>
+                    <button type="button" className="btn btn-block my-2">Switch Circle Page</button>
+                </Col>
+            </Row>
         </PageContainer>
     );
 }

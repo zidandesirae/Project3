@@ -22,7 +22,7 @@
     "express-session": "^1.17.1",
     "if-env": "^1.0.4",
     "install": "^0.13.0",
-    "moment": "^2.24.0",
+    "moment": "^2.26.0",
     "mysql2": "^2.1.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
