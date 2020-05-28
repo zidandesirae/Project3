@@ -63,6 +63,7 @@ function Settings(props) {
             }
             <button type="button" className="btn">Save Changes</button>
             <hr className="my-4 border-dark" />
+            {/* MAKE NEW COMPONENT TO HOLD CONTENT BELOW */}
             <h4 className="pb-3">Additional Circles</h4>
             <Row className="my-2">
                 <Col sm={12}>

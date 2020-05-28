@@ -16,8 +16,7 @@ function Login(props) {
 
     const [user, setUser] = useState({
         email: "",
-        password: "",
-        id: ""
+        password: ""
     });
 
     const handleUserInputChange = e => {
@@ -34,7 +33,7 @@ function Login(props) {
                 API.getAllGroupsByUserId({id: res.data.id})
                 .then(res => {
                     console.log(res);
-                    //Set up to log into first group
+                    //Set up to log into first group *** looking to change for when there are multiple groups
                     setGroupContext({id: res.data[0].id, name:res.data[0].name})
                 });
                 history.push('/home');

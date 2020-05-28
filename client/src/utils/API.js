@@ -22,7 +22,7 @@ export default {
     postUserLogin: function (id) {
         return axios.post("/api/users/login", id);
     },
-    // --->>> *** Login.js
+    //!! Login.js
     getAllGroupsByUserId: function (id) {
         return axios.get(`/api/groups/${id.id}`)
     },
@@ -36,7 +36,7 @@ export default {
     postMessage: function (messageData) {
         return axios.post("/api/messages", messageData);
     },
-    // --->>> *** MessageBoard.js
+    // --->>> *FIX* MessageBoard.js
     getAllMessagesByGroupId: function(groupId) {
         return axios.get(`/api/messages/${groupId.groupId}`)
     }

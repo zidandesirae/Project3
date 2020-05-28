@@ -14,7 +14,6 @@ module.exports = {
   //           as: "users",
   //           attributes: ["id", "fullname"],
   //           required: true
-  //           // where: { id: req.params.groupId }
   //         },
   //       ],
   //     })
