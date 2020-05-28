@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../utils/UserContext';
 import PageContainer from '../../components/General/PageContainer';
+import AddCircle from '../../components/Navbar/AddCircle';
 import { Row, Col, Form } from 'react-bootstrap';
 import API from '../../utils/API';
 
@@ -63,27 +64,7 @@ function Settings(props) {
             }
             <button type="button" className="btn">Save Changes</button>
             <hr className="my-4 border-dark" />
-            {/* MAKE NEW COMPONENT TO HOLD CONTENT BELOW */}
-            <h4 className="pb-3">Additional Circles</h4>
-            <Row className="my-2">
-                <Col sm={12}>
-                    <h6>Looking to create a new circle or join an exising circle?</h6>
-                </Col>
-                <Col md={6} sm={12}>
-                    <button type="button" className="btn btn-block my-2">Create a New Circle</button>
-                </Col>
-                <Col md={6} sm={12}>
-                    <button type="button" className="btn btn-block my-2">Join an Existing Circle</button>
-                </Col>
-            </Row>
-            <Row className="mt-4 mb-2">
-                <Col sm={12}>
-                    <h6>Already a member of another Circle?</h6>
-                </Col>
-                <Col md={6} sm={12}>
-                    <button type="button" className="btn btn-block my-2">Switch Circle Page</button>
-                </Col>
-            </Row>
+            <AddCircle title="Additional Cirlces"/>
         </PageContainer>
     );
 }
