@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     class Message extends Model { }
     Message.init({
         fullname: DataTypes.STRING,
+        userId: DataTypes.INTEGER,
         groupId: DataTypes.INTEGER,
         messagePost: {
             type: DataTypes.STRING,

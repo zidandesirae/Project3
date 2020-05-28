@@ -8,6 +8,9 @@ import SignUp from './pages/Landing/SignUp';
 import SignUpForm from './pages/Landing/SignUpForm';
 import Settings from "./pages/Navbar/Settings";
 import GroupInfo from './pages/Navbar/GroupInfo';
+import YourCircles from './pages/Navbar/YourCircles';
+import AddNew from './pages/Navbar/AddNew';
+import AddExisting from './pages/Navbar/AddExisting';
 import Home from './pages/Home';
 import CalendarShare from './pages/CalendarShare';
 import MessageBoard from './pages/MessageBoard';
@@ -31,6 +34,9 @@ function App() {
               <Route path="/newcircle" component={NewCircle} />
               <Route path="/existingcircle" component={ExistingCircle} />
               <Route path="/signupform" component={SignUpForm} />
+              <Route path="/yourcircles" component={YourCircles} />
+              <Route path="/addnew" component={AddNew} />
+              <Route path="/addexisting" component={AddExisting} />
               <Route path="/home" component={Home} />
               <Route path="/settings" component={Settings} />
               <Route path="/groupinfo" component={GroupInfo} />

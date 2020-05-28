@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { UserContext } from '../utils/UserContext';
+import { GroupContext } from '../utils/GroupContext';
 import API from '../utils/API';
 import PageContainer from '../components/General/PageContainer'
 import { Row, Form, Col, Card, InputGroup, FormControl } from 'react-bootstrap';
@@ -7,10 +8,12 @@ import moment from 'moment';
 
 function MessageBoard(props) {
     const { userContext } = useContext(UserContext);
+    const { groupContext } = useContext(GroupContext);
 
     const [message, setMessage] = useState({
         fullname: (userContext && userContext.fullname) || "",
-        groupId: (userContext && userContext.groupId) || "",
+        userId: (userContext && userContext.id) || "",
+        groupId: (groupContext && groupContext.id) || "",
         messagePost: ""
     });
 
@@ -21,7 +24,7 @@ function MessageBoard(props) {
     }, []);
 
     const loadPosts = () => {
-        API.getAllMessagesByGroupId({ groupId: (userContext && userContext.groupId) || "Not Logged In " })
+        API.getAllMessagesByGroupId({ groupId: (groupContext && groupContext.id) || "Not Logged In " })
             .then(res => {
                 setPosts(res.data)
                 console.log(res.data)
@@ -73,7 +76,8 @@ function MessageBoard(props) {
                             <Row className="p-3">
                                 <Col md={4} sm={12}>
                                     <h5 className="m-2">{item.fullname}</h5>
-                                    <small className="m-2">{moment(item.createdAt).format('MM-DD-YY hh:mm A')}</small>
+                                    <small className="m-2">{moment(item.createdAt).format('MM-DD-YY')}</small>
+                                    <small className="m-2">{moment(item.createdAt).format('hh:mm A')}</small>
                                 </Col>
                                 <Col md={8} sm={12}>
                                     <p className="m-2">{item.messagePost}</p>
