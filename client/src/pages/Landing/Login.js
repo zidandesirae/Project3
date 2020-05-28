@@ -30,13 +30,7 @@ function Login(props) {
             .then(res => {
                 console.log(res.data)
                 setUserContext(res.data)
-                API.getAllGroupsByUserId({id: res.data.id})
-                .then(res => {
-                    console.log(res);
-                    //Set up to log into first group *** looking to change for when there are multiple groups
-                    setGroupContext({id: res.data[0].id, name:res.data[0].name})
-                });
-                history.push('/home');
+                history.push('/yourcircles')
             });
     };
 

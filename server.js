@@ -53,7 +53,7 @@ app.use(routes);
 
 // Start the API server
 db.sequelize.sync({}).then(function() {
-  http.listen(PORT, function() {
+  app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
 });
