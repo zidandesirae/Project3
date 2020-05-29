@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PageContainer from '../components/General/PageContainer';
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
@@ -7,12 +7,17 @@ import "./CalendarShare.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import withDragAndDrop from 'react-big-calendar/lib/addons/dragAndDrop'
 import 'react-big-calendar/lib/addons/dragAndDrop/styles.scss'
+import API from '../utils/API';
+import { GroupContext } from '../utils/GroupContext';
 
 const DragAndDropCalendar = withDragAndDrop(Calendar);
 
 const localizer = momentLocalizer(moment);
 
 class CalendarShare extends React.Component {
+
+    static contextType = GroupContext;
+
     // set to event state; 
     state = {
         events: [
@@ -27,11 +32,13 @@ class CalendarShare extends React.Component {
     }
 
     handleSelect = ({ start, end }) => {
+        let group = this.context;
+        console.log(group);
         const title = window.prompt('New Event Name')
         const description = window.prompt('New Event Description')
         if (title) {
             //TODO: when group is figured out, add groupId to post info (and make sure it shouws in db)
-            axios.post("/api/events", { start: start, end: end, name: title, description: description }).then(
+            axios.post("/api/events", { start: start, end: end, name: title, description: description, groupId: group.id }).then(
                 (res) => {
                     var id = res.data.id;
                     this.setState({
@@ -101,6 +108,20 @@ class CalendarShare extends React.Component {
         //alert(`${event.title} was resized to ${start}-${end}`)
     }
 
+    onSelectEvent(pEvent) {
+        const r = window.confirm("Would you like to remove this event?")
+        if (r === true) {
+            API.removeEvent({ id: pEvent.id }).then(res => {
+                this.setState((prevState, props) => {
+                    const events = [...prevState.events]
+                    const idx = events.indexOf(pEvent)
+                    events.splice(idx, 1);
+                    return { events };
+                });
+            });
+        }
+    }
+
     fetchEvents() {
         axios.get("/api/events").then((returnCall) => {
             (returnCall.data || []).forEach(function (ele) {
@@ -129,7 +150,10 @@ class CalendarShare extends React.Component {
                             defaultDate={new Date()}
                             defaultView="month"
                             events={this.state.events}
-                            onSelectEvent={event => alert(event.title)}
+                            onSelectEvent={event => {
+                                alert(event.title)
+                                this.onSelectEvent(event)
+                            }}
                             onSelectSlot={this.handleSelect}
                             style={{ height: "100vh" }}
                         />

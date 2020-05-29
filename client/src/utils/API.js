@@ -39,6 +39,20 @@ export default {
     // MessageBoard.js
     getAllMessagesByGroupId: function(groupId) {
         return axios.get(`/api/messages/${groupId.groupId}`)
+    },
+
+    // Lists.js
+    postList: function (listData) {
+        return axios.post("/api/lists", listData);
+    },
+    // Lists.js
+    getAllListsByGroupId: function(groupId) {
+        return axios.get(`/api/lists/${groupId.groupId}`)
+    },
+
+
+    removeEvent: function(id) {
+        return axios.delete(`/api/events/${id.id}`)
     }
 
 }
