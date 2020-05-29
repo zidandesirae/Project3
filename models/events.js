@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
         name: DataTypes.STRING,
         description: DataTypes.TEXT,
         start: DataTypes.DATE,
-        end: DataTypes.DATE
+        end: DataTypes.DATE,
+        groupId: DataTypes.INTEGER
     }, { sequelize, modelName: 'event' });
     return Event;
 }
