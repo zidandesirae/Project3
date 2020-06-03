@@ -14,7 +14,7 @@ export default {
         return axios.post("/api/users", userData);
     },
     // SignUpForm.js
-    addUserToGroup: function(userId, groupId) {
+    addUserToGroup: function (userId, groupId) {
         return axios.get(`/api/groups/addUser/${userId}/${groupId}`)
     },
 
@@ -28,16 +28,16 @@ export default {
     },
 
     // GroupInfo.js
-    getAllUsersByGroupId: function(id) {
+    getAllUsersByGroupId: function (id) {
         return axios.get(`/api/users/${id.id}`)
     },
-    
+
     // MessageBoard.js
     postMessage: function (messageData) {
         return axios.post("/api/messages", messageData);
     },
     // MessageBoard.js
-    getAllMessagesByGroupId: function(groupId) {
+    getAllMessagesByGroupId: function (groupId) {
         return axios.get(`/api/messages/${groupId.groupId}`)
     },
 
@@ -46,13 +46,19 @@ export default {
         return axios.post("/api/lists", listData);
     },
     // Lists.js
-    getAllListsByGroupId: function(groupId) {
+    getAllListsByGroupId: function (groupId) {
         return axios.get(`/api/lists/${groupId.groupId}`)
     },
 
-
-    removeEvent: function(id) {
+    // CalendarShare.js
+    postEvent: function (eventData) {
+        return axios.post("/api/events", eventData);
+    },
+    removeEvent: function (id) {
         return axios.delete(`/api/events/${id.id}`)
+    },
+    findByGroupId: function (groupId) {
+        return axios.get(`/api/events/${groupId.groupId}`)
     }
 
 }

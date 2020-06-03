@@ -9,8 +9,11 @@ router.route("/")
 // Matches with "/api/events/:id"
 router
   .route("/:id")
-  .get(eventsController.findById)
   .put(eventsController.update)
   .delete(eventsController.remove);
-
+  
+  router
+  .route("/:groupId")
+  .get(eventsController.findByGroupId);
+  
 module.exports = router;
