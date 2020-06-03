@@ -1,10 +1,30 @@
-Our Circle
+# Our Circle
 
-Our Circle is an app designed for families, friends, and even colleagues to create groups or “Circles” that help keep track of events, notes, photos and calendars that pertain to the individuals assigned to that specific Circle. This was created with React, MySQL, Sequelize, JavaScript, Sass, HTML, and CSS.
+## Description
+Our Circle is an application made for groups of people looking to stay closely connected. Whether it be a family, group of friends or colleagues, Our Circle makes it possible for members to privately share moments and information with one another. Each group's Circle provides a place to collaborate, stay organized and up-to-date on daily ventures. It is designed for members to share calendar events, post messages, create lists and upload photos for those in their select Circle to see and expand on.
 
-Deployed Link: http://our-circle.herokuapp.com/
+### Deployed Site - http://our-circle.herokuapp.com/
 
-Landing Page:
+<!-- Our Circle is an app designed for families, friends, and even colleagues to create groups or “Circles” that help keep track of events, notes, photos and calendars that pertain to the individuals assigned to that specific Circle. This was created with React, MySQL, Sequelize, JavaScript, Sass, HTML, and CSS. -->
+
+## Technologies Used
+* React
+* MySql
+* Javascript
+* Node
+* Express
+* Sequelize
+* Axios
+* Passport
+* Bootstrap
+* Sass
+
+## Visuals
+
+![landing.png](/readme-images/landing.png)
+![home.png](/readme-images/home.png)
+
+<!-- Landing Page:
 
 ![Landing Page](https://github.com/zidandesirae/Project3/blob/master/readme-images/Our-Circle-Screenshot.png)
 
@@ -38,4 +58,4 @@ Lists:
 
 Settings and Group Information:
 
-![Settings and Group Information](https://github.com/zidandesirae/Project3/blob/master/readme-images/Our-Circle-Settings-Group-Info.png)
+![Settings and Group Information](https://github.com/zidandesirae/Project3/blob/master/readme-images/Our-Circle-Settings-Group-Info.png) -->
