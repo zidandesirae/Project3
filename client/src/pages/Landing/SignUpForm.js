@@ -67,7 +67,7 @@ function SignUpForm(props) {
                         onChange={e => handleUserInputChange(e)}
                         className="form-control my-4"
                         name="password"
-                        placeholder="Create Password (8-20 characters)"
+                        placeholder="Create Password (Must be 8-20 characters)"
                     />
                     <input
                         value={user.phone}
@@ -75,14 +75,14 @@ function SignUpForm(props) {
                         className="form-control my-4"
                         type="tel"
                         name="phone"
-                        placeholder="Phone Number (XXX-XXX-XXXX)"
+                        placeholder="Phone Number"
                     />
                     <input
                         value={user.birthday}
                         onChange={e => handleUserInputChange(e)}
                         className="form-control my-4"
                         name="birthday"
-                        placeholder="Birthday (MM/DD)"
+                        placeholder="Birthday"
                     />
                     <button
                         type="submit"
