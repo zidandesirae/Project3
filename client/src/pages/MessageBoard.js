@@ -71,7 +71,7 @@ function MessageBoard(props) {
             </Form>
             <Row>
                 <Col>
-                    {posts.map(item => (
+                    {posts.reverse().map(item => (
                         <Card key={item.id} className="border-dark my-2" style={{ border: "2px solid black" }}>
                             <Row className="p-3">
                                 <Col md={4} sm={12}>

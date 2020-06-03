@@ -18,14 +18,15 @@ const User = sequelize.import(__dirname + "/users");
 const Event = sequelize.import(__dirname + "/events");
 const Group = sequelize.import(__dirname + "/groups");
 const Message = sequelize.import(__dirname + "/messages");
+const List = sequelize.import(__dirname + "/lists");
 //const Photos = sequelize.import(__dirname + "/photos");
 
 
 User.belongsToMany(Group, { through: 'User_Group' });
 Group.belongsToMany(User, { through: 'User_Group' });
 
-Group.hasMany(Event);
-Event.belongsTo(Group);
+// Group.hasMany(Event);
+// Event.belongsTo(Group);
 
 var dbReady = sequelize.sync();
 
@@ -34,6 +35,7 @@ module.exports = {
     User: User,
     Event: Event,
     Group: Group,
-    Message: Message
+    Message: Message,
+    List: List
    // Photos: Photos
 }

@@ -17,8 +17,7 @@ const localizer = momentLocalizer(moment);
 class CalendarShare extends React.Component {
 
     static contextType = GroupContext;
-
-    // set to event state; 
+    
     state = {
         events: [
             {
@@ -26,19 +25,19 @@ class CalendarShare extends React.Component {
                 end: moment()
                     .add(1, "days")
                     .toDate(),
-                title: "Some title"
+                title: "Some title",
             }
         ]
     }
 
     handleSelect = ({ start, end }) => {
-        let group = this.context;
-        console.log(group);
+        let group = this.context.groupContext.id;
+        // console.log(group);
         const title = window.prompt('New Event Name')
         const description = window.prompt('New Event Description')
         if (title) {
             //TODO: when group is figured out, add groupId to post info (and make sure it shouws in db)
-            axios.post("/api/events", { start: start, end: end, name: title, description: description, groupId: group.id }).then(
+            axios.post("/api/events", { start: start, end: end, name: title, description: description, groupId: group}).then(
                 (res) => {
                     var id = res.data.id;
                     this.setState({
@@ -124,6 +123,8 @@ class CalendarShare extends React.Component {
 
     fetchEvents() {
         axios.get("/api/events").then((returnCall) => {
+            // let group = this.context.groupContext.id;
+            // API.findByGroupId({groupId: group}).then((returnCall) => {
             (returnCall.data || []).forEach(function (ele) {
                 ele.title = ele.name;
                 ele.start = new Date(ele.start);
