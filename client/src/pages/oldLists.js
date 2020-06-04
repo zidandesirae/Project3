@@ -5,9 +5,9 @@ import Titles from '../components/Lists/Titles'
 import '../components/Lists/Lists.css';
 
 const notesArray = [
-    { id: 1, heading: 'List 3', value: 'Create a new list!' },
-    { id: 2, heading: 'List 2', value: 'Create a new list!' },
-    { id: 3, heading: 'List 1', value: 'Create a new list!' }
+    // { id: 1, heading: 'List 3', value: 'Create a new list!' },
+    { id: 1, heading: "Groceries", value: 'Eggs, Milk, Bread' },
+    { id: 2, heading: "Rachel's Birthday Wish List", value: 'Here is a list of things I would like for my birthday!' }
 ];
 
 class Lists extends React.Component {
