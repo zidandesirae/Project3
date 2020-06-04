@@ -64,7 +64,7 @@ function Settings(props) {
             }
             <button type="button" className="btn">Save Changes</button>
             <hr className="my-4 border-dark" />
-            <AddCircle title="Additional Cirlces"/>
+            <AddCircle title="Additional Circles"/>
         </PageContainer>
     );
 }
