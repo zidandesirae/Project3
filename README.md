@@ -18,6 +18,7 @@ Our Circle is an application made for groups of people looking to stay closely c
 * Passport
 * Bootstrap
 * Sass
+* CSS
 
 ## Visuals
 

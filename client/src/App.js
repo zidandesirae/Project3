@@ -14,7 +14,7 @@ import AddExisting from './pages/Navbar/AddExisting';
 import Home from './pages/Home';
 import CalendarShare from './pages/CalendarShare';
 import MessageBoard from './pages/MessageBoard';
-import Lists from './pages/Lists';
+import oldLists from './pages/oldLists';
 import Photos from './pages/Photos';
 import Footer from './components/General/Footer';
 import './App.css';
@@ -42,7 +42,7 @@ function App() {
               <Route path="/groupinfo" component={GroupInfo} />
               <Route path="/calendar" component={CalendarShare} />
               <Route path="/messageboard" component={MessageBoard} />
-              <Route path="/lists" component={Lists} />
+              <Route path="/lists" component={oldLists} />
               <Route path="/photos" component={Photos} />
             </Switch>
         </UserContextProvider>
